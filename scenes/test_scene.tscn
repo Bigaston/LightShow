@@ -1,6 +1,29 @@
-[gd_scene format=3 uid="uid://v30ikj67ys62"]
+[gd_scene load_steps=3 format=3 uid="uid://v30ikj67ys62"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ucdej"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vm1t6"]
+size = Vector3(0.2, 2, 10)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298383, 1.69021)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.918574, 3.54759)
+
+[node name="Area" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area"]
+mesh = SubResource("BoxMesh_ucdej")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
+mesh = SubResource("BoxMesh_vm1t6")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+mesh = SubResource("BoxMesh_vm1t6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Area"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, -5)
+mesh = SubResource("BoxMesh_vm1t6")
