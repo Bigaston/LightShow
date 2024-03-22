@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://v30ikj67ys62"]
+[gd_scene load_steps=10 format=3 uid="uid://v30ikj67ys62"]
 
-[ext_resource type="Script" path="res://scenes/Lyre.gd" id="1_ixekl"]
+[ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/Lyre.tscn" id="1_wkpo5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kxehk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -11,38 +11,80 @@ sky_material = SubResource("ProceduralSkyMaterial_kxehk")
 
 [sub_resource type="Environment" id="Environment_pv774"]
 background_mode = 2
-background_energy_multiplier = 0.1
+background_energy_multiplier = 0.2
 sky = SubResource("Sky_oporb")
 tonemap_mode = 2
 glow_enabled = true
 fog_density = 0.0
-volumetric_fog_density = 0.1108
+volumetric_fog_density = 0.1
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_anisotropy = 0.0
+volumetric_fog_length = 4.0
+volumetric_fog_detail_spread = 0.5
 volumetric_fog_sky_affect = 0.0
+volumetric_fog_temporal_reprojection_enabled = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_ucdej"]
 size = Vector3(10, 0.2, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vm1t6"]
-size = Vector3(0.2, 2, 10)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_8rl7e"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.5
+size = Vector3(0.2, 5, 10)
 
 [sub_resource type="Animation" id="Animation_0dk1m"]
 resource_name = "Bruh"
-loop_mode = 2
-tracks/0/type = "rotation_3d"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Lyre")
+tracks/0/path = NodePath("../Lyre:tilt")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.919, -0.387, -0.065, -0.034, 0.5, 1, 0.888892, 0.0276343, 0.00927936, -0.45719, 1, 1, 0.899, 0.425, 0.102, -0.015)
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-60.0, -120.0, -120.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Lyre:power")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 1.7, 1.9, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1217.74, 1176.27),
+"update": 0,
+"values": [0.0, 10.0, 10.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Lyre:pan")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [120.0, 40.0, 40.0]
+}
 
 [sub_resource type="Animation" id="Animation_8y1si"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Lyre:tilt")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-103.553]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_skwsn"]
 _data = {
@@ -56,7 +98,7 @@ _data = {
 environment = SubResource("Environment_pv774")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.918574, 3.54759)
+transform = Transform3D(0.790102, 0, 0.612976, 0, 1, 0, -0.612976, 0, 0.790102, 1.10855, 0.918574, 0.542892)
 
 [node name="Area" type="Node3D" parent="."]
 
@@ -64,34 +106,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.918574, 3.54759)
 mesh = SubResource("BoxMesh_ucdej")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.33619, 0)
 mesh = SubResource("BoxMesh_vm1t6")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.33619, 0)
 mesh = SubResource("BoxMesh_vm1t6")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Area"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, -5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.33619, -5)
 mesh = SubResource("BoxMesh_vm1t6")
-
-[node name="Lyre" type="Node3D" parent="."]
-transform = Transform3D(0.983014, -0.176778, 0.0493171, -0.154878, -0.654878, 0.739696, -0.0984652, -0.73477, -0.671133, 0, 2.05219, 0)
-script = ExtResource("1_ixekl")
-light_color = Color(1, 1, 1, 1)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Lyre"]
-transform = Transform3D(0.999999, 7.45058e-08, -5.81145e-07, -2.79397e-08, -1.49012e-08, -0.999999, 0, 0.999999, 2.98023e-08, -5.96046e-08, 0.5, -1.19209e-07)
-light_energy = 10.0
-light_volumetric_fog_energy = 5.0
-shadow_enabled = true
-spot_range = 10.0
-spot_angle = 30.0
-
-[node name="Mesh" type="MeshInstance3D" parent="Lyre"]
-transform = Transform3D(1, -6.14673e-08, 1.49012e-08, 7.45058e-09, 1, 1.49012e-08, -1.49012e-08, -2.98023e-08, 1, 0, 0.25, -5.96046e-08)
-mesh = SubResource("CylinderMesh_8rl7e")
-skeleton = NodePath("../..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../WorldEnvironment")
@@ -99,3 +123,9 @@ libraries = {
 "": SubResource("AnimationLibrary_skwsn")
 }
 autoplay = "Bruh"
+
+[node name="Lyre" parent="." instance=ExtResource("1_wkpo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41294, 0, 0)
+pan = 49.5906
+tilt = -103.553
+power = 18.5144
