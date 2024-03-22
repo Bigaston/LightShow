@@ -126,6 +126,5 @@ autoplay = "Bruh"
 
 [node name="Lyre" parent="." instance=ExtResource("1_wkpo5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41294, 0, 0)
-pan = 49.5906
+pan = 136.447
 tilt = -103.553
-power = 18.5144
