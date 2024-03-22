@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlacableElementContainer" load_steps=6 format=3 uid="uid://bkfjcwx3b5npc"]
+
+[ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/placable_elements/Lyre.tscn" id="1_6i6fu"]
+[ext_resource type="Script" path="res://scripts/custom_resources/PlacableElement.gd" id="1_iffxe"]
+[ext_resource type="Script" path="res://scripts/custom_resources/PlacableElementContainer.gd" id="1_rd4jp"]
+[ext_resource type="PackedScene" uid="uid://v6x06tl5e5rq" path="res://objects/placable_elements/previews/Lyre.tscn" id="2_g8dpc"]
+
+[sub_resource type="Resource" id="Resource_3r1rt"]
+script = ExtResource("1_iffxe")
+name = "Lyre"
+preview = ExtResource("2_g8dpc")
+placable_element = ExtResource("1_6i6fu")
+
+[resource]
+script = ExtResource("1_rd4jp")
+elements = Array[ExtResource("1_iffxe")]([SubResource("Resource_3r1rt")])

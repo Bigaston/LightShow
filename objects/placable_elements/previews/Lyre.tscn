@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://v6x06tl5e5rq"]
+
+[ext_resource type="PackedScene" uid="uid://dcck3nlvnsmxr" path="res://resources/meshs/Lyre.glb" id="1_ewr55"]
+[ext_resource type="Material" uid="uid://c3d1gx51atvbu" path="res://resources/materials/PreviewPlacableElements.tres" id="2_kxohw"]
+
+[node name="blockbench_export" instance=ExtResource("1_ewr55")]
+
+[node name="BaseSupport" parent="Node" index="0"]
+surface_material_override/0 = ExtResource("2_kxohw")
+
+[node name="Base" parent="Node" index="1"]
+surface_material_override/0 = ExtResource("2_kxohw")
+
+[node name="Pan" parent="Node/Pan2" index="0"]
+surface_material_override/0 = ExtResource("2_kxohw")
+
+[node name="Support" parent="Node/Pan2" index="1"]
+surface_material_override/0 = ExtResource("2_kxohw")
+
+[node name="Light" parent="Node/Pan2/Tilt2" index="0"]
+visible = false
+surface_material_override/0 = ExtResource("2_kxohw")
+
+[node name="Tilt" parent="Node/Pan2/Tilt2" index="1"]
+surface_material_override/0 = ExtResource("2_kxohw")
