@@ -22,10 +22,10 @@ func _process(delta: float) -> void:
 			position = position + (basis.x * moving_speed * delta)
 			
 		if Input.is_action_pressed("flying_cam_up"):
-			position = position + Vector3.UP * moving_speed * delta
+			position = position + (basis.y * moving_speed * delta)
 			
 		if Input.is_action_pressed("flying_cam_down"):
-			position = position + Vector3.DOWN * moving_speed * delta
+			position = position + (-basis.y * moving_speed * delta)
 			
 		if position.y < minimum_height:
 			position.y = minimum_height

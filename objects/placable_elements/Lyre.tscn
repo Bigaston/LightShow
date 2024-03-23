@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr1arqkchrm1h"]
+[gd_scene load_steps=5 format=3 uid="uid://cr1arqkchrm1h"]
 
 [ext_resource type="PackedScene" uid="uid://dcck3nlvnsmxr" path="res://resources/meshs/Lyre.glb" id="1_3dd6w"]
 [ext_resource type="Script" path="res://objects/placable_elements/Lyre.gd" id="2_c5im4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mogeu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ga30k"]
+size = Vector3(0.440857, 0.934082, 0.492645)
 
 [node name="Lyre" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("1_3dd6w")]
 script = ExtResource("2_c5im4")
@@ -22,3 +25,9 @@ light_volumetric_fog_energy = 5.0
 shadow_enabled = true
 spot_range = 20.0
 spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00112915, 0.468506, 0.00114441)
+shape = SubResource("BoxShape3D_ga30k")

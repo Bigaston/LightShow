@@ -64,5 +64,6 @@ flying_cam_down={
 
 [layer_names]
 
+3d_physics/layer_1="FocusableElement"
 3d_physics/layer_9="Placable"
 3d_physics/layer_10="Ground"
