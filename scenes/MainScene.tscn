@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://3xmpptnmd6wc"]
+[gd_scene load_steps=10 format=3 uid="uid://3xmpptnmd6wc"]
 
 [ext_resource type="Texture2D" uid="uid://u7xn1401jfek" path="res://resources/textures/Prototype/texture_08.png" id="1_2ktel"]
 [ext_resource type="Script" path="res://scenes/MainScene.gd" id="1_wkvf4"]
 [ext_resource type="PackedScene" uid="uid://c77cqyhql034w" path="res://objects/cameras/FlyingCamera.tscn" id="2_jxigl"]
 [ext_resource type="Script" path="res://scripts/proto/PlacableElement.gd" id="4_qjkxm"]
 [ext_resource type="Resource" uid="uid://bkfjcwx3b5npc" path="res://resources/custom/PlacableElements.tres" id="5_ypet5"]
+[ext_resource type="Script" path="res://scripts/placable_elements/PlacableContainer.gd" id="6_qcfji"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4egh"]
 albedo_texture = ExtResource("1_2ktel")
@@ -17,9 +18,8 @@ size = Vector2(1000, 1000)
 [sub_resource type="BoxShape3D" id="BoxShape3D_w32je"]
 size = Vector3(1000, 0.5, 1000)
 
-[node name="MainScene" type="Node3D" node_paths=PackedStringArray("camera")]
+[node name="MainScene" type="Node3D"]
 script = ExtResource("1_wkvf4")
-camera = NodePath("FlyingCamera")
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_wkbe3")
@@ -53,4 +53,8 @@ grow_vertical = 2
 script = ExtResource("4_qjkxm")
 elements = ExtResource("5_ypet5")
 
-[connection signal="placable_element_selected" from="Control/PlacableElements" to="." method="_on_placable_elements_placable_element_selected"]
+[node name="PlacableContainer" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+script = ExtResource("6_qcfji")
+camera = NodePath("../FlyingCamera")
+
+[connection signal="placable_element_selected" from="Control/PlacableElements" to="PlacableContainer" method="_on_element_selected"]
