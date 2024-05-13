@@ -2,7 +2,7 @@ extends VBoxContainer
 
 @export var elements: PlacableElementContainer
 
-signal placable_element_selected(element: PlacableElement)
+signal placable_element_selected(element: PlacableElementResource)
 
 func _ready() -> void:
 	for element in elements.elements:
@@ -13,5 +13,5 @@ func _ready() -> void:
 		
 		add_child(btn)
 
-func on_btn_click(element: PlacableElement):
+func on_btn_click(element: PlacableElementResource):
 	placable_element_selected.emit(element)

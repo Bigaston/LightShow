@@ -1,6 +1,6 @@
 @tool
 
-extends Node3D
+extends PlacableElement
 
 @export var color: Color: 
 	set(value):

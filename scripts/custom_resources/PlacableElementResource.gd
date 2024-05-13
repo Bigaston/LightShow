@@ -1,5 +1,5 @@
 extends Resource
-class_name PlacableElement
+class_name PlacableElementResource
 
 @export var name: String = ""
 @export var preview: PackedScene
