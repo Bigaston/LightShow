@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://v30ikj67ys62"]
+[gd_scene load_steps=13 format=3 uid="uid://v30ikj67ys62"]
 
+[ext_resource type="PackedScene" uid="uid://c77cqyhql034w" path="res://objects/cameras/FlyingCamera.tscn" id="1_plhtt"]
 [ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/placable_elements/Lyre.tscn" id="1_wkpo5"]
 [ext_resource type="PackedScene" uid="uid://bykyupejixulv" path="res://objects/ground.tscn" id="3_5dhwy"]
 [ext_resource type="PackedScene" uid="uid://vfvvfjugv2qs" path="res://objects/placable_elements/Structure.tscn" id="3_r50tl"]
@@ -33,16 +34,88 @@ size = Vector3(0.2, 5, 10)
 
 [sub_resource type="Animation" id="Animation_0dk1m"]
 resource_name = "Bruh"
-length = 2.5
+length = 2.0
 loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Structure3/Lyre:tilt")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-90.0, -10.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Structure3/Lyre2:tilt")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-90.0, -10.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Structure3/Lyre3:tilt")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-90.0, -10.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Structure3/Lyre4:tilt")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-90.0, -10.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Structure3/Lyre5:tilt")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-90.0, -10.0]
+}
 
-[sub_resource type="Animation" id="Animation_8y1si"]
+[sub_resource type="Animation" id="Animation_4nftd"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Structure3/Lyre:tilt")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_skwsn"]
 _data = {
 "Bruh": SubResource("Animation_0dk1m"),
-"RESET": SubResource("Animation_8y1si")
+"RESET": SubResource("Animation_4nftd")
 }
 
 [node name="Node3D" type="Node3D"]
@@ -50,8 +123,8 @@ _data = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pv774")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999821, 1.0312e-09, 0.0189005, 0.00375394, 0.980078, -0.19858, -0.018524, 0.198615, 0.979902, 2.17341, 0.56723, 3.827)
+[node name="FlyingCamera" parent="." instance=ExtResource("1_plhtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76331, 0.697989, 4.80988)
 
 [node name="Area" type="Node3D" parent="."]
 visible = false
@@ -97,35 +170,35 @@ lenght = 9
 
 [node name="Lyre" parent="Structure3" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-1.31134e-07, -1, 3.82137e-15, -1, 1.31134e-07, 8.74228e-08, -8.74228e-08, 7.64274e-15, -1, -0.166187, 1.80493, -7.45058e-09)
-pan = 53.012
-tilt = -33.243
+pan = 90.0
+tilt = -10.0
 power = 10.0
 angle = 10.0
 
 [node name="Lyre2" parent="Structure3" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.182867, 0.919575, 0.000562906)
-pan = 67.369
-tilt = -30.876
+pan = 90.0
+tilt = -81.68
 power = 10.0
 angle = 10.0
 
 [node name="Lyre3" parent="Structure3" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.171757, -0.00804114, -0.00635412)
 pan = 90.0
-tilt = -30.877
+tilt = -61.84
 power = 10.0
 angle = 10.0
 
 [node name="Lyre4" parent="Structure3" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.177203, -0.976048, 0.00306243)
-pan = -56.842
-tilt = 33.684
+pan = 90.0
+tilt = -38.16
 power = 10.0
 angle = 10.0
 
 [node name="Lyre5" parent="Structure3" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.16559, -1.78889, 0.00278804)
-pan = -37.895
-tilt = 40.702
+pan = 90.0
+tilt = -18.32
 power = 10.0
 angle = 10.0
