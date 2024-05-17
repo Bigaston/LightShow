@@ -8,6 +8,8 @@ extends PlacableElement
 		
 		if light:
 			light.light_color = color
+			light_render.albedo_color = color
+			light_render.emission = color
 			
 @export_range(-180,180) var pan: float = 0:
 	set(value):
@@ -29,8 +31,16 @@ extends PlacableElement
 		
 		if light:
 			light.light_energy = value
+			
+@export_range(10, 70) var angle: float = 20:
+	set(value):
+		angle = value
+		
+		if light:
+			light.spot_angle = angle
 
 @export_subgroup("PrivateSettings")
 @export var light: SpotLight3D
 @export var pan_pivot: Node3D
 @export var tilt_pivot: Node3D
+@export var light_render: StandardMaterial3D

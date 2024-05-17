@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="GoShow"
-run/main_scene="res://scenes/MainScene.tscn"
+config/name="LightShow"
+run/main_scene="res://scenes/test_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

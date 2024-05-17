@@ -49,8 +49,8 @@ func update_display():
 		if last_elem:
 			elem.position = last_elem.position + Vector3(0, SIZE, 0)
 		
-		print(elem)
-		
 		$Container.add_child(elem)
 		
 		last_elem = elem
+		
+	$Container.position = Vector3(0, -SIZE * lenght / 2, 0)
