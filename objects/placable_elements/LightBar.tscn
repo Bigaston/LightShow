@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://5pex6hghwp8i"]
+
+[ext_resource type="Script" path="res://objects/placable_elements/LightBar.gd" id="1_1p2sg"]
+[ext_resource type="PackedScene" uid="uid://m5ja5w3vvt05" path="res://resources/meshs/LightBar.glb" id="1_8xpqj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttcka"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[node name="LightBar" type="Node3D" node_paths=PackedStringArray("lights", "pan_pivot", "tilt_pivot")]
+script = ExtResource("1_1p2sg")
+lights = [NodePath("Model/Node/Tilt2/Light5/Light1/SpotLight3D"), NodePath("Model/Node/Tilt2/Light5/Light22/SpotLight3D2"), NodePath("Model/Node/Tilt2/Light5/Light32/SpotLight3D3"), NodePath("Model/Node/Tilt2/Light5/Light42/SpotLight3D4")]
+pan_pivot = NodePath("Model/Node/Tilt2")
+tilt_pivot = NodePath("Model/Node/Tilt2/Light5")
+light_render = SubResource("StandardMaterial3D_ttcka")
+
+[node name="Model" parent="." instance=ExtResource("1_8xpqj")]
+
+[node name="Tilt2" parent="Model/Node" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35625, 0)
+
+[node name="Light" parent="Model/Node/Tilt2/Light5/Light1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ttcka")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Model/Node/Tilt2/Light5/Light1" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.12278, 0)
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 10.0
+
+[node name="Light2" parent="Model/Node/Tilt2/Light5/Light22" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ttcka")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Model/Node/Tilt2/Light5/Light22" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.12278, -0.184115)
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 10.0
+
+[node name="Light3" parent="Model/Node/Tilt2/Light5/Light32" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ttcka")
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Model/Node/Tilt2/Light5/Light32" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.57278, -0.103079)
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 10.0
+
+[node name="Light4" parent="Model/Node/Tilt2/Light5/Light42" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ttcka")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Model/Node/Tilt2/Light5/Light42" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.12278, -5.29289e-05)
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 10.0
+
+[editable path="Model"]

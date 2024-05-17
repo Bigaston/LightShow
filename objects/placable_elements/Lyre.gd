@@ -4,7 +4,7 @@ extends PlacableElement
 
 enum Shape {None, Star}
 
-@export var color: Color: 
+@export var color: Color = Color.WHITE: 
 	set(value):
 		color = value
 		
