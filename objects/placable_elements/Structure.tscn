@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://vfvvfjugv2qs"]
+
+[ext_resource type="Script" path="res://objects/placable_elements/Structure.gd" id="1_fu2gc"]
+[ext_resource type="PackedScene" uid="uid://br74hpn16klk0" path="res://resources/meshs/Struct_3.glb" id="2_2jpia"]
+
+[node name="Structure" type="Node3D"]
+transform = Transform3D(0.0369944, 0.998692, -0.035289, 0.067225, -0.0377203, -0.997025, -0.997052, 0.0345121, -0.0685325, 0, 1.18987, 0)
+script = ExtResource("1_fu2gc")
+number_of_border = 3
+lenght = 4
+
+[node name="Container" type="Node3D" parent="."]
+
+[node name="blockbench_export" parent="Container" instance=ExtResource("2_2jpia")]
+
+[node name="_Node3D_21017" parent="Container" instance=ExtResource("2_2jpia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="_Node3D_21018" parent="Container" instance=ExtResource("2_2jpia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="_Node3D_21019" parent="Container" instance=ExtResource("2_2jpia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
