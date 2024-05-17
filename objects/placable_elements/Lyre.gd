@@ -2,6 +2,8 @@
 
 extends PlacableElement
 
+enum Shape {None, Star}
+
 @export var color: Color: 
 	set(value):
 		color = value
@@ -38,6 +40,25 @@ extends PlacableElement
 		
 		if light:
 			light.spot_angle = angle
+	
+@export_category("Projector")
+@export var shape: Shape = Shape.None:
+	set(value):
+		shape = value
+		
+		if light:
+			match shape:
+				Shape.None:
+					light.light_projector = null
+				Shape.Star:
+					light.light_projector = preload("res://resources/textures/projector/star.svg")
+
+@export_range(-180, 180) var projector_angle: float = 0:
+	set(value):
+		projector_angle = value
+		
+		if light:
+			light.rotation_degrees.y = projector_angle
 
 @export_subgroup("PrivateSettings")
 @export var light: SpotLight3D

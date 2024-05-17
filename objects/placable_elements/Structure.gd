@@ -19,6 +19,11 @@ const SIZE = 0.6
 			
 		lenght = value
 		update_display()
+		
+@export var is_on_ground: bool = false:
+	set(value):
+		is_on_ground = value
+		update_display()
 
 func _ready():
 	update_display()
@@ -52,5 +57,12 @@ func update_display():
 		$Container.add_child(elem)
 		
 		last_elem = elem
+		
+	if is_on_ground:
+		var ground_support = preload("res://resources/meshs/Struct_ground.glb").instantiate()
+		
+		ground_support.position = Vector3(0, -0.02, 0)
+		
+		$Container.add_child(ground_support)
 		
 	$Container.position = Vector3(0, -SIZE * lenght / 2, 0)
