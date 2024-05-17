@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://v30ikj67ys62"]
+[gd_scene load_steps=12 format=3 uid="uid://v30ikj67ys62"]
 
 [ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/placable_elements/Lyre.tscn" id="1_wkpo5"]
+[ext_resource type="Script" path="res://objects/placable_elements/Structure.gd" id="2_ymnap"]
+[ext_resource type="PackedScene" uid="uid://bykyupejixulv" path="res://objects/ground.tscn" id="3_5dhwy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kxehk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -101,6 +103,7 @@ environment = SubResource("Environment_pv774")
 transform = Transform3D(0.790102, 0, 0.612976, 0, 1, 0, -0.612976, 0, 0.790102, 1.10855, 0.918574, 0.542892)
 
 [node name="Area" type="Node3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area"]
 mesh = SubResource("BoxMesh_ucdej")
@@ -128,3 +131,8 @@ autoplay = "Bruh"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41294, 0, 0)
 pan = 136.447
 tilt = -103.553
+
+[node name="Structure" type="Node3D" parent="."]
+script = ExtResource("2_ymnap")
+
+[node name="Ground" parent="." instance=ExtResource("3_5dhwy")]

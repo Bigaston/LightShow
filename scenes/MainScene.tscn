@@ -1,36 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://3xmpptnmd6wc"]
+[gd_scene load_steps=7 format=3 uid="uid://3xmpptnmd6wc"]
 
-[ext_resource type="Texture2D" uid="uid://u7xn1401jfek" path="res://resources/textures/Prototype/texture_08.png" id="1_2ktel"]
 [ext_resource type="Script" path="res://scenes/MainScene.gd" id="1_wkvf4"]
+[ext_resource type="PackedScene" uid="uid://bykyupejixulv" path="res://objects/ground.tscn" id="2_05cdj"]
 [ext_resource type="PackedScene" uid="uid://c77cqyhql034w" path="res://objects/cameras/FlyingCamera.tscn" id="2_jxigl"]
 [ext_resource type="Script" path="res://scripts/proto/PlacableElement.gd" id="4_qjkxm"]
 [ext_resource type="Resource" uid="uid://bkfjcwx3b5npc" path="res://resources/custom/PlacableElements.tres" id="5_ypet5"]
 [ext_resource type="Script" path="res://scripts/placable_elements/PlacableContainer.gd" id="6_qcfji"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4egh"]
-albedo_texture = ExtResource("1_2ktel")
-uv1_triplanar = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_wkbe3"]
-material = SubResource("StandardMaterial3D_w4egh")
-size = Vector2(1000, 1000)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w32je"]
-size = Vector3(1000, 0.5, 1000)
-
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_wkvf4")
 
-[node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_wkbe3")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
-collision_layer = 768
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
-shape = SubResource("BoxShape3D_w32je")
+[node name="Ground" parent="." instance=ExtResource("2_05cdj")]
 
 [node name="FlyingCamera" parent="." instance=ExtResource("2_jxigl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.697768, 0.781563)
