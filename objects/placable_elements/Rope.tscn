@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://scbqaj8a7mjm"]
+
+[ext_resource type="Script" path="res://objects/placable_elements/Rope.gd" id="1_q4c8q"]
+[ext_resource type="PackedScene" uid="uid://dnp4vm5tbp7el" path="res://resources/meshs/RopeContainer.glb" id="2_obccv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bngum"]
+radius = 0.1
+
+[node name="Rope" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.26542)
+script = ExtResource("1_q4c8q")
+
+[node name="Mesh" parent="." instance=ExtResource("2_obccv")]
+
+[node name="Final" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Final"]
+shape = SubResource("SphereShape3D_bngum")
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+node_a = NodePath("../Final")
+
+[node name="Container" type="Node3D" parent="."]

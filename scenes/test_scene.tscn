@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://v30ikj67ys62"]
+[gd_scene load_steps=15 format=3 uid="uid://v30ikj67ys62"]
 
 [ext_resource type="PackedScene" uid="uid://c77cqyhql034w" path="res://objects/cameras/FlyingCamera.tscn" id="1_plhtt"]
 [ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/placable_elements/Lyre.tscn" id="1_wkpo5"]
 [ext_resource type="PackedScene" uid="uid://bykyupejixulv" path="res://objects/ground.tscn" id="3_5dhwy"]
 [ext_resource type="PackedScene" uid="uid://vfvvfjugv2qs" path="res://objects/placable_elements/Structure.tscn" id="3_r50tl"]
 [ext_resource type="PackedScene" uid="uid://5pex6hghwp8i" path="res://objects/placable_elements/LightBar.tscn" id="5_indfa"]
+[ext_resource type="PackedScene" uid="uid://scbqaj8a7mjm" path="res://objects/placable_elements/Rope.tscn" id="6_nethk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kxehk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -236,3 +237,5 @@ pan = 90.0
 tilt = -18.32
 power = 10.0
 angle = 10.0
+
+[node name="Rope" parent="." instance=ExtResource("6_nethk")]
