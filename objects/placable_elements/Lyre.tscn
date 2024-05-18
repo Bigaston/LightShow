@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr1arqkchrm1h"]
+[gd_scene load_steps=6 format=3 uid="uid://cr1arqkchrm1h"]
 
 [ext_resource type="PackedScene" uid="uid://dcck3nlvnsmxr" path="res://resources/meshs/Lyre.glb" id="1_3dd6w"]
 [ext_resource type="Script" path="res://objects/placable_elements/Lyre.gd" id="2_c5im4"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikhnd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xstvk"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hj87v"]
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
@@ -12,14 +16,14 @@ size = Vector3(0.440857, 0.934082, 0.492645)
 
 [node name="Lyre" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("1_3dd6w")]
 script = ExtResource("2_c5im4")
-color = Color(1, 1, 1, 1)
+power = 0.0
 light = NodePath("Node/Pan2/Tilt2/SpotLight")
 pan_pivot = NodePath("Node/Pan2")
 tilt_pivot = NodePath("Node/Pan2/Tilt2")
-light_render = SubResource("StandardMaterial3D_ikhnd")
+light_render = SubResource("StandardMaterial3D_xstvk")
 
 [node name="Light" parent="Node/Pan2/Tilt2" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ikhnd")
+surface_material_override/0 = SubResource("StandardMaterial3D_hj87v")
 
 [node name="SpotLight" type="SpotLight3D" parent="Node/Pan2/Tilt2" index="2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.244155, 0)

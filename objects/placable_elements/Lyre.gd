@@ -27,7 +27,7 @@ enum Shape {None, Star}
 		if tilt_pivot:
 			tilt_pivot.rotation_degrees.z = value
 
-@export_range(0, 20) var power: float = 0:
+@export_range(0, 20) var power: float = 10:
 	set(value):
 		power = value
 		
