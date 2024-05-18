@@ -16,10 +16,11 @@ const ROPE_LENGHT = 0.28
 @export var other_body: PhysicsBody3D:
 	set(value):
 		other_body = value
-		$PinJoint3D.node_b = value
 		
 func _ready():
 	update_length()
+	
+	$Joint.node_b = other_body.get_path()
 
 func update_length():
 	if $Container == null:
@@ -32,6 +33,7 @@ func update_length():
 		n.queue_free()
 	
 	$Final.position = Vector3(0, length, 0)
+	$Joint.position = Vector3(0, length, 0)
 	
 	for i in range(number_of_rope):
 		var elem = preload("res://resources/meshs/Rope.glb").instantiate()

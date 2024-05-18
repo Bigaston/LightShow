@@ -1,6 +1,6 @@
 @tool
 
-extends Node3D
+extends RigidBody3D
 
 var struct_2 = preload("res://resources/meshs/Struct_2.glb")
 var struct_3 = preload("res://resources/meshs/Struct_3.glb")
@@ -24,6 +24,13 @@ const SIZE = 0.6
 	set(value):
 		is_on_ground = value
 		update_display()
+
+@export var has_physics: bool = false:
+	set(value):
+		has_physics = value
+		
+		sleeping = !has_physics
+		freeze = !has_physics
 
 func _ready():
 	update_display()
@@ -64,5 +71,10 @@ func update_display():
 		ground_support.position = Vector3(0, -0.02, 0)
 		
 		$Container.add_child(ground_support)
+	
+	var hitbox = BoxShape3D.new()
+	hitbox.size = Vector3(0.35, SIZE * lenght, 0.35)
+	
+	$Shape.shape = hitbox
 		
 	$Container.position = Vector3(0, -SIZE * lenght / 2, 0)
