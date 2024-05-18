@@ -188,6 +188,11 @@ _data = {
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_o7jsf")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.610283, 0.634723, -0.474005, 0, 0.598353, 0.801233, 0.792183, 0.488979, -0.365165, -6, 7, -8)
+light_energy = 0.3
+sky_mode = 1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pv774")
 
@@ -228,23 +233,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_x4ecd")
 
 [node name="StructureLeft" parent="." instance=ExtResource("3_r50tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.81773, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.73219, 0)
 freeze = true
 number_of_border = 4
-lenght = 6
+lenght = 9
 is_on_ground = true
 
 [node name="StructureRight" parent="." instance=ExtResource("3_r50tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7599, 1.81773, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7599, 2.76993, 0)
 freeze = true
 number_of_border = 4
-lenght = 6
+lenght = 9
 is_on_ground = true
 
+[node name="StructureTopSupport" parent="." instance=ExtResource("3_r50tl")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.40532, 5.59795, 0)
+sleeping = false
+number_of_border = 4
+lenght = 17
+has_physics = true
+
 [node name="StructureTop" parent="." instance=ExtResource("3_r50tl")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.38022, 3.76253, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.38022, 4.28103, 0)
 sleeping = false
 number_of_border = 3
 lenght = 9
@@ -286,12 +296,12 @@ power = 10.0
 angle = 10.0
 
 [node name="Rope" parent="." node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.183556, 4.90612, 0.00687619)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.183556, 5.42462, 0.00687619)
 length = 0.905
 other_body = NodePath("../StructureTop")
 
 [node name="Rope2" parent="." node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 4.75361, 4.92534, 0.000203937)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 4.75361, 5.44384, 0.000203937)
 length = 0.9
 other_body = NodePath("../StructureTop")
 

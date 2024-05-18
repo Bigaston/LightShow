@@ -8,7 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("toggle_sunlight"):
+		$DirectionalLight3D.visible = !$DirectionalLight3D.visible
 
 
 func _on_animation_player_2_animation_finished(anim_name):
