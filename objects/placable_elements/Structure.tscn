@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/placable_elements/Structure.gd" id="1_fu2gc"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kgxcs"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_sbctu"]
 size = Vector3(0.35, 0.6, 0.35)
 
 [node name="Structure" type="RigidBody3D"]
@@ -13,4 +13,4 @@ script = ExtResource("1_fu2gc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 
 [node name="Shape" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_kgxcs")
+shape = SubResource("BoxShape3D_sbctu")

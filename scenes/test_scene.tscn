@@ -19,13 +19,14 @@ background_mode = 2
 background_energy_multiplier = 0.2
 sky = SubResource("Sky_oporb")
 tonemap_mode = 2
+glow_enabled = true
 fog_density = 0.0
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.3
-volumetric_fog_emission_energy = 0.0
 volumetric_fog_anisotropy = 0.0
-volumetric_fog_length = 5.0
+volumetric_fog_length = 10.0
 volumetric_fog_detail_spread = 0.5
-volumetric_fog_sky_affect = 0.0
+volumetric_fog_sky_affect = 0.503
 volumetric_fog_temporal_reprojection_enabled = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_ucdej"]
@@ -100,7 +101,7 @@ tracks/4/keys = {
 }
 tracks/5/type = "value"
 tracks/5/imported = false
-tracks/5/enabled = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("../StructureTop/Lyre:projector_angle")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
@@ -190,7 +191,8 @@ script = ExtResource("1_o7jsf")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.610283, 0.634723, -0.474005, 0, 0.598353, 0.801233, 0.792183, 0.488979, -0.365165, -6, 7, -8)
-light_energy = 0.3
+visible = false
+light_energy = 0.1
 sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -266,6 +268,7 @@ pan = 81.4198
 tilt = -10.0
 power = 10.0
 angle = 10.0
+shape = 1
 
 [node name="Lyre2" parent="StructureTop" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.165541, 0.919575, 0.000562906)
