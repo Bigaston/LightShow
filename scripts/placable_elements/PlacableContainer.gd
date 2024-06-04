@@ -32,10 +32,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			var result = space_state.intersect_ray(query)
 			
 			if !result.is_empty():
+				var selected_element: PlacableElement
 				var collider = result.collider
-				var selected_element = collider.get_parent() as PlacableElement
 				
-				print(selected_element)
+				if collider is PlacableElement:
+					selected_element = collider
+				else:
+					selected_element = collider.get_parent() as PlacableElement
+				
+				selected_element.select()
 				
 		
 func _process(delta: float) -> void:

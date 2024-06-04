@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="PlacableElementContainer" load_steps=6 format=3 uid="uid://bkfjcwx3b5npc"]
+[gd_resource type="Resource" script_class="PlacableElementContainer" load_steps=9 format=3 uid="uid://bkfjcwx3b5npc"]
 
 [ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/placable_elements/Lyre.tscn" id="1_6i6fu"]
 [ext_resource type="Script" path="res://scripts/custom_resources/PlacableElementResource.gd" id="1_iffxe"]
 [ext_resource type="Script" path="res://scripts/custom_resources/PlacableElementContainer.gd" id="1_rd4jp"]
 [ext_resource type="PackedScene" uid="uid://v6x06tl5e5rq" path="res://objects/placable_elements/previews/Lyre.tscn" id="2_g8dpc"]
+[ext_resource type="PackedScene" uid="uid://vfvvfjugv2qs" path="res://objects/placable_elements/Structure.tscn" id="4_6sgln"]
+[ext_resource type="PackedScene" uid="uid://dbkxtv1r5bnic" path="res://objects/placable_elements/previews/Structure.tscn" id="5_sca14"]
 
 [sub_resource type="Resource" id="Resource_3r1rt"]
 script = ExtResource("1_iffxe")
@@ -11,6 +13,12 @@ name = "Lyre"
 preview = ExtResource("2_g8dpc")
 placable_element = ExtResource("1_6i6fu")
 
+[sub_resource type="Resource" id="Resource_q7jtn"]
+script = ExtResource("1_iffxe")
+name = "Structure"
+preview = ExtResource("5_sca14")
+placable_element = ExtResource("4_6sgln")
+
 [resource]
 script = ExtResource("1_rd4jp")
-elements = Array[ExtResource("1_iffxe")]([SubResource("Resource_3r1rt")])
+elements = Array[ExtResource("1_iffxe")]([SubResource("Resource_3r1rt"), SubResource("Resource_q7jtn")])

@@ -1,6 +1,4 @@
-@tool
-
-extends RigidBody3D
+extends PlacableElement
 
 var struct_2 = preload("res://resources/meshs/Struct_2.glb")
 var struct_3 = preload("res://resources/meshs/Struct_3.glb")

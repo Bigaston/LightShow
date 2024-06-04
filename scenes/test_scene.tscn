@@ -86,6 +86,54 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.8, 4.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Stuff/Ceilling/StructureTop/Rope3:length")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.8, 5.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Stuff/Ceilling/StructureTop/Rope4:length")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.8, 5.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Stuff/Ceilling/StructureTop2/Rope5:length")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.8, 4.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Stuff/Ceilling/StructureTop2/Rope6:length")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.8, 4.0]
+}
 
 [sub_resource type="Animation" id="Animation_4nftd"]
 length = 0.001
@@ -207,6 +255,73 @@ lenght = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 shape = SubResource("BoxShape3D_t0po3")
 
+[node name="SupportCeiling2" type="RigidBody3D" parent="Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92316, 7.98782, -0.0338104)
+
+[node name="Structure" parent="Stuff/SupportCeiling2" instance=ExtResource("3_r50tl")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+number_of_border = 4
+lenght = 4
+
+[node name="Lyre" parent="Stuff/SupportCeiling2/Structure" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.172414, 0.96981, 0.00503147)
+pan = 110.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+light = NodePath("../../../SupportCeiling/Structure/Lyre/Node/Pan2/Tilt2/SpotLight")
+pan_pivot = NodePath("../../../SupportCeiling/Structure/Lyre/Node/Pan2")
+tilt_pivot = NodePath("../../../SupportCeiling/Structure/Lyre/Node/Pan2/Tilt2")
+
+[node name="Lyre2" parent="Stuff/SupportCeiling2/Structure" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.173526, 0.339604, -0.00233269)
+pan = 100.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+light = NodePath("../../../SupportCeiling/Structure/Lyre2/Node/Pan2/Tilt2/SpotLight")
+pan_pivot = NodePath("../../../SupportCeiling/Structure/Lyre2/Node/Pan2")
+tilt_pivot = NodePath("../../../SupportCeiling/Structure/Lyre2/Node/Pan2/Tilt2")
+
+[node name="Lyre3" parent="Stuff/SupportCeiling2/Structure" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.17459, -0.34512, -0.00668788)
+pan = 80.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+light = NodePath("../../../SupportCeiling/Structure/Lyre3/Node/Pan2/Tilt2/SpotLight")
+pan_pivot = NodePath("../../../SupportCeiling/Structure/Lyre3/Node/Pan2")
+tilt_pivot = NodePath("../../../SupportCeiling/Structure/Lyre3/Node/Pan2/Tilt2")
+
+[node name="Lyre4" parent="Stuff/SupportCeiling2/Structure" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, -0.951202, 0)
+pan = 70.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+light = NodePath("../../../SupportCeiling/Structure/Lyre4/Node/Pan2/Tilt2/SpotLight")
+pan_pivot = NodePath("../../../SupportCeiling/Structure/Lyre4/Node/Pan2")
+tilt_pivot = NodePath("../../../SupportCeiling/Structure/Lyre4/Node/Pan2/Tilt2")
+
+[node name="Structure2" parent="Stuff/SupportCeiling2" instance=ExtResource("3_r50tl")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 2)
+number_of_border = 4
+lenght = 4
+
+[node name="Structure3" parent="Stuff/SupportCeiling2" instance=ExtResource("3_r50tl")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 1, 0, 1)
+number_of_border = 4
+lenght = 4
+
+[node name="Structure4" parent="Stuff/SupportCeiling2" instance=ExtResource("3_r50tl")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -1, 0, 1)
+number_of_border = 4
+lenght = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/SupportCeiling2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("BoxShape3D_t0po3")
+
 [node name="Ceilling" type="Node3D" parent="Stuff"]
 
 [node name="StructureLeft" parent="Stuff/Ceilling" instance=ExtResource("3_r50tl")]
@@ -236,6 +351,16 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158
 length = 0.8
 other_body = NodePath("../../../SupportCeiling")
 
+[node name="Rope3" parent="Stuff/Ceilling/StructureTop" node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158756, 3.12405, -0.00734457)
+length = 0.8
+other_body = NodePath("../../../SupportCeiling2")
+
+[node name="Rope4" parent="Stuff/Ceilling/StructureTop" node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158756, 1.09397, -0.00734457)
+length = 0.8
+other_body = NodePath("../../../SupportCeiling2")
+
 [node name="StructureLeft2" parent="Stuff/Ceilling" instance=ExtResource("3_r50tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 1.97438)
 number_of_border = 4
@@ -262,3 +387,13 @@ other_body = NodePath("../../../SupportCeiling")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158756, 4.51311, -0.0424851)
 length = 0.8
 other_body = NodePath("../../../SupportCeiling")
+
+[node name="Rope5" parent="Stuff/Ceilling/StructureTop2" node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158756, 3.12405, -0.00666344)
+length = 1.42
+other_body = NodePath("../../../SupportCeiling2")
+
+[node name="Rope6" parent="Stuff/Ceilling/StructureTop2" node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158756, 1.09397, -0.0424851)
+length = 1.545
+other_body = NodePath("../../../SupportCeiling2")

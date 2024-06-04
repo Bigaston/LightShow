@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbkxtv1r5bnic"]
+
+[ext_resource type="PackedScene" uid="uid://b7lsyxf4r0k06" path="res://resources/meshs/Struct_4.glb" id="1_f6lym"]
+[ext_resource type="Material" uid="uid://c3d1gx51atvbu" path="res://resources/materials/PreviewPlacableElements.tres" id="2_fmw7p"]
+
+[node name="Structure" type="Node3D"]
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_f6lym")]
+
+[node name="SupportLeft" parent="blockbench_export/Node/Structure" index="0"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportRight" parent="blockbench_export/Node/Structure" index="1"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportSecondary1" parent="blockbench_export/Node/Structure" index="2"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportSecondary2" parent="blockbench_export/Node/Structure" index="3"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportRight2" parent="blockbench_export/Node/Structure2" index="0"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportSecondary22" parent="blockbench_export/Node/Structure2" index="1"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportSecondary3" parent="blockbench_export/Node/Structure2" index="2"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportRight3" parent="blockbench_export/Node/Structure3" index="0"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportSecondary32" parent="blockbench_export/Node/Structure3" index="1"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportSecondary4" parent="blockbench_export/Node/Structure3" index="2"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportSecondary42" parent="blockbench_export/Node/Structure4" index="0"]
+material_override = ExtResource("2_fmw7p")
+
+[node name="SupportSecondary5" parent="blockbench_export/Node/Structure4" index="1"]
+material_override = ExtResource("2_fmw7p")
+
+[editable path="blockbench_export"]

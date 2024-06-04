@@ -1,5 +1,3 @@
-@tool
-
 extends PlacableElement
 
 enum Shape {None, Star}
