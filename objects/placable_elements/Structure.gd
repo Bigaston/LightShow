@@ -1,3 +1,5 @@
+@tool
+
 extends PlacableElement
 
 var struct_2 = preload("res://resources/meshs/Struct_2.glb")
@@ -31,6 +33,10 @@ const SIZE = 0.6
 		freeze = !has_physics
 
 func _ready():
+	add_editable_property("number_of_border")
+	add_editable_property("lenght")
+	add_editable_property("is_on_ground")
+	
 	update_display()
 
 func update_display():

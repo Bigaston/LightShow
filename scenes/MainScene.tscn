@@ -33,8 +33,19 @@ grow_vertical = 2
 script = ExtResource("4_qjkxm")
 elements = ExtResource("5_ypet5")
 
-[node name="PlacableContainer" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+[node name="Properties" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -185.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PlacableContainer" type="Node3D" parent="." node_paths=PackedStringArray("camera", "properties_container")]
 script = ExtResource("6_qcfji")
 camera = NodePath("../FlyingCamera")
+properties_container = NodePath("../Control/Properties")
 
 [connection signal="placable_element_selected" from="Control/PlacableElements" to="PlacableContainer" method="_on_element_selected"]

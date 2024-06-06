@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var camera: Camera3D
+@export var properties_container: VBoxContainer
 
 const RAY_LENGTH = 100
 
@@ -41,7 +42,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					selected_element = collider.get_parent() as PlacableElement
 				
 				selected_element.select()
-				
+				selected_element.open_window(properties_container)
 		
 func _process(delta: float) -> void:
 	if selected_element != null:

@@ -37,6 +37,6 @@ func _process(delta):
 			tween.tween_property($Stuff/Ceilling/StructureTop/Rope, "length", 6, 5)
 			tween.tween_property($Stuff/Ceilling/StructureTop/Rope2, "length", 6, 5)
 			tween.tween_property($Stuff/Ceilling/StructureTop2/Rope3, "length", 5, 5)
-			tween.tween_property($Stuff/Ceilling/StructureTop2/Rope4, "length", 5, 5)
+			tween.tween_property($Stuff/Ceilling/StructureTop2/Rope4, "length", 5, 5 )
 		
 		down = !down

@@ -1,4 +1,7 @@
+@tool
+
 extends PlacableElement
+class_name Lyre
 
 enum Shape {None, Star}
 
@@ -32,7 +35,7 @@ enum Shape {None, Star}
 		if light:
 			light.light_energy = value
 			
-@export_range(10, 70) var angle: float = 20:
+@export_range(5, 70) var angle: float = 20:
 	set(value):
 		angle = value
 		
@@ -63,3 +66,11 @@ enum Shape {None, Star}
 @export var pan_pivot: Node3D
 @export var tilt_pivot: Node3D
 @export var light_render: StandardMaterial3D
+
+func _ready():
+	add_editable_property("color")
+	add_editable_property("pan")
+	add_editable_property("tilt")
+	add_editable_property("power")
+	add_editable_property("angle")
+	add_editable_property("shape")
