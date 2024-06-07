@@ -2,6 +2,7 @@ extends Node3D
 
 @export var lights: Dictionary = {}
 @export var lights_group: Array[Array] = [[], [], [], [], [], [], []]
+@export var timeline_step: float = 0.2
 
 var selected_light: Lyre
 var select_id = 0
@@ -9,6 +10,9 @@ var select_id = 0
 const save_path = "res://configs/light_config.tres"
 
 var snapshot: Dictionary = {}
+
+var timelines: TimelineContainer
+var current_time: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -71,7 +75,34 @@ func handle_midi(event: InputEventMIDI):
 			else:
 				for light in lights_group[event.controller_number - 33]:
 					light.power = 0
+					
+		if event.controller_number == 41 && event.controller_value == 0:
+			for key in timelines.timelines.keys():
+				var timeline = timelines.timelines[key] as Timeline
+				var light = lights[key]
+				var prev_time = 0
+				
+				var tween = get_tree().create_tween()
+				tween.set_trans(Tween.TRANS_CUBIC)
+				
+				var part_keys = timeline.parts.keys()
+				part_keys.sort()
+				
+				for part_key in part_keys:
+					var part = timeline.parts[part_key] as TimelinePart
+					
+					var first = true
+					for prop in part.properties.keys():
+						if first:
+							first = false
+							
+							tween.tween_property(light, prop, part.properties[prop], part.time - prev_time)
+						else:
+							tween.parallel().tween_property(light, prop, part.properties[prop], part.time - prev_time)
+
+					prev_time = part.time
 			
+				tween.play()
 	else:
 		if event.controller_number >= 33 && event.controller_number <= 39:
 			if lights_group[event.controller_number - 33].find(selected_light) == -1:
@@ -80,6 +111,7 @@ func handle_midi(event: InputEventMIDI):
 		if event.controller_number >= 49 && event.controller_number <= 55:
 			lights_group[event.controller_number - 49].remove_at(lights_group[event.controller_number - 49].find(selected_light))
 		
+		# Prev Light
 		if event.controller_number == 58 && event.controller_value == 0:
 			var ordered_key = lights.keys()
 			ordered_key.sort()
@@ -93,7 +125,8 @@ func handle_midi(event: InputEventMIDI):
 			
 			unselect_light()
 			select_lyre(select_id)
-			
+		
+		# Next Light	
 		if event.controller_number == 59 && event.controller_value == 0:
 			var ordered_key = lights.keys()
 			ordered_key.sort()
@@ -107,6 +140,40 @@ func handle_midi(event: InputEventMIDI):
 
 			unselect_light()
 			select_lyre(select_id)
+			
+		# Timeline Register
+		if event.controller_number == 60 && event.controller_value == 0:
+			if !timelines.timelines.has(select_id):
+				timelines.timelines[select_id] = Timeline.new()
+				
+			var timeline = timelines.timelines[select_id] as Timeline
+			
+			if !timeline.parts.has(current_time):
+				timeline.parts[current_time] = TimelinePart.new()
+				
+			var part = timeline.parts[current_time] as TimelinePart
+			part.time = current_time
+			part.properties = {}
+			
+			for prop in selected_light.editable_properties:
+				part.properties[prop.property] = selected_light[prop.property]
+				
+			update_part_display()
+		
+		# Timeline prev
+		if event.controller_number == 61 && event.controller_value == 0:
+			current_time -= timeline_step
+			
+			if current_time < 0:
+				current_time = 0
+				
+			%CurrentTime.text = "%.02f" % current_time
+			
+		# Timeline next
+		if event.controller_number == 62 && event.controller_value == 0:
+			current_time += timeline_step
+				
+			%CurrentTime.text = "%.02f" % current_time
 			
 		if event.controller_number == 16:
 			selected_light.pan = event.controller_value / 127.0 * 360 - 180
@@ -137,6 +204,8 @@ func handle_midi(event: InputEventMIDI):
 		
 func save():
 	var save_dict: SaveData = SaveData.new()
+	
+	save_dict.timelines = timelines
 	
 	for key in lights.keys():
 		save_dict.lights[key] = get_path_to(lights[key])
@@ -174,10 +243,14 @@ func load_data():
 		for light_index in data.lights_group[index]:
 			var light = get_saved_light(data.lights, light_index)
 			lights_group[index].push_back(light)
+			
+	timelines = data.timelines if data.timelines != null else TimelineContainer.new()
 
 func select_lyre(index):
 	selected_light = lights[index]
 	selected_light.power = snapshot[index]
+	
+	update_part_display()
 
 func unselect_light():
 	snapshot[select_id] = selected_light.power
@@ -199,3 +272,19 @@ func restore_snapshot():
 
 func get_saved_light(p_lights, index: int):
 	return get_node(p_lights[index])
+
+func update_part_display():
+	if timelines.timelines.has(select_id):
+		var string = ""
+		
+		var timeline = timelines.timelines[select_id] as Timeline
+		var ordered_keys = timeline.parts.keys()
+		ordered_keys.sort()
+		
+		for k in ordered_keys:
+			string += ("%.02f" % k) + ","
+			
+		%Parts.text = string
+	
+	else:
+		%Parts.text = "No parts..."
