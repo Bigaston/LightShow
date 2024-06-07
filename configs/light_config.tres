@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=31 format=3]
+[gd_resource type="Resource" script_class="SaveData" load_steps=33 format=3]
 
 [ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_wa0jy"]
 [ext_resource type="Script" path="res://scripts/custom_resources/TimelineContainer.gd" id="2_o2fr7"]
 [ext_resource type="Script" path="res://scripts/custom_resources/TimelinePart.gd" id="3_dp280"]
 [ext_resource type="Script" path="res://scripts/custom_resources/Timeline.gd" id="4_qibg3"]
+[ext_resource type="Script" path="res://scripts/custom_resources/TimelineManager.gd" id="5_p3unj"]
 
 [sub_resource type="Resource" id="Resource_3o1bf"]
 script = ExtResource("3_dp280")
@@ -297,7 +298,7 @@ parts = {
 
 [sub_resource type="Resource" id="Resource_j7400"]
 script = ExtResource("2_o2fr7")
-name = ""
+name = "L'Elue"
 timelines = {
 0: SubResource("Resource_ojobg"),
 1: SubResource("Resource_u8c7m"),
@@ -305,6 +306,10 @@ timelines = {
 11: SubResource("Resource_s8w60"),
 1000: SubResource("Resource_o5sik")
 }
+
+[sub_resource type="Resource" id="Resource_0u2kl"]
+script = ExtResource("5_p3unj")
+containers = Array[ExtResource("2_o2fr7")]([SubResource("Resource_j7400")])
 
 [resource]
 script = ExtResource("1_wa0jy")
@@ -328,7 +333,7 @@ lights_param = {
 "angle": 10.1181,
 "color": Color(1, 0.637795, 0, 1),
 "pan": -103.465,
-"power": 20.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -76.5354
 },
@@ -416,7 +421,7 @@ lights_param = {
 "angle": 11.6535,
 "color": Color(1, 0.653543, 0, 1),
 "pan": -69.4488,
-"power": 20.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -80.315
 },
@@ -430,4 +435,4 @@ lights_param = {
 }
 }
 lights_group = Array[Array]([[0, 1], [10, 11], [4, 7], [2, 9, 5, 6], [1000], [3, 8], []])
-timelines = SubResource("Resource_j7400")
+timeline_manager = SubResource("Resource_0u2kl")

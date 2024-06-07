@@ -11,7 +11,8 @@ const save_path = "res://configs/light_config.tres"
 
 var snapshot: Dictionary = {}
 
-var timelines: TimelineContainer
+var timelines: TimelineManager
+var current_timelines: TimelineContainer
 var current_time: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
@@ -77,8 +78,8 @@ func handle_midi(event: InputEventMIDI):
 					light.power = 0
 					
 		if event.controller_number == 41 && event.controller_value == 0:
-			for key in timelines.timelines.keys():
-				var timeline = timelines.timelines[key] as Timeline
+			for key in current_timelines.timelines.keys():
+				var timeline = current_timelines.timelines[key] as Timeline
 				var light = lights[key]
 				var prev_time = 0
 				
@@ -143,10 +144,10 @@ func handle_midi(event: InputEventMIDI):
 			
 		# Timeline Register
 		if event.controller_number == 60 && event.controller_value == 0:
-			if !timelines.timelines.has(select_id):
-				timelines.timelines[select_id] = Timeline.new()
+			if !current_timelines.timelines.has(select_id):
+				current_timelines.timelines[select_id] = Timeline.new()
 				
-			var timeline = timelines.timelines[select_id] as Timeline
+			var timeline = current_timelines.timelines[select_id] as Timeline
 			
 			if !timeline.parts.has(current_time):
 				timeline.parts[current_time] = TimelinePart.new()
@@ -205,7 +206,7 @@ func handle_midi(event: InputEventMIDI):
 func save():
 	var save_dict: SaveData = SaveData.new()
 	
-	save_dict.timelines = timelines
+	save_dict.timeline_manager = timelines
 	
 	for key in lights.keys():
 		save_dict.lights[key] = get_path_to(lights[key])
@@ -244,8 +245,9 @@ func load_data():
 			var light = get_saved_light(data.lights, light_index)
 			lights_group[index].push_back(light)
 			
-	timelines = data.timelines if data.timelines != null else TimelineContainer.new()
-
+	timelines = data.timeline_manager if data.timeline_manager != null else TimelineManager.new()
+	update_current_timeline(0)
+	
 func select_lyre(index):
 	selected_light = lights[index]
 	selected_light.power = snapshot[index]
@@ -274,10 +276,10 @@ func get_saved_light(p_lights, index: int):
 	return get_node(p_lights[index])
 
 func update_part_display():
-	if timelines.timelines.has(select_id):
+	if current_timelines.timelines.has(select_id):
 		var string = ""
 		
-		var timeline = timelines.timelines[select_id] as Timeline
+		var timeline = current_timelines.timelines[select_id] as Timeline
 		var ordered_keys = timeline.parts.keys()
 		ordered_keys.sort()
 		
@@ -288,3 +290,10 @@ func update_part_display():
 	
 	else:
 		%Parts.text = "No parts..."
+		
+func update_current_timeline(index):
+	if index < 0 or index >= timelines.containers.size():
+		return
+		
+	current_timelines = timelines.containers[index]
+	%CurrentTimeline.text = current_timelines.name
