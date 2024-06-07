@@ -37,50 +37,6 @@ func _print_midi_info(midi_event):
 	print("Pressure ", midi_event.pressure)
 	print("Controller number: ", midi_event.controller_number)
 	print("Controller value: ", midi_event.controller_value)
-	
-func save():
-	var save_dict: SaveData = SaveData.new()
-	
-	for key in lights.keys():
-		save_dict.lights[key] = get_path_to(lights[key])
-	
-	for key in lights.keys():
-		save_dict.lights_param[key] = {}
-		
-		for prop in lights[key].editable_properties:
-			save_dict.lights_param[key][prop.property] = lights[key][prop.property]
-			
-		if snapshot.has(key):
-			save_dict.lights_param[key].power = snapshot[key]
-	
-	for group in lights_group:
-		var arr = []
-		for light in group:
-			arr.push_back(light.index)
-			
-		save_dict.lights_group.push_back(arr)
-	
-	ResourceSaver.save(save_dict, save_path)
-
-func load_data():
-	var data = ResourceLoader.load(save_path)
-		
-	for key in data.lights_param.keys():
-		var light = lights[int(key)]
-		
-		for prop in light.editable_properties:
-			light[prop.property] = data.lights_param[key][prop.property]
-	
-	lights_group.resize(data.lights_group.size())
-	
-	for index in data.lights_group.size():
-		for light_index in data.lights_group[index]:
-			var light = get_saved_light(data.lights, light_index)
-			lights_group[index].push_back(light)
-	
-	print(lights_group)
-	
-	#lights_group = data.lights_group as Array[Array]
 
 func handle_midi(event: InputEventMIDI):	
 	if event.controller_number == 46 && event.controller_value == 0:
@@ -98,7 +54,23 @@ func handle_midi(event: InputEventMIDI):
 				
 		if event.controller_number >= 1 && event.controller_number <= 7:
 			for light in lights_group[event.controller_number - 1]:
-				light.power = event.controller_value / 127.0 * 20.0	
+				light.power = event.controller_value / 127.0 * 20.0
+		
+		if event.controller_number	== 32:
+			if event.controller_value == 127:	
+				for key in lights.keys():
+					lights[key].power = 20
+			else:
+				for key in lights.keys():
+					lights[key].power = 0
+	
+		if event.controller_number >= 33 && event.controller_number <= 39:
+			if event.controller_value == 127:
+				for light in lights_group[event.controller_number - 33]:
+					light.power = 20
+			else:
+				for light in lights_group[event.controller_number - 33]:
+					light.power = 0
 			
 	else:
 		if event.controller_number >= 33 && event.controller_number <= 39:
@@ -163,6 +135,46 @@ func handle_midi(event: InputEventMIDI):
 			color.b = event.controller_value / 127.0
 			selected_light.color = color
 		
+func save():
+	var save_dict: SaveData = SaveData.new()
+	
+	for key in lights.keys():
+		save_dict.lights[key] = get_path_to(lights[key])
+	
+	for key in lights.keys():
+		save_dict.lights_param[key] = {}
+		
+		for prop in lights[key].editable_properties:
+			save_dict.lights_param[key][prop.property] = lights[key][prop.property]
+			
+		if snapshot.has(key):
+			save_dict.lights_param[key].power = snapshot[key]
+	
+	for group in lights_group:
+		var arr = []
+		for light in group:
+			arr.push_back(light.index)
+			
+		save_dict.lights_group.push_back(arr)
+	
+	ResourceSaver.save(save_dict, save_path)
+
+func load_data():
+	var data = ResourceLoader.load(save_path)
+		
+	for key in data.lights_param.keys():
+		var light = lights[int(key)]
+		
+		for prop in light.editable_properties:
+			light[prop.property] = data.lights_param[key][prop.property]
+	
+	lights_group.resize(data.lights_group.size())
+	
+	for index in data.lights_group.size():
+		for light_index in data.lights_group[index]:
+			var light = get_saved_light(data.lights, light_index)
+			lights_group[index].push_back(light)
+
 func select_lyre(index):
 	selected_light = lights[index]
 	selected_light.power = snapshot[index]
