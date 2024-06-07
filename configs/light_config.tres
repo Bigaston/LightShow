@@ -16,7 +16,8 @@ lights = {
 8: NodePath("../Scene/Back/Lights/Lyre12"),
 9: NodePath("../Scene/Back/Lights/Lyre6"),
 10: NodePath("../Scene/Back/Lights/Lyre5"),
-11: NodePath("../Scene/Back/Lights/Lyre4")
+11: NodePath("../Scene/Back/Lights/Lyre4"),
+1000: NodePath("../Lyre")
 }
 lights_param = {
 0: {
@@ -114,6 +115,14 @@ lights_param = {
 "power": 0.0,
 "shape": 0,
 "tilt": -31.1811
+},
+1000: {
+"angle": 7.55906,
+"color": Color(1, 0.732283, 0, 1),
+"pan": 89.2913,
+"power": 20.0,
+"shape": 0,
+"tilt": 65.1969
 }
 }
-lights_group = Array[Array]([[0, 1], [10, 11], [4, 7], [2, 9, 5, 6], [8, 3], [], []])
+lights_group = Array[Array]([[0, 1], [10, 11], [4, 7], [2, 9, 5, 6], [1000], [3, 8], []])

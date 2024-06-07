@@ -23,11 +23,10 @@ tonemap_mode = 2
 glow_enabled = true
 fog_density = 0.0
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.3
-volumetric_fog_anisotropy = 0.0
-volumetric_fog_length = 10.0
-volumetric_fog_detail_spread = 0.5
-volumetric_fog_sky_affect = 0.503
+volumetric_fog_density = 0.2
+volumetric_fog_length = 20.0
+volumetric_fog_detail_spread = 1.0
+volumetric_fog_sky_affect = 0.5
 volumetric_fog_temporal_reprojection_enabled = false
 
 [sub_resource type="Animation" id="Animation_0dk1m"]
@@ -160,5 +159,30 @@ index = 7
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 7.95506, 5.81998, 0)
 index = 8
 
+[node name="Front" type="Node3D" parent="Scene"]
+
+[node name="Structure" parent="Scene/Front" instance=ExtResource("3_r50tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 10.0628)
+number_of_border = 4
+lenght = 7
+is_on_ground = true
+
+[node name="Structure2" parent="Scene/Front" instance=ExtResource("3_r50tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4044, 2.1, 10.0628)
+number_of_border = 4
+lenght = 7
+is_on_ground = true
+
+[node name="Structure3" parent="Scene/Front" instance=ExtResource("3_r50tl")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.74374, 4.3626, 10.0558)
+number_of_border = 4
+lenght = 20
+
+[node name="Lights" type="Node3D" parent="Scene/Front"]
+
 [node name="character-soldier2" parent="." instance=ExtResource("7_633fv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66276, 0, 3.27416)
+
+[node name="Lyre" parent="." instance=ExtResource("1_wkpo5")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.88961, 4.17169, 10.0697)
+index = 1000

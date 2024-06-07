@@ -1,14 +1,14 @@
 extends Node3D
 
-@export var lights: Array[Lyre] = []
+@export var lights: Dictionary = {}
 @export var lights_group: Array[Array] = [[], [], [], [], [], [], []]
 
 var selected_light: Lyre
-var select_index = 0
+var select_id = 0
 
 const save_path = "res://configs/light_config.tres"
 
-var snapshot: Array[float] = [lights.size()]
+var snapshot: Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,16 +41,17 @@ func _print_midi_info(midi_event):
 func save():
 	var save_dict: SaveData = SaveData.new()
 	
-	for light in lights:
-		save_dict.lights[light.index] = get_path_to(light)
+	for key in lights.keys():
+		save_dict.lights[key] = get_path_to(lights[key])
 	
-	for light in lights:
-		save_dict.lights_param[light.index] = {}
+	for key in lights.keys():
+		save_dict.lights_param[key] = {}
 		
-		for prop in light.editable_properties:
-			save_dict.lights_param[light.index][prop.property] = light[prop.property]
+		for prop in lights[key].editable_properties:
+			save_dict.lights_param[key][prop.property] = lights[key][prop.property]
 			
-		save_dict.lights_param[light.index].power = snapshot[light.index]
+		if snapshot.has(key):
+			save_dict.lights_param[key].power = snapshot[key]
 	
 	for group in lights_group:
 		var arr = []
@@ -85,16 +86,15 @@ func handle_midi(event: InputEventMIDI):
 	if event.controller_number == 46 && event.controller_value == 0:
 		if selected_light == null:
 			take_snapshot()
-			select_lyre(select_index)
+			select_lyre(select_id)
 		else:
 			unselect_light()
 			restore_snapshot()
 		
 	if selected_light == null:
 		if event.controller_number == 0:
-			for light in lights:
-				print(light)
-				light.power = event.controller_value / 127.0 * 20.0
+			for key in lights.keys():
+				lights[key].power = event.controller_value / 127.0 * 20.0
 				
 		if event.controller_number >= 1 && event.controller_number <= 7:
 			for light in lights_group[event.controller_number - 1]:
@@ -109,20 +109,32 @@ func handle_midi(event: InputEventMIDI):
 			lights_group[event.controller_number - 49].remove_at(lights_group[event.controller_number - 49].find(selected_light))
 		
 		if event.controller_number == 58 && event.controller_value == 0:
-			select_index -= 1
-			if select_index < 0:
-				select_index = lights.size() - 1
+			var ordered_key = lights.keys()
+			ordered_key.sort()
+			
+			var next_id_pos = ordered_key.find(select_id) - 1
+
+			if next_id_pos < 0:
+				next_id_pos = lights.keys().size() - 1
 				
+			select_id = ordered_key[next_id_pos]
+			
 			unselect_light()
-			select_lyre(select_index)
+			select_lyre(select_id)
 			
 		if event.controller_number == 59 && event.controller_value == 0:
-			select_index += 1
-			if select_index >= lights.size():
-				select_index = 0
-				
+			var ordered_key = lights.keys()
+			ordered_key.sort()
+			
+			var next_id_pos = ordered_key.find(select_id) + 1
+			
+			if next_id_pos >= lights.keys().size():
+				next_id_pos = 0
+			
+			select_id = ordered_key[next_id_pos]
+
 			unselect_light()
-			select_lyre(select_index)
+			select_lyre(select_id)
 			
 		if event.controller_number == 16:
 			selected_light.pan = event.controller_value / 127.0 * 360 - 180
@@ -156,20 +168,20 @@ func select_lyre(index):
 	selected_light.power = snapshot[index]
 
 func unselect_light():
-	snapshot[select_index] = selected_light.power
+	snapshot[select_id] = selected_light.power
 	selected_light.power = 0
 	
 	selected_light = null
 
 func take_snapshot():
-	for i in range(lights.size()):
-		var light = lights[i]
-		snapshot[i] = light.power
+	for key in lights.keys():
+		var light = lights[key]
+		snapshot[key] = light.power
 		
 		light.power = 0
 		
 func restore_snapshot():
-	for i in range(lights.size()):
+	for i in lights.keys():
 		var light = lights[i]
 		light.power = snapshot[i]
 

@@ -75,6 +75,7 @@ func _ready():
 	add_editable_property("angle")
 	add_editable_property("shape")
 	
-	%MidiInput.lights.push_back(self)
-	%MidiInput.lights.sort_custom(func(a, b): return a.index < b.index)
-	%MidiInput.snapshot.resize(%MidiInput.lights.size())
+	%MidiInput.lights[index] = self
+	#%MidiInput.lights.push_back(self)
+	#%MidiInput.lights.sort_custom(func(a, b): return a.index < b.index)
+	#%MidiInput.snapshot.resize(%MidiInput.lights.size())
