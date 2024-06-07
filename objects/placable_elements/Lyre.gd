@@ -1,7 +1,7 @@
 extends PlacableElement
 class_name Lyre
 
-enum Shape {None, Star}
+enum Shape {None, Star, TreeLeaves}
 
 @export var index: int = 0
 
@@ -53,6 +53,8 @@ enum Shape {None, Star}
 					light.light_projector = null
 				Shape.Star:
 					light.light_projector = preload("res://resources/textures/projector/star.svg")
+				Shape.TreeLeaves:
+					light.light_projector = preload("res://resources/textures/projector/tree.png")
 
 @export_range(-180, 180) var projector_angle: float = 0:
 	set(value):
@@ -74,6 +76,14 @@ func _ready():
 	add_editable_property("power")
 	add_editable_property("angle")
 	add_editable_property("shape")
+	
+	match shape:
+		Shape.None:
+			light.light_projector = null
+		Shape.Star:
+			light.light_projector = preload("res://resources/textures/projector/star.svg")
+		Shape.TreeLeaves:
+			light.light_projector = preload("res://resources/textures/projector/tree.png")
 	
 	%MidiInput.lights[index] = self
 	#%MidiInput.lights.push_back(self)

@@ -7,7 +7,7 @@ extends Node3D
 var selected_light: Lyre
 var select_id = 0
 
-const save_path = "res://configs/light_config.tres"
+const save_path = "res://configs/light_config2.tres"
 
 var snapshot: Dictionary = {}
 
@@ -15,6 +15,8 @@ var timelines: TimelineManager = TimelineManager.new()
 var current_timelines: TimelineContainer = TimelineContainer.new()
 var current_timeline_index = 0
 var current_time: float = 0.0
+
+var debug_mini = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,20 +36,18 @@ func _process(delta):
 		timelines.containers.push_back(tl)
 		
 		update_current_timeline(timelines.containers.size() - 1)
+		
+	if Input.is_action_just_pressed("debug_midi"):
+		debug_mini = !debug_mini
 
 func _input(input_event):
 	if input_event is InputEventMIDI:
-		_print_midi_info(input_event)
+		if debug_mini:
+			_print_midi_info(input_event)
 		handle_midi(input_event)
 
 func _print_midi_info(midi_event):
 	print(midi_event)
-	print("Channel ", midi_event.channel)
-	print("Message ", midi_event.message)
-	print("Pitch ", midi_event.pitch)
-	print("Velocity ", midi_event.velocity)
-	print("Instrument ", midi_event.instrument)
-	print("Pressure ", midi_event.pressure)
 	print("Controller number: ", midi_event.controller_number)
 	print("Controller value: ", midi_event.controller_value)
 
@@ -78,8 +78,11 @@ func handle_midi(event: InputEventMIDI):
 		
 	if selected_light == null:
 		if event.controller_number == 0:
-			for key in lights.keys():
-				lights[key].power = event.controller_value / 127.0 * 20.0
+			if Input.is_key_pressed(KEY_F):
+				%WorldEnvironment.environment.volumetric_fog_density = event.controller_value / 127.0 * 1
+			else:
+				for key in lights.keys():
+					lights[key].power = event.controller_value / 127.0 * 20.0
 				
 		if event.controller_number >= 1 && event.controller_number <= 7:
 			for light in lights_group[event.controller_number - 1]:
@@ -111,7 +114,7 @@ func handle_midi(event: InputEventMIDI):
 				tween.set_trans(Tween.TRANS_CUBIC)
 				
 				var part_keys = timeline.parts.keys()
-				part_keys.sort()
+				part_keys.sort_custom(func(a, b): return float(a) > float(b))
 				
 				for part_key in part_keys:
 					var part = timeline.parts[part_key] as TimelinePart
@@ -173,11 +176,11 @@ func handle_midi(event: InputEventMIDI):
 				
 			var timeline = current_timelines.timelines[select_id] as Timeline
 			
-			if !timeline.parts.has(current_time):
-				timeline.parts[current_time] = TimelinePart.new()
+			if !timeline.parts.has(ctime()):
+				timeline.parts[ctime()] = TimelinePart.new()
 				
-			var part = timeline.parts[current_time] as TimelinePart
-			part.time = current_time
+			var part = timeline.parts[ctime()] as TimelinePart
+			part.time = ctime()
 			part.properties = {}
 			
 			for prop in selected_light.editable_properties:
@@ -191,10 +194,10 @@ func handle_midi(event: InputEventMIDI):
 				
 			var timeline = current_timelines.timelines[select_id] as Timeline
 			
-			if !timeline.parts.has(current_time):
+			if !timeline.parts.has(ctime()):
 				return
 				
-			timeline.parts.erase(current_time)
+			timeline.parts.erase(ctime())
 			update_part_display()
 			
 		if event.controller_number == 45 && event.controller_value == 0:
@@ -203,10 +206,10 @@ func handle_midi(event: InputEventMIDI):
 				
 			var timeline = current_timelines.timelines[select_id] as Timeline
 			
-			if !timeline.parts.has(current_time):
+			if !timeline.parts.has(ctime()):
 				return
 				
-			var part = timeline.parts[current_time] as TimelinePart			
+			var part = timeline.parts[ctime()] as TimelinePart			
 				
 			for prop in part.properties.keys():
 				selected_light[prop] = part.properties[prop]
@@ -333,10 +336,10 @@ func update_part_display():
 		
 		var timeline = current_timelines.timelines[select_id] as Timeline
 		var ordered_keys = timeline.parts.keys()
-		ordered_keys.sort()
+		ordered_keys.sort_custom(func(a, b): return float(a) > float(b))
 		
 		for k in ordered_keys:
-			string += ("%.02f" % k) + ","
+			string += k + ","
 			
 		%Parts.text = string
 	
@@ -351,3 +354,6 @@ func update_current_timeline(index):
 	%CurrentTimeline.text = current_timelines.name
 	
 	current_timeline_index = index
+
+func ctime():
+	return "%.02f" % current_time
