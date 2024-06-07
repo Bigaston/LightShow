@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_d6wqn"]
+
+[resource]
+script = ExtResource("1_d6wqn")
+lights = {
+0: NodePath("../Scene/Lyre"),
+1: NodePath("../Scene/Lyre2"),
+2: NodePath("../Scene/Lyre3"),
+3: NodePath("../Scene/Lyre7"),
+4: NodePath("../Scene/Lyre8"),
+5: NodePath("../Scene/Lyre9"),
+6: NodePath("../Scene/Lyre10"),
+7: NodePath("../Scene/Lyre11"),
+8: NodePath("../Scene/Lyre12"),
+9: NodePath("../Scene/Lyre6"),
+10: NodePath("../Scene/Lyre5"),
+11: NodePath("../Scene/Lyre4")
+}
+lights_param = {
+0: {
+"angle": 10.1181,
+"color": Color(1, 0.637795, 0, 1),
+"pan": -131.811,
+"power": 0.0,
+"shape": 0,
+"tilt": -34.9606
+},
+1: {
+"angle": 12.1654,
+"color": Color(1, 0.692913, 0, 1),
+"pan": -120.472,
+"power": 0.0,
+"shape": 0,
+"tilt": -27.4016
+},
+2: {
+"angle": 31.1024,
+"color": Color(1, 0, 0, 1),
+"pan": -55.2756,
+"power": 0.0,
+"shape": 0,
+"tilt": -14.1732
+},
+3: {
+"angle": 36.7323,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+4: {
+"angle": 6.02362,
+"color": Color(1, 0, 0, 1),
+"pan": -111.969,
+"power": 0.0,
+"shape": 0,
+"tilt": -34.9606
+},
+5: {
+"angle": 41.8504,
+"color": Color(1, 0, 0, 1),
+"pan": -100.63,
+"power": 0.0,
+"shape": 0,
+"tilt": 8.50394
+},
+6: {
+"angle": 46.4567,
+"color": Color(1, 0, 0, 1),
+"pan": -69.4488,
+"power": 0.0,
+"shape": 0,
+"tilt": 10.3937
+},
+7: {
+"angle": 7.55906,
+"color": Color(1, 0, 0, 1),
+"pan": -66.6142,
+"power": 0.0,
+"shape": 0,
+"tilt": -33.0709
+},
+8: {
+"angle": 38.7795,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+9: {
+"angle": 32.6378,
+"color": Color(1, 0, 0, 1),
+"pan": -154.488,
+"power": 0.0,
+"shape": 0,
+"tilt": -25.5118
+},
+10: {
+"angle": 11.1417,
+"color": Color(1, 0.669291, 0, 1),
+"pan": -69.4488,
+"power": 0.0,
+"shape": 0,
+"tilt": -25.5118
+},
+11: {
+"angle": 12.6772,
+"color": Color(1, 0.653543, 0, 1),
+"pan": -46.7717,
+"power": 0.0,
+"shape": 0,
+"tilt": -31.1811
+}
+}
+lights_group = Array[Array]([[0, 1], [10, 11], [4, 7], [2, 9, 5, 6], [8, 3], [], []])
