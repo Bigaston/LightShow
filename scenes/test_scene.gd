@@ -14,29 +14,29 @@ func _process(delta):
 		
 	var tween: Tween
 	
-	if Input.is_action_just_pressed("start_anim"):
-		if down:
-			if tween && tween.is_running():
-				tween.kill()
-				
-			tween = get_tree().create_tween()
-			
-			tween.set_parallel()
-			tween.tween_property($Stuff/Ceilling/StructureTop/Rope, "length", 0.8, 5)
-			tween.tween_property($Stuff/Ceilling/StructureTop/Rope2, "length", 0.8, 5)
-			tween.tween_property($Stuff/Ceilling/StructureTop2/Rope3, "length", 0.8, 5)
-			tween.tween_property($Stuff/Ceilling/StructureTop2/Rope4, "length", 0.8, 5)
-			
-		else:
-			if tween && tween.is_running():
-				tween.kill()
-				
-			tween = get_tree().create_tween()
-			
-			tween.set_parallel()
-			tween.tween_property($Stuff/Ceilling/StructureTop/Rope, "length", 6, 5)
-			tween.tween_property($Stuff/Ceilling/StructureTop/Rope2, "length", 6, 5)
-			tween.tween_property($Stuff/Ceilling/StructureTop2/Rope3, "length", 5, 5)
-			tween.tween_property($Stuff/Ceilling/StructureTop2/Rope4, "length", 5, 5 )
-		
-		down = !down
+	#if Input.is_action_just_pressed("start_anim"):
+		#if down:
+			#if tween && tween.is_running():
+				#tween.kill()
+				#
+			#tween = get_tree().create_tween()
+			#
+			#tween.set_parallel()
+			#tween.tween_property($Stuff/Ceilling/StructureTop/Rope, "length", 0.8, 5)
+			#tween.tween_property($Stuff/Ceilling/StructureTop/Rope2, "length", 0.8, 5)
+			#tween.tween_property($Stuff/Ceilling/StructureTop2/Rope3, "length", 0.8, 5)
+			#tween.tween_property($Stuff/Ceilling/StructureTop2/Rope4, "length", 0.8, 5)
+			#
+		#else:
+			#if tween && tween.is_running():
+				#tween.kill()
+				#
+			#tween = get_tree().create_tween()
+			#
+			#tween.set_parallel()
+			#tween.tween_property($Stuff/Ceilling/StructureTop/Rope, "length", 6, 5)
+			#tween.tween_property($Stuff/Ceilling/StructureTop/Rope2, "length", 6, 5)
+			#tween.tween_property($Stuff/Ceilling/StructureTop2/Rope3, "length", 5, 5)
+			#tween.tween_property($Stuff/Ceilling/StructureTop2/Rope4, "length", 5, 5 )
+		#
+		#down = !down

@@ -5,6 +5,8 @@ class_name Lyre
 
 enum Shape {None, Star}
 
+@export var index: int = 0
+
 @export var color: Color = Color.WHITE: 
 	set(value):
 		color = value
@@ -74,3 +76,7 @@ func _ready():
 	add_editable_property("power")
 	add_editable_property("angle")
 	add_editable_property("shape")
+	
+	%MidiInput.lights.push_back(self)
+	%MidiInput.lights.sort_custom(func(a, b): return a.index < b.index)
+	%MidiInput.snapshot.resize(%MidiInput.lights.size())

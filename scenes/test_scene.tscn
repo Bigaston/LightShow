@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://v30ikj67ys62"]
+[gd_scene load_steps=14 format=3 uid="uid://v30ikj67ys62"]
 
 [ext_resource type="Script" path="res://scenes/test_scene.gd" id="1_o7jsf"]
 [ext_resource type="PackedScene" uid="uid://c77cqyhql034w" path="res://objects/cameras/FlyingCamera.tscn" id="1_plhtt"]
 [ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/placable_elements/Lyre.tscn" id="1_wkpo5"]
 [ext_resource type="PackedScene" uid="uid://bykyupejixulv" path="res://objects/ground.tscn" id="3_5dhwy"]
 [ext_resource type="PackedScene" uid="uid://vfvvfjugv2qs" path="res://objects/placable_elements/Structure.tscn" id="3_r50tl"]
-[ext_resource type="PackedScene" uid="uid://scbqaj8a7mjm" path="res://objects/placable_elements/Rope.tscn" id="6_nethk"]
 [ext_resource type="Script" path="res://scripts/proto/MidiInput.gd" id="7_4aor2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kxehk"]
@@ -30,63 +29,9 @@ volumetric_fog_detail_spread = 0.5
 volumetric_fog_sky_affect = 0.503
 volumetric_fog_temporal_reprojection_enabled = false
 
-[sub_resource type="BoxMesh" id="BoxMesh_ucdej"]
-size = Vector3(10, 0.2, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_vm1t6"]
-size = Vector3(0.2, 5, 10)
-
 [sub_resource type="Animation" id="Animation_0dk1m"]
 resource_name = "Bruh"
 length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Stuff/Ceilling/StructureTop/Rope:length")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.8, 5.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Stuff/Ceilling/StructureTop/Rope2:length")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.8, 5.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Stuff/Ceilling/StructureTop2/Rope4:length")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.8, 4.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Stuff/Ceilling/StructureTop2/Rope3:length")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.8, 4.0]
-}
 
 [sub_resource type="Animation" id="Animation_4nftd"]
 length = 0.001
@@ -99,9 +44,6 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x4ecd"]
 size = Vector3(1000, 1, 1000)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_t0po3"]
-size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_o7jsf")
@@ -116,24 +58,6 @@ environment = SubResource("Environment_pv774")
 
 [node name="FlyingCamera" parent="." instance=ExtResource("1_plhtt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.71416, 7.03788)
-
-[node name="Area" type="Node3D" parent="."]
-visible = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area"]
-mesh = SubResource("BoxMesh_ucdej")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.33619, 0)
-mesh = SubResource("BoxMesh_vm1t6")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.33619, 0)
-mesh = SubResource("BoxMesh_vm1t6")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Area"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.33619, -5)
-mesh = SubResource("BoxMesh_vm1t6")
 
 [node name="Structure" type="AnimationPlayer" parent="."]
 root_node = NodePath("../WorldEnvironment")
@@ -151,119 +75,84 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_x4ecd")
 
-[node name="Stuff" type="Node3D" parent="."]
-
-[node name="SupportCeiling" type="RigidBody3D" parent="Stuff"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44824, 7.98782, -0.0338104)
-
-[node name="Structure" parent="Stuff/SupportCeiling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-number_of_border = 4
-lenght = 4
-
-[node name="Lyre" parent="Stuff/SupportCeiling/Structure" instance=ExtResource("1_wkpo5")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.172414, 0.96981, 0.00503147)
-pan = 110.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-
-[node name="Lyre2" parent="Stuff/SupportCeiling/Structure" instance=ExtResource("1_wkpo5")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.173526, 0.339604, -0.00233269)
-pan = 100.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-
-[node name="Lyre3" parent="Stuff/SupportCeiling/Structure" instance=ExtResource("1_wkpo5")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.17459, -0.34512, -0.00668788)
-pan = 80.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-
-[node name="Lyre4" parent="Stuff/SupportCeiling/Structure" instance=ExtResource("1_wkpo5")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, -0.951202, 0)
-pan = 70.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-
-[node name="Structure2" parent="Stuff/SupportCeiling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 2)
-number_of_border = 4
-lenght = 4
-
-[node name="Structure3" parent="Stuff/SupportCeiling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 1, 0, 1)
-number_of_border = 4
-lenght = 4
-
-[node name="Structure4" parent="Stuff/SupportCeiling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -1, 0, 1)
-number_of_border = 4
-lenght = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/SupportCeiling"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-shape = SubResource("BoxShape3D_t0po3")
-
-[node name="Ceilling" type="Node3D" parent="Stuff"]
-
-[node name="StructureLeft" parent="Stuff/Ceilling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
-number_of_border = 4
-lenght = 15
-is_on_ground = true
-
-[node name="StructureRight" parent="Stuff/Ceilling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4.5, 0)
-number_of_border = 4
-lenght = 15
-is_on_ground = true
-
-[node name="StructureTop" parent="Stuff/Ceilling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 8, 9.15, 0)
-number_of_border = 4
-lenght = 30
-
-[node name="Rope" parent="Stuff/Ceilling/StructureTop" node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158756, 6.54319, -0.00734457)
-length = 0.8
-other_body = NodePath("../../../SupportCeiling")
-
-[node name="Rope2" parent="Stuff/Ceilling/StructureTop" node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158756, 4.51311, -0.00734457)
-length = 0.8
-other_body = NodePath("../../../SupportCeiling")
-
-[node name="StructureLeft2" parent="Stuff/Ceilling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 1.97438)
-number_of_border = 4
-lenght = 15
-is_on_ground = true
-
-[node name="StructureRight2" parent="Stuff/Ceilling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4.5, 1.97438)
-number_of_border = 4
-lenght = 15
-is_on_ground = true
-
-[node name="StructureTop2" parent="Stuff/Ceilling" instance=ExtResource("3_r50tl")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 8, 9.15, 1.97438)
-number_of_border = 4
-lenght = 30
-
-[node name="Rope4" parent="Stuff/Ceilling/StructureTop2" node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158756, 6.54319, -0.00666344)
-length = 0.8
-other_body = NodePath("../../../SupportCeiling")
-
-[node name="Rope3" parent="Stuff/Ceilling/StructureTop2" node_paths=PackedStringArray("other_body") instance=ExtResource("6_nethk")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.158756, 4.51311, -0.0424851)
-length = 0.8
-other_body = NodePath("../../../SupportCeiling")
-
-[node name="MidiInput" type="Node3D" parent="." node_paths=PackedStringArray("lights")]
+[node name="MidiInput" type="Node3D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("7_4aor2")
-lights = [NodePath("../Stuff/SupportCeiling/Structure/Lyre"), NodePath("../Stuff/SupportCeiling/Structure/Lyre2"), NodePath("../Stuff/SupportCeiling/Structure/Lyre3"), NodePath("../Stuff/SupportCeiling/Structure/Lyre4")]
+
+[node name="Scene" type="Node3D" parent="."]
+
+[node name="Struct" type="Node3D" parent="Scene"]
+
+[node name="Structure" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+number_of_border = 4
+lenght = 8
+is_on_ground = true
+
+[node name="Structure2" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4079, 2.4, 0)
+number_of_border = 4
+lenght = 8
+is_on_ground = true
+
+[node name="Structure3" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+transform = Transform3D(-4.37114e-08, 0.939693, 0.34202, 0, 0.34202, -0.939693, -1, -4.10753e-08, -1.49502e-08, 1.51257, 5.46195, 0)
+number_of_border = 4
+lenght = 5
+
+[node name="Structure4" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+transform = Transform3D(-4.37114e-08, -0.939693, 0.34202, 0, 0.34202, 0.939693, -1, 4.10753e-08, -1.49502e-08, 9.91085, 5.44699, 0)
+number_of_border = 4
+lenght = 5
+
+[node name="Structure5" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.70055, 5.9798, 0)
+number_of_border = 4
+lenght = 10
+
+[node name="Lyre" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-0.944135, 0.329559, 0, -0.329559, -0.944135, 0, 0, 0, 1, 0.613005, 4.94698, 0)
+
+[node name="Lyre2" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-0.929165, 0.369666, 0, -0.369666, -0.929165, 0, 0, 0, 1, 1.44866, 5.28008, 0)
+index = 1
+
+[node name="Lyre3" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-0.952592, 0.304249, 0, -0.304249, -0.952592, 0, 0, 0, 1, 2.29044, 5.54312, -0.00631537)
+index = 2
+
+[node name="Lyre4" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-0.930954, -0.365137, 0, 0.365137, -0.930954, 0, 0, 0, 1, 10.7835, 4.90813, 0)
+index = 11
+
+[node name="Lyre5" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-0.906963, -0.42121, 0, 0.42121, -0.906963, 0, 0, 0, 1, 9.81425, 5.31698, 0)
+index = 10
+
+[node name="Lyre6" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-0.904976, -0.425464, 0, 0.425464, -0.904976, 0, 0, 0, 1, 8.96618, 5.63175, 0)
+index = 9
+
+[node name="Lyre7" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 3.6268, 5.79721, 0)
+index = 3
+
+[node name="Lyre8" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 4.53351, 5.81381, 0)
+index = 4
+
+[node name="Lyre9" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.44019, 5.82197, 0.0344443)
+index = 5
+
+[node name="Lyre10" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 6.2877, 5.83321, 0.00551987)
+index = 6
+
+[node name="Lyre11" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 7.13286, 5.82961, 0)
+index = 7
+
+[node name="Lyre12" parent="Scene" instance=ExtResource("1_wkpo5")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 7.95506, 5.81998, 0)
+index = 8
