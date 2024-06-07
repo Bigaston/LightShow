@@ -11,8 +11,9 @@ const save_path = "res://configs/light_config.tres"
 
 var snapshot: Dictionary = {}
 
-var timelines: TimelineManager
-var current_timelines: TimelineContainer
+var timelines: TimelineManager = TimelineManager.new()
+var current_timelines: TimelineContainer = TimelineContainer.new()
+var current_timeline_index = 0
 var current_time: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +27,13 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("load_data"):
 		load_data()
+		
+	if Input.is_action_just_pressed("new_timeline"):
+		var tl = TimelineContainer.new()
+		tl.name = "Timeline %s" % timelines.containers.size()
+		timelines.containers.push_back(tl)
+		
+		update_current_timeline(timelines.containers.size() - 1)
 
 func _input(input_event):
 	if input_event is InputEventMIDI:
@@ -51,6 +59,22 @@ func handle_midi(event: InputEventMIDI):
 		else:
 			unselect_light()
 			restore_snapshot()
+		
+	if event.controller_number == 43 && event.controller_value == 0:
+		current_timeline_index -= 1
+		
+		if current_timeline_index < 0:
+			current_timeline_index = timelines.containers.size() - 1
+			
+		update_current_timeline(current_timeline_index)
+		
+	if event.controller_number == 44 && event.controller_value == 0:
+		current_timeline_index += 1
+		
+		if current_timeline_index >= timelines.containers.size():
+			current_timeline_index = 0
+			
+		update_current_timeline(current_timeline_index)
 		
 	if selected_light == null:
 		if event.controller_number == 0:
@@ -158,6 +182,34 @@ func handle_midi(event: InputEventMIDI):
 			
 			for prop in selected_light.editable_properties:
 				part.properties[prop.property] = selected_light[prop.property]
+				
+			update_part_display()
+		
+		if event.controller_number == 42 && event.controller_value == 0:
+			if !current_timelines.timelines.has(select_id):
+				return
+				
+			var timeline = current_timelines.timelines[select_id] as Timeline
+			
+			if !timeline.parts.has(current_time):
+				return
+				
+			timeline.parts.erase(current_time)
+			update_part_display()
+			
+		if event.controller_number == 45 && event.controller_value == 0:
+			if !current_timelines.timelines.has(select_id):
+				return
+				
+			var timeline = current_timelines.timelines[select_id] as Timeline
+			
+			if !timeline.parts.has(current_time):
+				return
+				
+			var part = timeline.parts[current_time] as TimelinePart			
+				
+			for prop in part.properties.keys():
+				selected_light[prop] = part.properties[prop]
 				
 			update_part_display()
 		
@@ -297,3 +349,5 @@ func update_current_timeline(index):
 		
 	current_timelines = timelines.containers[index]
 	%CurrentTimeline.text = current_timelines.name
+	
+	current_timeline_index = index
