@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://v30ikj67ys62"]
+[gd_scene load_steps=15 format=3 uid="uid://v30ikj67ys62"]
 
 [ext_resource type="Script" path="res://scenes/test_scene.gd" id="1_o7jsf"]
 [ext_resource type="PackedScene" uid="uid://c77cqyhql034w" path="res://objects/cameras/FlyingCamera.tscn" id="1_plhtt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bykyupejixulv" path="res://objects/ground.tscn" id="3_5dhwy"]
 [ext_resource type="PackedScene" uid="uid://vfvvfjugv2qs" path="res://objects/placable_elements/Structure.tscn" id="3_r50tl"]
 [ext_resource type="Script" path="res://scripts/proto/MidiInput.gd" id="7_4aor2"]
+[ext_resource type="PackedScene" uid="uid://c7dfe1c38tbxb" path="res://resources/scenes/kenney_mini_arena/character-soldier.glb" id="7_633fv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kxehk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -156,3 +157,6 @@ index = 7
 [node name="Lyre12" parent="Scene" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 7.95506, 5.81998, 0)
 index = 8
+
+[node name="character-soldier2" parent="." instance=ExtResource("7_633fv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66276, 0, 3.27416)

@@ -1,5 +1,3 @@
-@tool
-
 extends Node3D
 
 const ROPE_LENGHT = 0.28

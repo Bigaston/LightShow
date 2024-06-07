@@ -1,5 +1,3 @@
-@tool
-
 extends PlacableElement
 class_name Lyre
 
