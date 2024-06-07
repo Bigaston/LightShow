@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3 uid="uid://vtk6bas2nyij"]
 
 [ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_wa0jy"]
 
@@ -17,45 +17,45 @@ lights = {
 9: NodePath("../Scene/Back/Lights/Lyre6"),
 10: NodePath("../Scene/Back/Lights/Lyre5"),
 11: NodePath("../Scene/Back/Lights/Lyre4"),
-1000: NodePath("../Lyre")
+1000: NodePath("../Scene/Front/Lights/Lyre")
 }
 lights_param = {
 0: {
 "angle": 10.1181,
 "color": Color(1, 0.637795, 0, 1),
-"pan": -131.811,
-"power": 0.0,
+"pan": -134.646,
+"power": 20.0,
 "shape": 0,
-"tilt": -34.9606
+"tilt": -36.8504
 },
 1: {
 "angle": 12.1654,
-"color": Color(1, 0.692913, 0, 1),
+"color": Color(1, 0.574803, 0, 1),
 "pan": -120.472,
-"power": 0.0,
+"power": 20.0,
 "shape": 0,
-"tilt": -27.4016
+"tilt": -29.2913
 },
 2: {
 "angle": 31.1024,
 "color": Color(1, 0, 0, 1),
 "pan": -55.2756,
-"power": 2.67717,
+"power": 20.0,
 "shape": 0,
 "tilt": -14.1732
 },
 3: {
 "angle": 36.7323,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
+"pan": -86.4567,
+"power": 20.0,
 "shape": 0,
-"tilt": 0.0
+"tilt": -6.61417
 },
 4: {
 "angle": 6.02362,
 "color": Color(1, 0, 0, 1),
-"pan": -111.969,
+"pan": -109.134,
 "power": 20.0,
 "shape": 0,
 "tilt": -34.9606
@@ -64,7 +64,7 @@ lights_param = {
 "angle": 41.8504,
 "color": Color(1, 0, 0, 1),
 "pan": -100.63,
-"power": 2.67717,
+"power": 20.0,
 "shape": 0,
 "tilt": 8.50394
 },
@@ -72,7 +72,7 @@ lights_param = {
 "angle": 46.4567,
 "color": Color(1, 0, 0, 1),
 "pan": -69.4488,
-"power": 2.67717,
+"power": 20.0,
 "shape": 0,
 "tilt": 10.3937
 },
@@ -82,13 +82,13 @@ lights_param = {
 "pan": -66.6142,
 "power": 20.0,
 "shape": 0,
-"tilt": -33.0709
+"tilt": -34.9606
 },
 8: {
 "angle": 38.7795,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 0.0,
+"power": 20.0,
 "shape": 0,
 "tilt": 0.0
 },
@@ -96,31 +96,31 @@ lights_param = {
 "angle": 32.6378,
 "color": Color(1, 0, 0, 1),
 "pan": -154.488,
-"power": 2.67717,
+"power": 20.0,
 "shape": 0,
 "tilt": -25.5118
 },
 10: {
 "angle": 11.1417,
 "color": Color(1, 0.669291, 0, 1),
-"pan": -69.4488,
-"power": 0.0,
+"pan": -63.7795,
+"power": 20.0,
 "shape": 0,
-"tilt": -25.5118
+"tilt": -29.2913
 },
 11: {
-"angle": 12.6772,
+"angle": 11.6535,
 "color": Color(1, 0.653543, 0, 1),
 "pan": -46.7717,
-"power": 0.0,
+"power": 20.0,
 "shape": 0,
-"tilt": -31.1811
+"tilt": -33.0709
 },
 1000: {
 "angle": 7.55906,
 "color": Color(1, 0.732283, 0, 1),
 "pan": 89.2913,
-"power": 8.34646,
+"power": 20.0,
 "shape": 0,
 "tilt": 65.1969
 }

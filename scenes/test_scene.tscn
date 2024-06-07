@@ -180,9 +180,9 @@ lenght = 20
 
 [node name="Lights" type="Node3D" parent="Scene/Front"]
 
-[node name="character-soldier2" parent="." instance=ExtResource("7_633fv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66276, 0, 3.27416)
-
-[node name="Lyre" parent="." instance=ExtResource("1_wkpo5")]
+[node name="Lyre" parent="Scene/Front/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.88961, 4.17169, 10.0697)
 index = 1000
+
+[node name="character-soldier2" parent="." instance=ExtResource("7_633fv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66276, 0, 3.27416)
