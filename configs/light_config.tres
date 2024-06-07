@@ -1,22 +1,22 @@
 [gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_d6wqn"]
+[ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_wa0jy"]
 
 [resource]
-script = ExtResource("1_d6wqn")
+script = ExtResource("1_wa0jy")
 lights = {
-0: NodePath("../Scene/Lyre"),
-1: NodePath("../Scene/Lyre2"),
-2: NodePath("../Scene/Lyre3"),
-3: NodePath("../Scene/Lyre7"),
-4: NodePath("../Scene/Lyre8"),
-5: NodePath("../Scene/Lyre9"),
-6: NodePath("../Scene/Lyre10"),
-7: NodePath("../Scene/Lyre11"),
-8: NodePath("../Scene/Lyre12"),
-9: NodePath("../Scene/Lyre6"),
-10: NodePath("../Scene/Lyre5"),
-11: NodePath("../Scene/Lyre4")
+0: NodePath("../Scene/Back/Lights/Lyre"),
+1: NodePath("../Scene/Back/Lights/Lyre2"),
+2: NodePath("../Scene/Back/Lights/Lyre3"),
+3: NodePath("../Scene/Back/Lights/Lyre7"),
+4: NodePath("../Scene/Back/Lights/Lyre8"),
+5: NodePath("../Scene/Back/Lights/Lyre9"),
+6: NodePath("../Scene/Back/Lights/Lyre10"),
+7: NodePath("../Scene/Back/Lights/Lyre11"),
+8: NodePath("../Scene/Back/Lights/Lyre12"),
+9: NodePath("../Scene/Back/Lights/Lyre6"),
+10: NodePath("../Scene/Back/Lights/Lyre5"),
+11: NodePath("../Scene/Back/Lights/Lyre4")
 }
 lights_param = {
 0: {

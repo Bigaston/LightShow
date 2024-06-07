@@ -82,79 +82,81 @@ script = ExtResource("7_4aor2")
 
 [node name="Scene" type="Node3D" parent="."]
 
-[node name="Struct" type="Node3D" parent="Scene"]
+[node name="Back" type="Node3D" parent="Scene"]
 
-[node name="Structure" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+[node name="Structure" parent="Scene/Back" instance=ExtResource("3_r50tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
 number_of_border = 4
 lenght = 8
 is_on_ground = true
 
-[node name="Structure2" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+[node name="Structure2" parent="Scene/Back" instance=ExtResource("3_r50tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4079, 2.4, 0)
 number_of_border = 4
 lenght = 8
 is_on_ground = true
 
-[node name="Structure3" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+[node name="Structure3" parent="Scene/Back" instance=ExtResource("3_r50tl")]
 transform = Transform3D(-4.37114e-08, 0.939693, 0.34202, 0, 0.34202, -0.939693, -1, -4.10753e-08, -1.49502e-08, 1.51257, 5.46195, 0)
 number_of_border = 4
 lenght = 5
 
-[node name="Structure4" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+[node name="Structure4" parent="Scene/Back" instance=ExtResource("3_r50tl")]
 transform = Transform3D(-4.37114e-08, -0.939693, 0.34202, 0, 0.34202, 0.939693, -1, 4.10753e-08, -1.49502e-08, 9.91085, 5.44699, 0)
 number_of_border = 4
 lenght = 5
 
-[node name="Structure5" parent="Scene/Struct" instance=ExtResource("3_r50tl")]
+[node name="Structure5" parent="Scene/Back" instance=ExtResource("3_r50tl")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.70055, 5.9798, 0)
 number_of_border = 4
 lenght = 10
 
-[node name="Lyre" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lights" type="Node3D" parent="Scene/Back"]
+
+[node name="Lyre" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-0.944135, 0.329559, 0, -0.329559, -0.944135, 0, 0, 0, 1, 0.613005, 4.94698, 0)
 
-[node name="Lyre2" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre2" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-0.929165, 0.369666, 0, -0.369666, -0.929165, 0, 0, 0, 1, 1.44866, 5.28008, 0)
 index = 1
 
-[node name="Lyre3" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre3" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-0.952592, 0.304249, 0, -0.304249, -0.952592, 0, 0, 0, 1, 2.29044, 5.54312, -0.00631537)
 index = 2
 
-[node name="Lyre4" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre4" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-0.930954, -0.365137, 0, 0.365137, -0.930954, 0, 0, 0, 1, 10.7835, 4.90813, 0)
 index = 11
 
-[node name="Lyre5" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre5" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-0.906963, -0.42121, 0, 0.42121, -0.906963, 0, 0, 0, 1, 9.81425, 5.31698, 0)
 index = 10
 
-[node name="Lyre6" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre6" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-0.904976, -0.425464, 0, 0.425464, -0.904976, 0, 0, 0, 1, 8.96618, 5.63175, 0)
 index = 9
 
-[node name="Lyre7" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre7" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 3.6268, 5.79721, 0)
 index = 3
 
-[node name="Lyre8" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre8" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 4.53351, 5.81381, 0)
 index = 4
 
-[node name="Lyre9" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre9" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.44019, 5.82197, 0.0344443)
 index = 5
 
-[node name="Lyre10" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre10" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 6.2877, 5.83321, 0.00551987)
 index = 6
 
-[node name="Lyre11" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre11" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 7.13286, 5.82961, 0)
 index = 7
 
-[node name="Lyre12" parent="Scene" instance=ExtResource("1_wkpo5")]
+[node name="Lyre12" parent="Scene/Back/Lights" instance=ExtResource("1_wkpo5")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 7.95506, 5.81998, 0)
 index = 8
 
