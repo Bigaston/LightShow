@@ -114,7 +114,7 @@ func handle_midi(event: InputEventMIDI):
 				tween.set_trans(Tween.TRANS_CUBIC)
 				
 				var part_keys = timeline.parts.keys()
-				part_keys.sort_custom(func(a, b): return float(a) > float(b))
+				part_keys.sort_custom(func(a, b): return float(a) < float(b))
 				
 				for part_key in part_keys:
 					var part = timeline.parts[part_key] as TimelinePart
@@ -336,7 +336,7 @@ func update_part_display():
 		
 		var timeline = current_timelines.timelines[select_id] as Timeline
 		var ordered_keys = timeline.parts.keys()
-		ordered_keys.sort_custom(func(a, b): return float(a) > float(b))
+		ordered_keys.sort_custom(func(a, b): return float(a) < float(b))
 		
 		for k in ordered_keys:
 			string += k + ","
