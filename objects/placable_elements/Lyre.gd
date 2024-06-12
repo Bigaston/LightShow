@@ -64,10 +64,11 @@ enum Shape {None, Star, TreeLeaves}
 			light.rotation_degrees.y = projector_angle
 
 @export_subgroup("PrivateSettings")
-@export var light: SpotLight3D
-@export var pan_pivot: Node3D
-@export var tilt_pivot: Node3D
-@export var light_render: StandardMaterial3D
+@onready var light: SpotLight3D = $Node/Pan2/Tilt2/SpotLight
+@onready var pan_pivot: Node3D = $Node/Pan2
+@onready var tilt_pivot: Node3D = $Node/Pan2/Tilt2
+
+var light_render: StandardMaterial3D = StandardMaterial3D.new()
 
 func _ready():
 	add_editable_property("color")
@@ -76,6 +77,11 @@ func _ready():
 	add_editable_property("power")
 	add_editable_property("angle")
 	add_editable_property("shape")
+	
+	light_render.emission_enabled = true
+	light_render.emission = Color.WHITE
+	
+	$Node/Pan2/Tilt2/Light.set_surface_override_material(0, light_render)
 	
 	match shape:
 		Shape.None:
@@ -86,6 +92,3 @@ func _ready():
 			light.light_projector = preload("res://resources/textures/projector/tree.png")
 	
 	%MidiInput.lights[index] = self
-	#%MidiInput.lights.push_back(self)
-	#%MidiInput.lights.sort_custom(func(a, b): return a.index < b.index)
-	#%MidiInput.snapshot.resize(%MidiInput.lights.size())
