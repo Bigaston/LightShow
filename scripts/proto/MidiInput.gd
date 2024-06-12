@@ -4,10 +4,10 @@ extends Node3D
 @export var lights_group: Array[Array] = [[], [], [], [], [], [], []]
 @export var timeline_step: float = 0.2
 
-var selected_light: Lyre
-var select_id = 0
+var selected_light: PlacableElement
+var select_id = null
 
-const save_path = "res://configs/light_config2.tres"
+const save_path = "res://configs/light_config3.tres"
 
 var snapshot: Dictionary = {}
 
@@ -21,7 +21,6 @@ var current_time: float = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	OS.open_midi_inputs()
-	print(OS.get_connected_midi_inputs())
 
 func _process(delta):
 	if Input.is_action_just_pressed("save_data"):
@@ -55,6 +54,10 @@ func handle_midi(event: InputEventMIDI):
 	if event.controller_number == 46 && event.controller_value == 0:
 		if selected_light == null:
 			take_snapshot()
+			
+			if select_id == null:
+				select_id = int(lights.keys()[0])
+			
 			select_lyre(select_id)
 		else:
 			unselect_light()
@@ -78,15 +81,15 @@ func handle_midi(event: InputEventMIDI):
 		
 	if selected_light == null:
 		if event.controller_number == 0:
-			if Input.is_key_pressed(KEY_F):
-				%WorldEnvironment.environment.volumetric_fog_density = event.controller_value / 127.0 * 1
-				
-			elif Input.is_key_pressed(KEY_L):
-				%DirectionalLight.light_energy = event.controller_value / 127.0 * 2
-				
-			else:
-				for key in lights.keys():
-					lights[key].power = event.controller_value / 127.0 * 20.0
+			#if Input.is_key_pressed(KEY_F):
+				#%WorldEnvironment.environment.volumetric_fog_density = event.controller_value / 127.0 * 1
+				#
+			#elif Input.is_key_pressed(KEY_L):
+				#%DirectionalLight.light_energy = event.controller_value / 127.0 * 2
+				#
+			#else:
+			for key in lights.keys():
+				lights[key].power = event.controller_value / 127.0 * 20.0
 				
 		if event.controller_number >= 1 && event.controller_number <= 7:
 			for light in lights_group[event.controller_number - 1]:
@@ -253,13 +256,13 @@ func handle_midi(event: InputEventMIDI):
 			if current_time < 0:
 				current_time = 0
 				
-			%CurrentTime.text = "%.02f" % current_time
+			#%CurrentTime.text = "%.02f" % current_time
 			
 		# Timeline next
 		if event.controller_number == 62 && event.controller_value == 0:
 			current_time += timeline_step
 				
-			%CurrentTime.text = "%.02f" % current_time
+			#%CurrentTime.text = "%.02f" % current_time
 			
 		if event.controller_number == 16:
 			selected_light.pan = event.controller_value / 127.0 * 360 - 180
@@ -312,8 +315,8 @@ func save():
 			
 		save_dict.lights_group.push_back(arr)
 		
-	save_dict.fog_power = %WorldEnvironment.environment.volumetric_fog_density
-	save_dict.dir_light_power = %DirectionalLight.light_energy
+	#save_dict.fog_power = %WorldEnvironment.environment.volumetric_fog_density
+	#save_dict.dir_light_power = %DirectionalLight.light_energy
 	
 	ResourceSaver.save(save_dict, save_path)
 
@@ -336,8 +339,8 @@ func load_data():
 	timelines = data.timeline_manager if data.timeline_manager != null else TimelineManager.new()
 	update_current_timeline(0)
 	
-	%WorldEnvironment.environment.volumetric_fog_density = data.fog_power
-	%DirectionalLight.light_energy = data.dir_light_power
+	#%WorldEnvironment.environment.volumetric_fog_density = data.fog_power
+	#%DirectionalLight.light_energy = data.dir_light_power
 	
 func select_lyre(index):
 	selected_light = lights[index]
@@ -377,17 +380,18 @@ func update_part_display():
 		for k in ordered_keys:
 			string += k + ","
 			
-		%Parts.text = string
+		#%Parts.text = string
 	
 	else:
-		%Parts.text = "No parts..."
+		pass
+		#%Parts.text = "No parts..."
 		
 func update_current_timeline(index):
 	if index < 0 or index >= timelines.containers.size():
 		return
 		
 	current_timelines = timelines.containers[index]
-	%CurrentTimeline.text = current_timelines.name
+	#%CurrentTimeline.text = current_timelines.name
 	
 	current_timeline_index = index
 

@@ -1,58 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://oo1b2v1a8o54"]
+[gd_scene load_steps=5 format=3 uid="uid://oo1b2v1a8o54"]
 
 [ext_resource type="PackedScene" uid="uid://vfvvfjugv2qs" path="res://objects/placable_elements/Structure.tscn" id="1_0ilfk"]
+[ext_resource type="Script" path="res://scripts/placable_elements/PlacableParent.gd" id="1_yide8"]
 [ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/placable_elements/Lyre.tscn" id="2_tv46i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t0po3"]
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="SupportCeiling" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44824, 7.98782, -0.0338104)
+script = ExtResource("1_yide8")
+base_id = 200
 
 [node name="Structure" parent="." instance=ExtResource("1_0ilfk")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 number_of_border = 4
 lenght = 4
 
-[node name="Lyre" parent="Structure" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("2_tv46i")]
+[node name="Lyre" parent="Structure" instance=ExtResource("2_tv46i")]
 transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.172414, 0.96981, 0.00503147)
 pan = 110.0
 tilt = -40.0
 power = 10.0
 angle = 10.0
-light = NodePath("")
-pan_pivot = NodePath("")
-tilt_pivot = NodePath("")
 
-[node name="Lyre2" parent="Structure" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("2_tv46i")]
+[node name="Lyre2" parent="Structure" instance=ExtResource("2_tv46i")]
 transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.173526, 0.339604, -0.00233269)
 pan = 100.0
 tilt = -40.0
 power = 10.0
 angle = 10.0
-light = NodePath("")
-pan_pivot = NodePath("")
-tilt_pivot = NodePath("")
+index = 1
 
-[node name="Lyre3" parent="Structure" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("2_tv46i")]
+[node name="Lyre3" parent="Structure" instance=ExtResource("2_tv46i")]
 transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.17459, -0.34512, -0.00668788)
 pan = 80.0
 tilt = -40.0
 power = 10.0
 angle = 10.0
-light = NodePath("")
-pan_pivot = NodePath("")
-tilt_pivot = NodePath("")
+index = 2
 
-[node name="Lyre4" parent="Structure" node_paths=PackedStringArray("light", "pan_pivot", "tilt_pivot") instance=ExtResource("2_tv46i")]
+[node name="Lyre4" parent="Structure" instance=ExtResource("2_tv46i")]
 transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, -0.951202, 0)
 pan = 70.0
 tilt = -40.0
 power = 10.0
 angle = 10.0
-light = NodePath("")
-pan_pivot = NodePath("")
-tilt_pivot = NodePath("")
+index = 3
+
+[node name="Lyre7" parent="Structure" instance=ExtResource("2_tv46i")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.172414, 0.96981, 1.8917)
+pan = 110.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+index = 6
+
+[node name="Lyre8" parent="Structure" instance=ExtResource("2_tv46i")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.173526, 0.339604, 1.88434)
+pan = 100.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+index = 7
+
+[node name="Lyre9" parent="Structure" instance=ExtResource("2_tv46i")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.17459, -0.34512, 1.87998)
+pan = 80.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+index = 8
+
+[node name="Lyre10" parent="Structure" instance=ExtResource("2_tv46i")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, -0.951202, 1.88667)
+pan = 70.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+index = 9
+
+[node name="Lyre6" parent="Structure" instance=ExtResource("2_tv46i")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, -0.951202, 0.949915)
+pan = 70.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+index = 5
+
+[node name="Lyre11" parent="Structure" instance=ExtResource("2_tv46i")]
+transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, 1.03047, 0.949915)
+pan = 70.0
+tilt = -40.0
+power = 10.0
+angle = 10.0
+index = 4
 
 [node name="Structure2" parent="." instance=ExtResource("1_0ilfk")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 2)

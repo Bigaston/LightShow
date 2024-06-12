@@ -3,8 +3,6 @@ class_name Lyre
 
 enum Shape {None, Star, TreeLeaves}
 
-@export var index: int = 0
-
 @export var color: Color = Color.WHITE: 
 	set(value):
 		color = value
@@ -71,6 +69,8 @@ enum Shape {None, Star, TreeLeaves}
 var light_render: StandardMaterial3D = StandardMaterial3D.new()
 
 func _ready():
+	super._ready()
+	
 	add_editable_property("color")
 	add_editable_property("pan")
 	add_editable_property("tilt")
@@ -90,5 +90,3 @@ func _ready():
 			light.light_projector = preload("res://resources/textures/projector/star.svg")
 		Shape.TreeLeaves:
 			light.light_projector = preload("res://resources/textures/projector/tree.png")
-	
-	%MidiInput.lights[index] = self

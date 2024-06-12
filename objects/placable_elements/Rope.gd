@@ -1,4 +1,4 @@
-extends Node3D
+extends PlacableElement
 
 const ROPE_LENGHT = 0.28
 
@@ -17,6 +17,8 @@ const ROPE_LENGHT = 0.28
 		
 func _ready():
 	update_length()
+	
+	add_editable_property("length")
 	
 	$Joint.node_b = other_body.get_path()
 

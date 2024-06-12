@@ -1,0 +1,406 @@
+[gd_resource type="Resource" script_class="SaveData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_dds7u"]
+[ext_resource type="Script" path="res://scripts/custom_resources/TimelineManager.gd" id="2_d8ydf"]
+
+[sub_resource type="Resource" id="Resource_6m3hx"]
+script = ExtResource("2_d8ydf")
+containers = Array[Resource("res://scripts/custom_resources/TimelineContainer.gd")]([])
+
+[resource]
+script = ExtResource("1_dds7u")
+lights = {
+0: NodePath("../Node3D/Scene/Back/Lights/Lyre"),
+1: NodePath("../Node3D/Scene/Back/Lights/Lyre2"),
+2: NodePath("../Node3D/Scene/Back/Lights/Lyre3"),
+3: NodePath("../Node3D/Scene/Back/Lights/Lyre7"),
+4: NodePath("../Node3D/Scene/Back/Lights/Lyre8"),
+5: NodePath("../Node3D/Scene/Back/Lights/Lyre9"),
+6: NodePath("../Node3D/Scene/Back/Lights/Lyre10"),
+7: NodePath("../Node3D/Scene/Back/Lights/Lyre11"),
+8: NodePath("../Node3D/Scene/Back/Lights/Lyre12"),
+9: NodePath("../Node3D/Scene/Back/Lights/Lyre6"),
+10: NodePath("../Node3D/Scene/Back/Lights/Lyre5"),
+11: NodePath("../Node3D/Scene/Back/Lights/Lyre4"),
+100: NodePath("../Node3D/Scene/Back2/Lights/Lyre"),
+101: NodePath("../Node3D/Scene/Back2/Lights/Lyre2"),
+102: NodePath("../Node3D/Scene/Back2/Lights/Lyre3"),
+103: NodePath("../Node3D/Scene/Back2/Lights/Lyre7"),
+104: NodePath("../Node3D/Scene/Back2/Lights/Lyre8"),
+105: NodePath("../Node3D/Scene/Back2/Lights/Lyre9"),
+106: NodePath("../Node3D/Scene/Back2/Lights/Lyre10"),
+107: NodePath("../Node3D/Scene/Back2/Lights/Lyre11"),
+108: NodePath("../Node3D/Scene/Back2/Lights/Lyre12"),
+109: NodePath("../Node3D/Scene/Back2/Lights/Lyre6"),
+110: NodePath("../Node3D/Scene/Back2/Lights/Lyre5"),
+111: NodePath("../Node3D/Scene/Back2/Lights/Lyre4"),
+200: NodePath("../Node3D/SupportCeiling/Structure/Lyre"),
+201: NodePath("../Node3D/SupportCeiling/Structure/Lyre2"),
+202: NodePath("../Node3D/SupportCeiling/Structure/Lyre3"),
+203: NodePath("../Node3D/SupportCeiling/Structure/Lyre4"),
+204: NodePath("../Node3D/SupportCeiling/Structure/Lyre11"),
+205: NodePath("../Node3D/SupportCeiling/Structure/Lyre6"),
+206: NodePath("../Node3D/SupportCeiling/Structure/Lyre7"),
+207: NodePath("../Node3D/SupportCeiling/Structure/Lyre8"),
+208: NodePath("../Node3D/SupportCeiling/Structure/Lyre9"),
+209: NodePath("../Node3D/SupportCeiling/Structure/Lyre10"),
+1000: NodePath("../Node3D/Scene/Front/Lights/Lyre2"),
+1001: NodePath("../Node3D/Scene/Front/Lights/Lyre4"),
+1002: NodePath("../Node3D/Scene/Front/Lights/Lyre"),
+1003: NodePath("../Node3D/Scene/Front/Lights/Lyre5"),
+1004: NodePath("../Node3D/Scene/Front/Lights/Lyre3"),
+2000: NodePath("../Node3D/Scene/Side/Lyre"),
+2001: NodePath("../Node3D/Scene/Side/Lyre2"),
+2002: NodePath("../Node3D/Scene/Side/Lyre3"),
+2003: NodePath("../Node3D/Scene/Side/Lyre4")
+}
+lights_param = {
+0: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+1: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+2: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+3: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+4: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+5: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+6: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+7: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+8: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+9: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+10: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+11: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+100: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+101: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+102: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+103: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+104: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+105: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+106: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+107: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+108: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+109: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+110: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+111: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+200: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 110.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+201: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 100.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+202: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 80.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+203: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 70.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+204: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 70.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+205: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 70.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+206: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 110.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+207: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 100.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+208: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 80.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+209: {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 70.0,
+"power": 10.0,
+"shape": 0,
+"tilt": -40.0
+},
+1000: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+1001: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+1002: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+1003: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+1004: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+2000: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+2001: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+2002: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+},
+2003: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 0.0
+}
+}
+lights_group = Array[Array]([[], [], [], [], [], [], []])
+timeline_manager = SubResource("Resource_6m3hx")
+fog_power = 0.0
+dir_light_power = 0.0

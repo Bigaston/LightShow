@@ -6,8 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_bngum"]
 radius = 0.1
 
-[node name="Rope" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.26542)
+[node name="Rope" type="RigidBody3D"]
 script = ExtResource("1_q4c8q")
 
 [node name="Mesh" parent="." instance=ExtResource("2_obccv")]
