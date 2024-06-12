@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=33 format=3]
+[gd_resource type="Resource" script_class="SaveData" load_steps=33 format=3 uid="uid://ccle8ysm4ejdp"]
 
 [ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_h0nwk"]
 [ext_resource type="Script" path="res://scripts/custom_resources/TimelineContainer.gd" id="2_3ugsx"]
@@ -298,7 +298,7 @@ parts = {
 
 [sub_resource type="Resource" id="Resource_uuwxn"]
 script = ExtResource("2_3ugsx")
-name = "Timeline 0"
+name = "Recherche de la statue"
 timelines = {
 100: SubResource("Resource_tcygp"),
 111: SubResource("Resource_4xtbc"),
