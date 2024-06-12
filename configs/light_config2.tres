@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=33 format=3 uid="uid://ccle8ysm4ejdp"]
+[gd_resource type="Resource" script_class="SaveData" load_steps=33 format=3]
 
 [ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_h0nwk"]
 [ext_resource type="Script" path="res://scripts/custom_resources/TimelineContainer.gd" id="2_3ugsx"]
@@ -449,7 +449,7 @@ lights_param = {
 "angle": 40.315,
 "color": Color(0, 0.362205, 1, 1),
 "pan": -63.7795,
-"power": 0.0,
+"power": 1.25984,
 "shape": 0,
 "tilt": 19.8425
 },
@@ -537,7 +537,7 @@ lights_param = {
 "angle": 38.7795,
 "color": Color(0, 0.377953, 1, 1),
 "pan": 60.9449,
-"power": 0.0,
+"power": 2.20472,
 "shape": 0,
 "tilt": -19.8425
 },
@@ -560,18 +560,18 @@ lights_param = {
 1002: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 145.984,
-"power": 20.0,
+"pan": 126.142,
+"power": 0.0,
 "shape": 0,
 "tilt": -68.9764
 },
 1003: {
-"angle": 14.7244,
+"angle": 10.6299,
 "color": Color(1, 1, 1, 1),
-"pan": 97.7953,
-"power": 5.19685,
+"pan": 41.1024,
+"power": 0.0,
 "shape": 0,
-"tilt": -53.8583
+"tilt": -50.0787
 },
 1004: {
 "angle": 8.58268,
@@ -598,12 +598,12 @@ lights_param = {
 "tilt": 0.0
 },
 2101: {
-"angle": 14.2126,
+"angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 32.5984,
-"power": 8.97638,
+"power": 0.0,
 "shape": 0,
-"tilt": -91.6535
+"tilt": -93.5433
 },
 2102: {
 "angle": 20.0,
@@ -616,3 +616,5 @@ lights_param = {
 }
 lights_group = Array[Array]([[1001, 1004], [105], [], [110], [0], [100, 111], [10, 1, 4, 7]])
 timeline_manager = SubResource("Resource_t1hdr")
+fog_power = 0.0314961
+dir_light_power = 0.0

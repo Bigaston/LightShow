@@ -80,6 +80,10 @@ func handle_midi(event: InputEventMIDI):
 		if event.controller_number == 0:
 			if Input.is_key_pressed(KEY_F):
 				%WorldEnvironment.environment.volumetric_fog_density = event.controller_value / 127.0 * 1
+				
+			elif Input.is_key_pressed(KEY_L):
+				%DirectionalLight.light_energy = event.controller_value / 127.0 * 2
+				
 			else:
 				for key in lights.keys():
 					lights[key].power = event.controller_value / 127.0 * 20.0
@@ -307,6 +311,9 @@ func save():
 			arr.push_back(light.index)
 			
 		save_dict.lights_group.push_back(arr)
+		
+	save_dict.fog_power = %WorldEnvironment.environment.volumetric_fog_density
+	save_dict.dir_light_power = %DirectionalLight.light_energy
 	
 	ResourceSaver.save(save_dict, save_path)
 
@@ -328,6 +335,9 @@ func load_data():
 			
 	timelines = data.timeline_manager if data.timeline_manager != null else TimelineManager.new()
 	update_current_timeline(0)
+	
+	%WorldEnvironment.environment.volumetric_fog_density = data.fog_power
+	%DirectionalLight.light_energy = data.dir_light_power
 	
 func select_lyre(index):
 	selected_light = lights[index]

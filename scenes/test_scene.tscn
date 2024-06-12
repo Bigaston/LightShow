@@ -38,7 +38,8 @@ size = Vector3(1000, 1, 1000)
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_o7jsf")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(-0.610283, 0.634723, -0.474005, 0, 0.598353, 0.801233, 0.792183, 0.488979, -0.365165, -6, 7, -8)
 light_energy = 0.1
 sky_mode = 1
