@@ -16,7 +16,7 @@ var current_timelines: TimelineContainer = TimelineContainer.new()
 var current_timeline_index = 0
 var current_time: float = 0.0
 
-var debug_mini = false
+@export var debug_mini = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -103,6 +103,32 @@ func handle_midi(event: InputEventMIDI):
 			else:
 				for light in lights_group[event.controller_number - 33]:
 					light.power = 0
+		
+		if event.controller_number == 42 && event.controller_value == 0:
+			for key in current_timelines.timelines.keys():
+				var timeline = current_timelines.timelines[key] as Timeline
+				var light = lights[key]
+				var prev_time = 0
+				
+				var tween = get_tree().create_tween()
+				tween.set_trans(Tween.TRANS_CUBIC)
+				
+				var part_keys = timeline.parts.keys()
+				part_keys.sort_custom(func(a, b): return float(a) < float(b))
+				
+				if timeline.parts.has("0.00"):
+					var part = timeline.parts["0.00"] as TimelinePart
+					var first = true
+					
+					for prop in part.properties.keys():
+						if first:
+							first = false
+							
+							tween.tween_property(light, prop, part.properties[prop], 0.2)
+						else:
+							tween.parallel().tween_property(light, prop, part.properties[prop], 0.2)
+					
+					tween.play()
 					
 		if event.controller_number == 41 && event.controller_value == 0:
 			for key in current_timelines.timelines.keys():

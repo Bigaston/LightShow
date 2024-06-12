@@ -12,8 +12,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("toggle_sunlight"):
 		$DirectionalLight3D.visible = !$DirectionalLight3D.visible
 		
-	var tween: Tween
-	
 	#if Input.is_action_just_pressed("start_anim"):
 		#if down:
 			#if tween && tween.is_running():

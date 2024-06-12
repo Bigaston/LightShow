@@ -268,7 +268,7 @@ index = 1003
 [node name="Side" type="Node3D" parent="Scene"]
 
 [node name="Lyre" parent="Scene/Side" instance=ExtResource("1_wkpo5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 4)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 4.74256)
 index = 2001
 
 [node name="Lyre2" parent="Scene/Side" instance=ExtResource("1_wkpo5")]
@@ -276,7 +276,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0018
 index = 2002
 
 [node name="Lyre3" parent="Scene/Side" instance=ExtResource("1_wkpo5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.4273, 0, 4.2113)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.4273, 0, 4.89229)
 index = 2101
 
 [node name="Lyre4" parent="Scene/Side" instance=ExtResource("1_wkpo5")]
