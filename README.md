@@ -1,1 +1,3 @@
-https://github.com/anthonyec/godot_little_camera_preview
+# LightShow
+
+![Demo](./support/github/show.gif)
