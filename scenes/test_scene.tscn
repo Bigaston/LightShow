@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://v30ikj67ys62"]
+[gd_scene load_steps=15 format=3 uid="uid://v30ikj67ys62"]
 
-[ext_resource type="Script" path="res://scenes/test_scene.gd" id="1_o7jsf"]
 [ext_resource type="PackedScene" uid="uid://c77cqyhql034w" path="res://objects/cameras/FlyingCamera.tscn" id="1_plhtt"]
 [ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/placable_elements/Lyre.tscn" id="1_wkpo5"]
 [ext_resource type="PackedScene" uid="uid://bykyupejixulv" path="res://objects/ground.tscn" id="3_5dhwy"]
@@ -37,7 +36,6 @@ volumetric_fog_temporal_reprojection_enabled = false
 size = Vector3(1000, 1, 1000)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_o7jsf")
 
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 unique_name_in_owner = true
@@ -316,49 +314,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.12537, 5.96046e-08, -3.7174
 
 [node name="tree9" parent="Props" instance=ExtResource("9_dqexi")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.18682, 5.96046e-08, -3.71741)
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="CurrentTime" type="Label" parent="Control"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -23.0
-offset_right = 40.0
-grow_vertical = 0
-text = "0.0"
-
-[node name="Parts" type="Label" parent="Control"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -43.0
-offset_right = 40.0
-offset_bottom = -20.0
-grow_vertical = 0
-text = ","
-
-[node name="CurrentTimeline" type="Label" parent="Control"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -68.0
-offset_right = 40.0
-offset_bottom = -45.0
-grow_vertical = 0
 
 [node name="statue2" parent="." instance=ExtResource("10_3ayu4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.14483, -5.96046e-08, 1.64033)

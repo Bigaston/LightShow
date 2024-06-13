@@ -28,37 +28,15 @@ func check_parent(node):
 	if parent != null:
 		check_parent(parent)
 
-func select():
-	print(self, " selected")
-	
 func add_editable_property(property: String, name: String = property):
 	editable_properties.push_back(EditableProperty.new(property, name))
 	
-func open_window(container: VBoxContainer):
-	for child in container.get_children():
-		child.queue_free()
+func handle_midi(event: InputEventMIDI):
+	pass
 	
-	for property in editable_properties:
-		var box = HBoxContainer.new()
-		
-		var label = Label.new()
-		label.text = property.name
-		box.add_child(label)
-		
-		match typeof(self[property.property]):
-			TYPE_STRING:
-				var textbox = LineEdit.new()
-				textbox.text = self[property.property]
-				
-				box.push(textbox)
-			TYPE_INT:
-				var textbox = LineEdit.new()
-				textbox.text = self[property.property]
-				
-				box.push(textbox)
-				
-		
-		print(self[property.property])
-		
-		container.add_child(box)
-		
+func select():
+	MidiInput.selected_light = self
+	MidiInput.update_part_display()
+	
+func unselect():
+	MidiInput.selected_light = null

@@ -67,6 +67,7 @@ enum Shape {None, Star, TreeLeaves}
 @onready var tilt_pivot: Node3D = $Node/Pan2/Tilt2
 
 var light_render: StandardMaterial3D = StandardMaterial3D.new()
+var select_snapshot = power
 
 func _ready():
 	super._ready()
@@ -90,3 +91,42 @@ func _ready():
 			light.light_projector = preload("res://resources/textures/projector/star.svg")
 		Shape.TreeLeaves:
 			light.light_projector = preload("res://resources/textures/projector/tree.png")
+
+func select():
+	super.select()
+	
+	power = select_snapshot
+	
+func unselect():
+	super.unselect()
+	
+	select_snapshot = power
+	power = 0
+
+func handle_midi(event: InputEventMIDI):
+	if event.controller_number == 16:
+		pan = event.controller_value / 127.0 * 360 - 180
+		
+	if event.controller_number == 17:
+		tilt = event.controller_value / 127.0 * 240 - 120
+		
+	if event.controller_number == 18:
+		angle = event.controller_value / 127.0 * 65 + 5
+		
+	if event.controller_number == 0:
+		power = event.controller_value / 127.0 * 20
+		
+	if event.controller_number == 1:
+		var new_color = color
+		new_color.r = event.controller_value / 127.0
+		color = new_color
+	
+	if event.controller_number == 2:
+		var new_color = color
+		new_color.g = event.controller_value / 127.0
+		color = new_color
+		
+	if event.controller_number == 3:
+		var new_color = color
+		new_color.b = event.controller_value / 127.0
+		color = new_color

@@ -18,9 +18,11 @@ var current_time: float = 0.0
 
 @export var debug_mini = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	OS.open_midi_inputs()
+	
+	var ui = preload("res://objects/ui.tscn").instantiate()
+	add_child(ui)
 
 func _process(delta):
 	if Input.is_action_just_pressed("save_data"):
@@ -58,9 +60,9 @@ func handle_midi(event: InputEventMIDI):
 			if select_id == null:
 				select_id = int(lights.keys()[0])
 			
-			select_lyre(select_id)
+			lights[select_id].select()
 		else:
-			unselect_light()
+			selected_light.unselect()
 			restore_snapshot()
 		
 	if event.controller_number == 43 && event.controller_value == 0:
@@ -184,8 +186,8 @@ func handle_midi(event: InputEventMIDI):
 				
 			select_id = ordered_key[next_id_pos]
 			
-			unselect_light()
-			select_lyre(select_id)
+			selected_light.unselect()
+			lights[select_id].select()
 		
 		# Next Light	
 		if event.controller_number == 59 && event.controller_value == 0:
@@ -199,8 +201,8 @@ func handle_midi(event: InputEventMIDI):
 			
 			select_id = ordered_key[next_id_pos]
 
-			unselect_light()
-			select_lyre(select_id)
+			selected_light.unselect()
+			lights[select_id].select()
 			
 		# Timeline Register
 		if event.controller_number == 60 && event.controller_value == 0:
@@ -256,40 +258,15 @@ func handle_midi(event: InputEventMIDI):
 			if current_time < 0:
 				current_time = 0
 				
-			#%CurrentTime.text = "%.02f" % current_time
+			$UI/CurrentTime.text = "%.02f" % current_time
 			
 		# Timeline next
 		if event.controller_number == 62 && event.controller_value == 0:
 			current_time += timeline_step
 				
-			#%CurrentTime.text = "%.02f" % current_time
+			$UI/CurrentTime.text = "%.02f" % current_time
 			
-		if event.controller_number == 16:
-			selected_light.pan = event.controller_value / 127.0 * 360 - 180
-			
-		if event.controller_number == 17:
-			selected_light.tilt = event.controller_value / 127.0 * 240 - 120
-			
-		if event.controller_number == 18:
-			selected_light.angle = event.controller_value / 127.0 * 65 + 5
-			
-		if event.controller_number == 0:
-			selected_light.power = event.controller_value / 127.0 * 20
-			
-		if event.controller_number == 1:
-			var color = selected_light.color
-			color.r = event.controller_value / 127.0
-			selected_light.color = color
-		
-		if event.controller_number == 2:
-			var color = selected_light.color
-			color.g = event.controller_value / 127.0
-			selected_light.color = color
-			
-		if event.controller_number == 3:
-			var color = selected_light.color
-			color.b = event.controller_value / 127.0
-			selected_light.color = color
+		selected_light.handle_midi(event)
 		
 func save():
 	var save_dict: SaveData = SaveData.new()
@@ -341,18 +318,6 @@ func load_data():
 	
 	#%WorldEnvironment.environment.volumetric_fog_density = data.fog_power
 	#%DirectionalLight.light_energy = data.dir_light_power
-	
-func select_lyre(index):
-	selected_light = lights[index]
-	selected_light.power = snapshot[index]
-	
-	update_part_display()
-
-func unselect_light():
-	snapshot[select_id] = selected_light.power
-	selected_light.power = 0
-	
-	selected_light = null
 
 func take_snapshot():
 	for key in lights.keys():
@@ -380,18 +345,18 @@ func update_part_display():
 		for k in ordered_keys:
 			string += k + ","
 			
-		#%Parts.text = string
+		$UI/Parts.text = string
 	
 	else:
 		pass
-		#%Parts.text = "No parts..."
+		$UI/Parts.text = "No parts..."
 		
 func update_current_timeline(index):
 	if index < 0 or index >= timelines.containers.size():
 		return
 		
 	current_timelines = timelines.containers[index]
-	#%CurrentTimeline.text = current_timelines.name
+	$UI/CurrentTimeline.text = current_timelines.name
 	
 	current_timeline_index = index
 
