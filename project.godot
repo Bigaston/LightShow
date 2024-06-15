@@ -20,10 +20,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 MidiInput="*res://scripts/proto/MidiInput.gd"
+ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/imgui-godot/plugin.cfg")
 
 [file_customization]
 

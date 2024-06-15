@@ -25,6 +25,8 @@ func _ready():
 	add_child(ui)
 
 func _process(delta):
+	ImGui.ShowDemoWindow()
+	
 	if Input.is_action_just_pressed("save_data"):
 		save()
 		
