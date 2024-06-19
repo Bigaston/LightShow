@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var lights: Dictionary = {}
+@export var placable_parents: Array[PlacableParent] = []
 @export var lights_group: Array[Array] = [[], [], [], [], [], [], []]
 @export var timeline_step: float = 0.2
 
@@ -8,8 +9,6 @@ var selected_light: PlacableElement
 var select_id = null
 
 const save_path = "res://configs/light_config3.tres"
-
-var snapshot: Dictionary = {}
 
 var timelines: TimelineManager = TimelineManager.new()
 var current_timelines: TimelineContainer = TimelineContainer.new()
@@ -25,7 +24,35 @@ func _ready():
 	add_child(ui)
 
 func _process(delta):
-	ImGui.ShowDemoWindow()
+	#ImGui.ShowDemoWindow()
+	ImGui.Begin("Lights & More")
+	
+	if selected_light == null:
+		if ImGui.Button("Edit mode"):
+			if select_id == null:
+				select_id = int(lights.keys()[0])
+			
+			lights[select_id].select()
+	else:
+		if ImGui.Button("Play mode"):
+			selected_light.unselect()
+	
+	if ImGui.CollapsingHeader("Lights"):
+		for parent in placable_parents:
+			if ImGui.TreeNode(parent.group_name):
+				for child in parent.childrens:
+					if selected_light == null:
+						ImGui.Text(child.p_name + " " + str(child.index))
+					else:
+						if ImGui.Button(child.p_name + " " + str(child.index)):
+							selected_light.unselect()
+							select_id = child.index
+							child.select()
+					
+				ImGui.TreePop()
+				
+		
+	ImGui.End()
 	
 	if Input.is_action_just_pressed("save_data"):
 		save()
@@ -57,15 +84,12 @@ func _print_midi_info(midi_event):
 func handle_midi(event: InputEventMIDI):	
 	if event.controller_number == 46 && event.controller_value == 0:
 		if selected_light == null:
-			take_snapshot()
-			
 			if select_id == null:
 				select_id = int(lights.keys()[0])
 			
 			lights[select_id].select()
 		else:
 			selected_light.unselect()
-			restore_snapshot()
 		
 	if event.controller_number == 43 && event.controller_value == 0:
 		current_timeline_index -= 1
@@ -283,9 +307,6 @@ func save():
 		
 		for prop in lights[key].editable_properties:
 			save_dict.lights_param[key][prop.property] = lights[key][prop.property]
-			
-		if snapshot.has(key):
-			save_dict.lights_param[key].power = snapshot[key]
 	
 	for group in lights_group:
 		var arr = []
@@ -320,18 +341,6 @@ func load_data():
 	
 	#%WorldEnvironment.environment.volumetric_fog_density = data.fog_power
 	#%DirectionalLight.light_energy = data.dir_light_power
-
-func take_snapshot():
-	for key in lights.keys():
-		var light = lights[key]
-		snapshot[key] = light.power
-		
-		light.power = 0
-		
-func restore_snapshot():
-	for i in lights.keys():
-		var light = lights[i]
-		light.power = snapshot[i]
 
 func get_saved_light(p_lights, index: int):
 	return get_node(p_lights[index])

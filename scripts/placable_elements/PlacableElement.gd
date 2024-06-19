@@ -5,6 +5,9 @@ class_name PlacableElement
 
 var editable_properties: Array[EditableProperty] = []
 
+var p_name = "PlacableElement"
+var selected = false
+
 class EditableProperty:
 	var name: String
 	var property: String
@@ -23,6 +26,7 @@ func check_parent(node):
 	
 	if parent is PlacableParent:
 		index += parent.base_id
+		parent.childrens.push_back(self)
 		return
 	
 	if parent != null:
@@ -35,8 +39,10 @@ func handle_midi(event: InputEventMIDI):
 	pass
 	
 func select():
+	selected = true
 	MidiInput.selected_light = self
 	MidiInput.update_part_display()
 	
 func unselect():
+	selected = false
 	MidiInput.selected_light = null

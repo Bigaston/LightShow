@@ -72,6 +72,8 @@ var select_snapshot = power
 func _ready():
 	super._ready()
 	
+	p_name = "Lyre"
+	
 	add_editable_property("color")
 	add_editable_property("pan")
 	add_editable_property("tilt")

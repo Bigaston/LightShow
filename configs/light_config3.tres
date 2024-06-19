@@ -1,27 +1,115 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="SaveData" load_steps=17 format=3]
 
-[ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_dds7u"]
-[ext_resource type="Script" path="res://scripts/custom_resources/TimelineManager.gd" id="2_d8ydf"]
+[ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_qepwo"]
+[ext_resource type="Script" path="res://scripts/custom_resources/TimelineContainer.gd" id="2_52c75"]
+[ext_resource type="Script" path="res://scripts/custom_resources/TimelinePart.gd" id="3_lcvci"]
+[ext_resource type="Script" path="res://scripts/custom_resources/Timeline.gd" id="4_3afy4"]
+[ext_resource type="Script" path="res://scripts/custom_resources/TimelineManager.gd" id="5_55od3"]
 
-[sub_resource type="Resource" id="Resource_6m3hx"]
-script = ExtResource("2_d8ydf")
-containers = Array[Resource("res://scripts/custom_resources/TimelineContainer.gd")]([])
+[sub_resource type="Resource" id="Resource_go4ey"]
+script = ExtResource("3_lcvci")
+time = 0.0
+properties = {
+"length": 0.5
+}
+
+[sub_resource type="Resource" id="Resource_u8x2w"]
+script = ExtResource("3_lcvci")
+time = 3.0
+properties = {
+"length": 4.65349
+}
+
+[sub_resource type="Resource" id="Resource_rcvoj"]
+script = ExtResource("4_3afy4")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_go4ey"),
+"3.00": SubResource("Resource_u8x2w")
+}
+
+[sub_resource type="Resource" id="Resource_6f77v"]
+script = ExtResource("3_lcvci")
+time = 0.0
+properties = {
+"length": 0.5
+}
+
+[sub_resource type="Resource" id="Resource_hi3no"]
+script = ExtResource("3_lcvci")
+time = 3.0
+properties = {
+"length": 4.67784
+}
+
+[sub_resource type="Resource" id="Resource_wbxcq"]
+script = ExtResource("4_3afy4")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_6f77v"),
+"3.00": SubResource("Resource_hi3no")
+}
+
+[sub_resource type="Resource" id="Resource_ou8eo"]
+script = ExtResource("3_lcvci")
+time = 0.0
+properties = {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": -94.9606,
+"power": 0.0,
+"shape": 0,
+"tilt": 55.748
+}
+
+[sub_resource type="Resource" id="Resource_v53aw"]
+script = ExtResource("3_lcvci")
+time = 3.0
+properties = {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": -94.9606,
+"power": 20.0,
+"shape": 0,
+"tilt": -61.4173
+}
+
+[sub_resource type="Resource" id="Resource_7rc8y"]
+script = ExtResource("4_3afy4")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_ou8eo"),
+"3.00": SubResource("Resource_v53aw")
+}
+
+[sub_resource type="Resource" id="Resource_8xivb"]
+script = ExtResource("2_52c75")
+name = "Timeline 0"
+timelines = {
+500: SubResource("Resource_rcvoj"),
+501: SubResource("Resource_wbxcq"),
+525: SubResource("Resource_7rc8y")
+}
+
+[sub_resource type="Resource" id="Resource_38tg3"]
+script = ExtResource("5_55od3")
+containers = Array[ExtResource("2_52c75")]([SubResource("Resource_8xivb")])
 
 [resource]
-script = ExtResource("1_dds7u")
+script = ExtResource("1_qepwo")
 lights = {
-0: NodePath("../Node3D/Scene/Back/Lights/Lyre"),
-1: NodePath("../Node3D/Scene/Back/Lights/Lyre2"),
-2: NodePath("../Node3D/Scene/Back/Lights/Lyre3"),
-3: NodePath("../Node3D/Scene/Back/Lights/Lyre7"),
-4: NodePath("../Node3D/Scene/Back/Lights/Lyre8"),
-5: NodePath("../Node3D/Scene/Back/Lights/Lyre9"),
-6: NodePath("../Node3D/Scene/Back/Lights/Lyre10"),
-7: NodePath("../Node3D/Scene/Back/Lights/Lyre11"),
-8: NodePath("../Node3D/Scene/Back/Lights/Lyre12"),
-9: NodePath("../Node3D/Scene/Back/Lights/Lyre6"),
-10: NodePath("../Node3D/Scene/Back/Lights/Lyre5"),
-11: NodePath("../Node3D/Scene/Back/Lights/Lyre4"),
+50: NodePath("../Node3D/Scene/Back/Lights/Lyre"),
+51: NodePath("../Node3D/Scene/Back/Lights/Lyre2"),
+52: NodePath("../Node3D/Scene/Back/Lights/Lyre3"),
+53: NodePath("../Node3D/Scene/Back/Lights/Lyre7"),
+54: NodePath("../Node3D/Scene/Back/Lights/Lyre8"),
+55: NodePath("../Node3D/Scene/Back/Lights/Lyre9"),
+56: NodePath("../Node3D/Scene/Back/Lights/Lyre10"),
+57: NodePath("../Node3D/Scene/Back/Lights/Lyre11"),
+58: NodePath("../Node3D/Scene/Back/Lights/Lyre12"),
+59: NodePath("../Node3D/Scene/Back/Lights/Lyre6"),
+60: NodePath("../Node3D/Scene/Back/Lights/Lyre5"),
+61: NodePath("../Node3D/Scene/Back/Lights/Lyre4"),
 100: NodePath("../Node3D/Scene/Back2/Lights/Lyre"),
 101: NodePath("../Node3D/Scene/Back2/Lights/Lyre2"),
 102: NodePath("../Node3D/Scene/Back2/Lights/Lyre3"),
@@ -34,16 +122,18 @@ lights = {
 109: NodePath("../Node3D/Scene/Back2/Lights/Lyre6"),
 110: NodePath("../Node3D/Scene/Back2/Lights/Lyre5"),
 111: NodePath("../Node3D/Scene/Back2/Lights/Lyre4"),
-200: NodePath("../Node3D/SupportCeiling/Structure/Lyre"),
-201: NodePath("../Node3D/SupportCeiling/Structure/Lyre2"),
-202: NodePath("../Node3D/SupportCeiling/Structure/Lyre3"),
-203: NodePath("../Node3D/SupportCeiling/Structure/Lyre4"),
-204: NodePath("../Node3D/SupportCeiling/Structure/Lyre11"),
-205: NodePath("../Node3D/SupportCeiling/Structure/Lyre6"),
-206: NodePath("../Node3D/SupportCeiling/Structure/Lyre7"),
-207: NodePath("../Node3D/SupportCeiling/Structure/Lyre8"),
-208: NodePath("../Node3D/SupportCeiling/Structure/Lyre9"),
-209: NodePath("../Node3D/SupportCeiling/Structure/Lyre10"),
+500: NodePath("../Node3D/Scene/Suspender/Stuff/Rope"),
+501: NodePath("../Node3D/Scene/Suspender/Stuff/Rope2"),
+525: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre"),
+526: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre2"),
+527: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre3"),
+528: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre4"),
+529: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre11"),
+530: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre6"),
+531: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre7"),
+532: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre8"),
+533: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre9"),
+534: NodePath("../Node3D/Scene/Suspender/Stuff/SupportCeiling/Structure/Lyre10"),
 1000: NodePath("../Node3D/Scene/Front/Lights/Lyre2"),
 1001: NodePath("../Node3D/Scene/Front/Lights/Lyre4"),
 1002: NodePath("../Node3D/Scene/Front/Lights/Lyre"),
@@ -55,7 +145,7 @@ lights = {
 2003: NodePath("../Node3D/Scene/Side/Lyre4")
 }
 lights_param = {
-0: {
+50: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -63,7 +153,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-1: {
+51: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -71,7 +161,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-2: {
+52: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -79,7 +169,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-3: {
+53: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -87,7 +177,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-4: {
+54: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -95,7 +185,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-5: {
+55: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -103,7 +193,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-6: {
+56: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -111,7 +201,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-7: {
+57: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -119,7 +209,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-8: {
+58: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -127,7 +217,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-9: {
+59: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -135,7 +225,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-10: {
+60: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -143,7 +233,7 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-11: {
+61: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
@@ -247,23 +337,29 @@ lights_param = {
 "shape": 0,
 "tilt": 0.0
 },
-200: {
+500: {
+"length": 4.65349
+},
+501: {
+"length": 4.67784
+},
+525: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
-"pan": 110.0,
-"power": 10.0,
+"pan": -94.9606,
+"power": 20.0,
 "shape": 0,
-"tilt": -40.0
+"tilt": -61.4173
 },
-201: {
+526: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 100.0,
-"power": 10.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -40.0
 },
-202: {
+527: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 80.0,
@@ -271,7 +367,7 @@ lights_param = {
 "shape": 0,
 "tilt": -40.0
 },
-203: {
+528: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 70.0,
@@ -279,7 +375,7 @@ lights_param = {
 "shape": 0,
 "tilt": -40.0
 },
-204: {
+529: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 70.0,
@@ -287,7 +383,7 @@ lights_param = {
 "shape": 0,
 "tilt": -40.0
 },
-205: {
+530: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 70.0,
@@ -295,7 +391,7 @@ lights_param = {
 "shape": 0,
 "tilt": -40.0
 },
-206: {
+531: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 110.0,
@@ -303,7 +399,7 @@ lights_param = {
 "shape": 0,
 "tilt": -40.0
 },
-207: {
+532: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 100.0,
@@ -311,7 +407,7 @@ lights_param = {
 "shape": 0,
 "tilt": -40.0
 },
-208: {
+533: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 80.0,
@@ -319,7 +415,7 @@ lights_param = {
 "shape": 0,
 "tilt": -40.0
 },
-209: {
+534: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 70.0,
@@ -401,6 +497,6 @@ lights_param = {
 }
 }
 lights_group = Array[Array]([[], [], [], [], [], [], []])
-timeline_manager = SubResource("Resource_6m3hx")
+timeline_manager = SubResource("Resource_38tg3")
 fog_power = 0.0
 dir_light_power = 0.0

@@ -7,6 +7,9 @@
 radius = 0.1
 
 [node name="Rope" type="RigidBody3D"]
+sleeping = true
+can_sleep = false
+freeze = true
 script = ExtResource("1_q4c8q")
 
 [node name="Mesh" parent="." instance=ExtResource("2_obccv")]
@@ -23,3 +26,9 @@ node_a = NodePath("../Final")
 angular_limit_x/enabled = false
 angular_limit_y/enabled = false
 angular_limit_z/enabled = false
+
+[node name="Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113649, 0.620449, 0.167371)
+visible = false
+light_color = Color(1, 0, 0, 1)
+omni_range = 1.0
