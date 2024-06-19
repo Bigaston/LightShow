@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=17 format=3]
+[gd_resource type="Resource" script_class="SaveData" load_steps=22 format=3]
 
 [ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_qepwo"]
 [ext_resource type="Script" path="res://scripts/custom_resources/TimelineContainer.gd" id="2_52c75"]
@@ -74,12 +74,70 @@ properties = {
 "tilt": -61.4173
 }
 
+[sub_resource type="Resource" id="Resource_3bkjs"]
+script = ExtResource("3_lcvci")
+time = 3.2
+properties = {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": -94.9606,
+"power": 0.0,
+"shape": 0,
+"tilt": -61.4173
+}
+
 [sub_resource type="Resource" id="Resource_7rc8y"]
 script = ExtResource("4_3afy4")
 light_index = 0
 parts = {
 "0.00": SubResource("Resource_ou8eo"),
-"3.00": SubResource("Resource_v53aw")
+"3.00": SubResource("Resource_v53aw"),
+"3.20": SubResource("Resource_3bkjs")
+}
+
+[sub_resource type="Resource" id="Resource_8r6tb"]
+script = ExtResource("3_lcvci")
+time = 3.2
+properties = {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 70.0,
+"power": 0.0,
+"shape": 0,
+"tilt": 34.9606
+}
+
+[sub_resource type="Resource" id="Resource_78xoe"]
+script = ExtResource("3_lcvci")
+time = 3.0
+properties = {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 70.0,
+"power": 20.0,
+"shape": 0,
+"tilt": 34.9606
+}
+
+[sub_resource type="Resource" id="Resource_tojoi"]
+script = ExtResource("3_lcvci")
+time = 0.0
+properties = {
+"angle": 10.0,
+"color": Color(1, 1, 1, 1),
+"pan": 70.0,
+"power": 0.0,
+"shape": 0,
+"tilt": -57.6378
+}
+
+[sub_resource type="Resource" id="Resource_lmdal"]
+script = ExtResource("4_3afy4")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_tojoi"),
+"3.00": SubResource("Resource_78xoe"),
+"3.20": SubResource("Resource_8r6tb")
 }
 
 [sub_resource type="Resource" id="Resource_8xivb"]
@@ -88,7 +146,8 @@ name = "Timeline 0"
 timelines = {
 500: SubResource("Resource_rcvoj"),
 501: SubResource("Resource_wbxcq"),
-525: SubResource("Resource_7rc8y")
+525: SubResource("Resource_7rc8y"),
+528: SubResource("Resource_lmdal")
 }
 
 [sub_resource type="Resource" id="Resource_38tg3"]
@@ -338,16 +397,16 @@ lights_param = {
 "tilt": 0.0
 },
 500: {
-"length": 4.65349
+"length": 0.5
 },
 501: {
-"length": 4.67784
+"length": 0.5
 },
 525: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": -94.9606,
-"power": 20.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -61.4173
 },
@@ -363,7 +422,7 @@ lights_param = {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 80.0,
-"power": 10.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -40.0
 },
@@ -371,15 +430,15 @@ lights_param = {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 70.0,
-"power": 10.0,
+"power": 0.0,
 "shape": 0,
-"tilt": -40.0
+"tilt": 34.9606
 },
 529: {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 70.0,
-"power": 10.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -40.0
 },
@@ -387,7 +446,7 @@ lights_param = {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 70.0,
-"power": 10.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -40.0
 },
@@ -395,7 +454,7 @@ lights_param = {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 110.0,
-"power": 10.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -40.0
 },
@@ -403,7 +462,7 @@ lights_param = {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 100.0,
-"power": 10.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -40.0
 },
@@ -411,7 +470,7 @@ lights_param = {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 80.0,
-"power": 10.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -40.0
 },
@@ -419,7 +478,7 @@ lights_param = {
 "angle": 10.0,
 "color": Color(1, 1, 1, 1),
 "pan": 70.0,
-"power": 10.0,
+"power": 0.0,
 "shape": 0,
 "tilt": -40.0
 },

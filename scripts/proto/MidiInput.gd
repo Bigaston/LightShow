@@ -117,7 +117,8 @@ func handle_midi(event: InputEventMIDI):
 				#
 			#else:
 			for key in lights.keys():
-				lights[key].power = event.controller_value / 127.0 * 20.0
+				if lights[key] is Lyre:
+					lights[key].power = event.controller_value / 127.0 * 20.0
 				
 		if event.controller_number >= 1 && event.controller_number <= 7:
 			for light in lights_group[event.controller_number - 1]:
@@ -126,10 +127,12 @@ func handle_midi(event: InputEventMIDI):
 		if event.controller_number	== 32:
 			if event.controller_value == 127:	
 				for key in lights.keys():
-					lights[key].power = 20
+					if lights[key] is Lyre:
+						lights[key].power = 20
 			else:
 				for key in lights.keys():
-					lights[key].power = 0
+					if lights[key] is Lyre:
+						lights[key].power = 0
 	
 		if event.controller_number >= 33 && event.controller_number <= 39:
 			if event.controller_value == 127:
@@ -144,6 +147,10 @@ func handle_midi(event: InputEventMIDI):
 				var timeline = current_timelines.timelines[key] as Timeline
 				var light = lights[key]
 				var prev_time = 0
+				var tween_time = 0.2
+				
+				if light is Rope:
+					tween_time = 2
 				
 				var tween = get_tree().create_tween()
 				tween.set_trans(Tween.TRANS_CUBIC)
@@ -159,9 +166,9 @@ func handle_midi(event: InputEventMIDI):
 						if first:
 							first = false
 							
-							tween.tween_property(light, prop, part.properties[prop], 0.2)
+							tween.tween_property(light, prop, part.properties[prop], tween_time)
 						else:
-							tween.parallel().tween_property(light, prop, part.properties[prop], 0.2)
+							tween.parallel().tween_property(light, prop, part.properties[prop], tween_time)
 					
 					tween.play()
 					

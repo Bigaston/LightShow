@@ -1,4 +1,5 @@
 extends PlacableElement
+class_name Rope
 
 const ROPE_LENGHT = 0.28
 
