@@ -74,11 +74,39 @@ func _ready():
 	
 	p_name = "Lyre"
 	
-	add_editable_property("color")
-	add_editable_property("pan")
-	add_editable_property("tilt")
-	add_editable_property("power")
-	add_editable_property("angle")
+	add_editable_property("color", "Color", func(value):
+		var col_array = [value.r, value.g, value.b]
+		
+		if ImGui.ColorEdit3("Color", col_array):
+			color.r = col_array[0]
+			color.g = col_array[1]
+			color.b = col_array[2]
+	)
+	
+	add_editable_property("pan", "Pan", func(value):
+		var array = [value]
+		if ImGui.SliderInt("Pan", array, -180, 180):
+			pan = array[0]
+	)
+	
+	add_editable_property("tilt", "Tilt", func(value):
+		var array = [value]
+		if ImGui.SliderInt("Tilt", array, -180, 180):
+			tilt = array[0]
+	)
+	
+	add_editable_property("power", "Power", func(value):
+		var array = [value]
+		if ImGui.SliderInt("Pan", array, 0, 20):
+			power = array[0]
+	)
+	
+	add_editable_property("angle", "Angle", func(value):
+		var array = [value]
+		if ImGui.SliderInt("Light Angle", array, 5, 70):
+			angle = array[0]
+	)
+	
 	add_editable_property("shape")
 	
 	light_render.emission_enabled = true
@@ -93,6 +121,9 @@ func _ready():
 			light.light_projector = preload("res://resources/textures/projector/star.svg")
 		Shape.TreeLeaves:
 			light.light_projector = preload("res://resources/textures/projector/tree.png")
+
+func _process(delta):
+	super._process(delta)
 
 func select():
 	super.select()

@@ -11,15 +11,33 @@ var selected = false
 class EditableProperty:
 	var name: String
 	var property: String
+	var imgui_func: Callable
 	
-	func _init(p_property: String, p_name: String = property):
+	func _init(p_property: String, p_name: String = property, p_imgui_func = null):
 		property = p_property
 		name = p_name
+
+		if p_imgui_func == null:
+			imgui_func = func(value):
+				ImGui.Text(name + " " + str(value))
+		else:
+			imgui_func = p_imgui_func
 
 func _ready():
 	check_parent(self)
 	
 	MidiInput.lights[index] = self
+	
+func _process(delta):
+	if selected:
+		ImGui.Begin("Selected Element")
+		ImGui.Text("Name: " + p_name + " " + str(index))
+		
+		if ImGui.CollapsingHeader("Properties"):
+			for prop in editable_properties:
+				prop.imgui_func.call(self[prop.property])
+			
+		ImGui.End()
 
 func check_parent(node):
 	var parent = node.get_parent()
@@ -32,8 +50,8 @@ func check_parent(node):
 	if parent != null:
 		check_parent(parent)
 
-func add_editable_property(property: String, name: String = property):
-	editable_properties.push_back(EditableProperty.new(property, name))
+func add_editable_property(property: String, name: String = property, imgui_func = null):
+	editable_properties.push_back(EditableProperty.new(property, name, imgui_func))
 	
 func handle_midi(event: InputEventMIDI):
 	pass

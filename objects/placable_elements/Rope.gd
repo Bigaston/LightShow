@@ -27,11 +27,18 @@ func _ready():
 	
 	update_length()
 	
-	add_editable_property("length")
+	add_editable_property("length", "Length", func(value):
+		var array = [value]
+		if ImGui.InputFloat("Light Angle", array):
+			if array[0] > 0:
+				length = array[0]
+	)
 	
 	$Joint.node_b = other_body.get_path()
 
 func _process(delta):
+	super._process(delta)
+	
 	if selected:
 		length += direction * delta
 		
