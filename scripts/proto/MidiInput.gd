@@ -117,7 +117,7 @@ func handle_midi(event: InputEventMIDI):
 				#
 			#else:
 			for key in lights.keys():
-				if lights[key] is Lyre:
+				if "power" in lights[key]:
 					lights[key].power = event.controller_value / 127.0 * 20.0
 				
 		if event.controller_number >= 1 && event.controller_number <= 7:
@@ -127,11 +127,11 @@ func handle_midi(event: InputEventMIDI):
 		if event.controller_number	== 32:
 			if event.controller_value == 127:	
 				for key in lights.keys():
-					if lights[key] is Lyre:
+					if "power" in lights[key]:
 						lights[key].power = 20
 			else:
 				for key in lights.keys():
-					if lights[key] is Lyre:
+					if "power" in lights[key]:
 						lights[key].power = 0
 	
 		if event.controller_number >= 33 && event.controller_number <= 39:

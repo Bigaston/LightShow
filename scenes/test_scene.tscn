@@ -308,7 +308,7 @@ index = 1
 [node name="SupportCeiling" parent="Scene/Suspender/Stuff" instance=ExtResource("6_uknnc")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 1.758, 6.65591, 1.35398)
 base_id = 525
-group_name = "First Support"
+group_name = "Support 1"
 
 [node name="Rope3" parent="Scene/Suspender/Stuff" node_paths=PackedStringArray("other_body") instance=ExtResource("7_4uduw")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 4.6695, 7.74039, 1.31456)
@@ -325,7 +325,7 @@ index = 3
 [node name="SupportCeiling2" parent="Scene/Suspender/Stuff" instance=ExtResource("6_uknnc")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 5.66557, 6.65591, 1.35398)
 base_id = 625
-group_name = "First Support"
+group_name = "Support 2"
 
 [node name="Rope5" parent="Scene/Suspender/Stuff" node_paths=PackedStringArray("other_body") instance=ExtResource("7_4uduw")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 8.86289, 7.74039, 1.31456)
@@ -342,7 +342,7 @@ index = 5
 [node name="SupportCeiling3" parent="Scene/Suspender/Stuff" instance=ExtResource("6_uknnc")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 9.85896, 6.65591, 1.35398)
 base_id = 725
-group_name = "First Support"
+group_name = "Support 3"
 
 [node name="Props" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66276, 0, 3.27416)
