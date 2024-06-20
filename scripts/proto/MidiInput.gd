@@ -50,9 +50,10 @@ func _process(delta):
 							child.select()
 					
 				ImGui.TreePop()
-				
-		
+
 	ImGui.End()
+	
+	display_timeline_window()
 	
 	if Input.is_action_just_pressed("save_data"):
 		save()
@@ -143,62 +144,10 @@ func handle_midi(event: InputEventMIDI):
 					light.power = 0
 		
 		if event.controller_number == 42 && event.controller_value == 0:
-			for key in current_timelines.timelines.keys():
-				var timeline = current_timelines.timelines[key] as Timeline
-				var light = lights[key]
-				var prev_time = 0
-				var tween_time = 0.2
-				
-				if light is Rope:
-					tween_time = 2
-				
-				var tween = get_tree().create_tween()
-				tween.set_trans(Tween.TRANS_CUBIC)
-				
-				var part_keys = timeline.parts.keys()
-				part_keys.sort_custom(func(a, b): return float(a) < float(b))
-				
-				if timeline.parts.has("0.00"):
-					var part = timeline.parts["0.00"] as TimelinePart
-					var first = true
-					
-					for prop in part.properties.keys():
-						if first:
-							first = false
-							
-							tween.tween_property(light, prop, part.properties[prop], tween_time)
-						else:
-							tween.parallel().tween_property(light, prop, part.properties[prop], tween_time)
-					
-					tween.play()
+			launch_timeline()
 					
 		if event.controller_number == 41 && event.controller_value == 0:
-			for key in current_timelines.timelines.keys():
-				var timeline = current_timelines.timelines[key] as Timeline
-				var light = lights[key]
-				var prev_time = 0
-				
-				var tween = get_tree().create_tween()
-				tween.set_trans(Tween.TRANS_CUBIC)
-				
-				var part_keys = timeline.parts.keys()
-				part_keys.sort_custom(func(a, b): return float(a) < float(b))
-				
-				for part_key in part_keys:
-					var part = timeline.parts[part_key] as TimelinePart
-					
-					var first = true
-					for prop in part.properties.keys():
-						if first:
-							first = false
-							
-							tween.tween_property(light, prop, part.properties[prop], part.time - prev_time)
-						else:
-							tween.parallel().tween_property(light, prop, part.properties[prop], part.time - prev_time)
-
-					prev_time = part.time
-			
-				tween.play()
+			setup_timeline()
 	else:
 		if event.controller_number >= 33 && event.controller_number <= 39:
 			if lights_group[event.controller_number - 33].find(selected_light) == -1:
@@ -380,3 +329,84 @@ func update_current_timeline(index):
 
 func ctime():
 	return "%.02f" % current_time
+
+func setup_timeline():
+	for key in current_timelines.timelines.keys():
+		var timeline = current_timelines.timelines[key] as Timeline
+		var light = lights[key]
+		var prev_time = 0
+		var tween_time = 0.2
+		
+		if light is Rope:
+			tween_time = 2
+		
+		var tween = get_tree().create_tween()
+		tween.set_trans(Tween.TRANS_CUBIC)
+		
+		var part_keys = timeline.parts.keys()
+		part_keys.sort_custom(func(a, b): return float(a) < float(b))
+		
+		if timeline.parts.has("0.00"):
+			var part = timeline.parts["0.00"] as TimelinePart
+			var first = true
+			
+			for prop in part.properties.keys():
+				if first:
+					first = false
+					
+					tween.tween_property(light, prop, part.properties[prop], tween_time)
+				else:
+					tween.parallel().tween_property(light, prop, part.properties[prop], tween_time)
+			
+			tween.play()
+
+func launch_timeline():
+	for key in current_timelines.timelines.keys():
+		var timeline = current_timelines.timelines[key] as Timeline
+		var light = lights[key]
+		var prev_time = 0
+		
+		var tween = get_tree().create_tween()
+		tween.set_trans(Tween.TRANS_CUBIC)
+		
+		var part_keys = timeline.parts.keys()
+		part_keys.sort_custom(func(a, b): return float(a) < float(b))
+		
+		for part_key in part_keys:
+			var part = timeline.parts[part_key] as TimelinePart
+			
+			var first = true
+			for prop in part.properties.keys():
+				if first:
+					first = false
+					
+					tween.tween_property(light, prop, part.properties[prop], part.time - prev_time)
+				else:
+					tween.parallel().tween_property(light, prop, part.properties[prop], part.time - prev_time)
+
+			prev_time = part.time
+	
+		tween.play()
+
+func display_timeline_window():
+	ImGui.Begin("Timeline")
+	
+	var current_timeline = [current_timelines.name]
+	if ImGui.Combo("Current Timeline", current_timeline, timelines.containers.map(func(timeline): return timeline.name)):
+		current_timelines = timelines.containers[timelines.containers.bsearch_custom(current_timeline[0], func(a, b): return a == b)]
+	
+	if selected_light == null:
+		if ImGui.Button("Setup"):
+			setup_timeline()
+		
+		ImGui.SameLine()
+		
+		if ImGui.Button("Play"):
+			launch_timeline()
+	else:
+		var arr = [current_time]
+		if ImGui.InputFloat("Current Time", arr):
+			if arr[0] > 0:
+				current_time = arr[0]
+		
+	ImGui.End()
