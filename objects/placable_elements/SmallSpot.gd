@@ -1,7 +1,5 @@
 extends PlacableElement
-class_name Lyre
-
-enum Shape {None, Star, TreeLeaves}
+class_name SmallSpot
 
 @export var color: Color = Color.WHITE: 
 	set(value):
@@ -21,12 +19,12 @@ enum Shape {None, Star, TreeLeaves}
 		if pan_pivot:
 			pan_pivot.rotation_degrees.y = value
 			
-@export_range(-120, 120) var tilt: float = 0:
+@export_range(-180, 180) var tilt: float = 0:
 	set(value):
 		tilt = value
 		
 		if tilt_pivot:
-			tilt_pivot.rotation_degrees.z = value
+			tilt_pivot.rotation_degrees.z = value - 90
 
 @export_range(0, 20) var power: float = 10:
 	set(value):
@@ -47,32 +45,10 @@ enum Shape {None, Star, TreeLeaves}
 		
 		if light:
 			light.spot_angle = angle
-	
-@export_category("Projector")
-@export var shape: Shape = Shape.None:
-	set(value):
-		shape = value
-		
-		if light:
-			match shape:
-				Shape.None:
-					light.light_projector = null
-				Shape.Star:
-					light.light_projector = preload("res://resources/textures/projector/star.svg")
-				Shape.TreeLeaves:
-					light.light_projector = preload("res://resources/textures/projector/tree.png")
 
-@export_range(-180, 180) var projector_angle: float = 0:
-	set(value):
-		projector_angle = value
-		
-		if light:
-			light.rotation_degrees.y = projector_angle
-
-@export_subgroup("PrivateSettings")
-@onready var light: SpotLight3D = $Node/Pan2/Tilt2/SpotLight
-@onready var pan_pivot: Node3D = $Node/Pan2
-@onready var tilt_pivot: Node3D = $Node/Pan2/Tilt2
+@onready var light: SpotLight3D = $blockbench_export/Node/Pan2/Tilt/SpotLight3D
+@onready var pan_pivot: Node3D = $blockbench_export/Node/Pan2
+@onready var tilt_pivot: Node3D = $blockbench_export/Node/Pan2/Tilt
 
 var light_render: StandardMaterial3D = StandardMaterial3D.new()
 var select_snapshot = power
@@ -80,7 +56,7 @@ var select_snapshot = power
 func _ready():
 	super._ready()
 	
-	p_name = "Lyre"
+	p_name = "SmallSpot"
 	
 	add_editable_property("color", "Color", func(value):
 		var col_array = [value.r, value.g, value.b]
@@ -99,7 +75,7 @@ func _ready():
 	
 	add_editable_property("tilt", "Tilt", func(value):
 		var array = [value]
-		if ImGui.SliderInt("Tilt", array, -120, 120):
+		if ImGui.SliderInt("Tilt", array, -180, 180):
 			tilt = array[0]
 	)
 	
@@ -115,20 +91,10 @@ func _ready():
 			angle = array[0]
 	)
 	
-	add_editable_property("shape")
-	
 	light_render.emission_enabled = true
 	light_render.emission = Color.WHITE
 	
-	$Node/Pan2/Tilt2/Light.set_surface_override_material(0, light_render)
-	
-	match shape:
-		Shape.None:
-			light.light_projector = null
-		Shape.Star:
-			light.light_projector = preload("res://resources/textures/projector/star.svg")
-		Shape.TreeLeaves:
-			light.light_projector = preload("res://resources/textures/projector/tree.png")
+	$blockbench_export/Node/Pan2/Tilt/Light.set_surface_override_material(0, light_render)
 
 func _process(delta):
 	super._process(delta)
@@ -149,7 +115,7 @@ func handle_midi(event: InputEventMIDI):
 		pan = event.controller_value / 127.0 * 360 - 180
 		
 	if event.controller_number == 17:
-		tilt = event.controller_value / 127.0 * 240 - 120
+		tilt = event.controller_value / 127.0 * 360 - 180
 		
 	if event.controller_number == 18:
 		angle = event.controller_value / 127.0 * 65 + 5

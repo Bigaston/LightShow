@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1r8hshfkxopp"]
+
+[ext_resource type="Script" path="res://objects/placable_elements/SmallSpot.gd" id="1_tbhcq"]
+[ext_resource type="PackedScene" uid="uid://2bogselkuax3" path="res://resources/meshs/SmallSpot.glb" id="2_j0iq2"]
+
+[node name="SmallSpot" type="RigidBody3D"]
+sleeping = true
+can_sleep = false
+freeze = true
+script = ExtResource("1_tbhcq")
+
+[node name="blockbench_export" parent="." instance=ExtResource("2_j0iq2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Tilt" parent="blockbench_export/Node/Pan2" index="1"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.296875, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="blockbench_export/Node/Pan2/Tilt" index="2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.134158, 0, 0)
+light_energy = 0.0
+light_volumetric_fog_energy = 5.0
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 14.0
+
+[editable path="blockbench_export"]

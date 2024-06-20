@@ -2,114 +2,78 @@
 
 [ext_resource type="PackedScene" uid="uid://vfvvfjugv2qs" path="res://objects/placable_elements/Structure.tscn" id="1_0ilfk"]
 [ext_resource type="Script" path="res://scripts/placable_elements/PlacableParent.gd" id="1_yide8"]
-[ext_resource type="PackedScene" uid="uid://cr1arqkchrm1h" path="res://objects/placable_elements/Lyre.tscn" id="2_tv46i"]
+[ext_resource type="PackedScene" uid="uid://d1r8hshfkxopp" path="res://objects/placable_elements/SmallSpot.tscn" id="3_46dc0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t0po3"]
-size = Vector3(0.5, 0.5, 0.5)
+size = Vector3(0.301331, 0.5, 0.5)
 
 [node name="SupportCeiling" type="RigidBody3D"]
 script = ExtResource("1_yide8")
 base_id = 200
 
 [node name="Structure" parent="." instance=ExtResource("1_0ilfk")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-number_of_border = 4
-lenght = 4
-
-[node name="Lyre" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.172414, 0.96981, 0.00503147)
-pan = 110.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-
-[node name="Lyre2" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.173526, 0.339604, -0.00233269)
-pan = 100.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-index = 1
-
-[node name="Lyre3" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.17459, -0.34512, -0.00668788)
-pan = 80.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-index = 2
-
-[node name="Lyre4" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, -0.951202, 0)
-pan = 70.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-index = 3
-
-[node name="Lyre7" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.172414, 0.96981, 1.8917)
-pan = 110.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-index = 6
-
-[node name="Lyre8" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.173526, 0.339604, 1.88434)
-pan = 100.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-index = 7
-
-[node name="Lyre9" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.17459, -0.34512, 1.87998)
-pan = 80.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-index = 8
-
-[node name="Lyre10" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, -0.951202, 1.88667)
-pan = 70.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-index = 9
-
-[node name="Lyre6" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, -0.951202, 0.949915)
-pan = 70.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-index = 5
-
-[node name="Lyre11" parent="Structure" instance=ExtResource("2_tv46i")]
-transform = Transform3D(-4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -3.82137e-15, 0, -8.74228e-08, -1, -0.1662, 1.03047, 0.949915)
-pan = 70.0
-tilt = -40.0
-power = 10.0
-angle = 10.0
-index = 4
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0205858, 0, -0.985473)
+lenght = 2
 
 [node name="Structure2" parent="." instance=ExtResource("1_0ilfk")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 2)
-number_of_border = 4
-lenght = 4
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0205858, 0, 1.01453)
+lenght = 2
 
 [node name="Structure3" parent="." instance=ExtResource("1_0ilfk")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 1, 0, 1)
-number_of_border = 4
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.404153, 0, 0.0145268)
 lenght = 4
 
 [node name="Structure4" parent="." instance=ExtResource("1_0ilfk")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -1, 0, 1)
-number_of_border = 4
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.416193, 0, 0.0145268)
 lenght = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0171434, 0, 0.0145268)
 shape = SubResource("BoxShape3D_t0po3")
+
+[node name="SmallSpot" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.430113, -0.0108348, -0.985715)
+
+[node name="SmallSpot2" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.430113, -0.0108348, -0.600404)
+index = 1
+
+[node name="SmallSpot3" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.430113, -0.0108348, -0.169259)
+index = 2
+
+[node name="SmallSpot4" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.430113, -0.0108348, 0.226057)
+index = 3
+
+[node name="SmallSpot5" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.430113, -0.0108348, 0.629077)
+index = 4
+
+[node name="SmallSpot6" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.430113, -0.0108348, 0.993947)
+index = 5
+
+[node name="SmallSpot7" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.421796, -0.0108348, -0.985715)
+index = 6
+
+[node name="SmallSpot8" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.421796, -0.0108348, -0.600404)
+index = 7
+
+[node name="SmallSpot9" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.421796, -0.0108348, -0.169259)
+index = 8
+
+[node name="SmallSpot10" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.421796, -0.0108348, 0.226057)
+index = 9
+
+[node name="SmallSpot11" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.421796, -0.0108348, 0.629077)
+index = 10
+
+[node name="SmallSpot12" parent="." instance=ExtResource("3_46dc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.421796, -0.0108348, 0.993947)
+index = 11
