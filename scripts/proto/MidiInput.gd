@@ -15,14 +15,13 @@ var current_timelines: TimelineContainer = TimelineContainer.new()
 var current_timeline_index = 0
 var current_time: float = 0.0
 
+var copied_timeline: Timeline
+
 @export var debug_mini = false
 
 func _ready():
 	OS.open_midi_inputs()
 	
-	var ui = preload("res://objects/ui.tscn").instantiate()
-	add_child(ui)
-
 func _process(_delta):
 	#ImGui.ShowDemoWindow()
 	ImGui.Begin("Lights & More")
@@ -411,5 +410,16 @@ func display_timeline_window():
 		
 		if ImGui.Button("Delete Part"):
 			erease_timeline_at_pos(select_id, ctime())
+			
+		if ImGui.Button("Copy Timeline"):
+			copied_timeline = current_timelines.timelines[select_id].duplicate(true)
+			
+		ImGui.SameLine()
+		
+		if ImGui.Button("Past Timeline"):
+			var new_timeline = copied_timeline.duplicate(true)
+			
+			new_timeline.light_index = select_id
+			current_timelines.timelines[select_id] = new_timeline
 		
 	ImGui.End()

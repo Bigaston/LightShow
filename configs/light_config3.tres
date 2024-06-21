@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=74 format=3]
+[gd_resource type="Resource" script_class="SaveData" load_steps=98 format=3]
 
 [ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_d1ans"]
 [ext_resource type="Script" path="res://scripts/custom_resources/TimelineContainer.gd" id="2_0jdtm"]
@@ -136,6 +136,258 @@ light_index = 0
 parts = {
 "0.00": SubResource("Resource_8fuwb"),
 "5.00": SubResource("Resource_tb7vc")
+}
+
+[sub_resource type="Resource" id="Resource_pnnwb"]
+script = ExtResource("3_mt2lq")
+time = 0.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": -80.7874
+}
+
+[sub_resource type="Resource" id="Resource_mvr63"]
+script = ExtResource("3_mt2lq")
+time = 5.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -4.25197,
+"power": 20.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_6rrtb"]
+script = ExtResource("3_mt2lq")
+time = 5.4
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_vgk8l"]
+script = ExtResource("4_nh35a")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_oo55n"]
+script = ExtResource("3_mt2lq")
+time = 0.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": -80.7874
+}
+
+[sub_resource type="Resource" id="Resource_knqsc"]
+script = ExtResource("3_mt2lq")
+time = 5.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -4.25197,
+"power": 20.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_oycug"]
+script = ExtResource("3_mt2lq")
+time = 5.4
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_n0b52"]
+script = ExtResource("4_nh35a")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_oo55n"),
+"5.00": SubResource("Resource_knqsc"),
+"5.40": SubResource("Resource_oycug")
+}
+
+[sub_resource type="Resource" id="Resource_ufcmq"]
+script = ExtResource("3_mt2lq")
+time = 0.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": -80.7874
+}
+
+[sub_resource type="Resource" id="Resource_qn4fw"]
+script = ExtResource("3_mt2lq")
+time = 5.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -4.25197,
+"power": 20.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_h32ee"]
+script = ExtResource("3_mt2lq")
+time = 5.4
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_cw2y4"]
+script = ExtResource("4_nh35a")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_ufcmq"),
+"5.00": SubResource("Resource_qn4fw"),
+"5.40": SubResource("Resource_h32ee")
+}
+
+[sub_resource type="Resource" id="Resource_ovyk3"]
+script = ExtResource("3_mt2lq")
+time = 0.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": -80.7874
+}
+
+[sub_resource type="Resource" id="Resource_p3fx6"]
+script = ExtResource("3_mt2lq")
+time = 5.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -4.25197,
+"power": 20.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_d750f"]
+script = ExtResource("3_mt2lq")
+time = 5.4
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_2e7pp"]
+script = ExtResource("4_nh35a")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_ovyk3"),
+"5.00": SubResource("Resource_p3fx6"),
+"5.40": SubResource("Resource_d750f")
+}
+
+[sub_resource type="Resource" id="Resource_kcwma"]
+script = ExtResource("3_mt2lq")
+time = 0.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": -80.7874
+}
+
+[sub_resource type="Resource" id="Resource_y55vx"]
+script = ExtResource("3_mt2lq")
+time = 5.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -4.25197,
+"power": 20.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_fyhre"]
+script = ExtResource("3_mt2lq")
+time = 5.4
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_fb002"]
+script = ExtResource("4_nh35a")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_kcwma"),
+"5.00": SubResource("Resource_y55vx"),
+"5.40": SubResource("Resource_fyhre")
+}
+
+[sub_resource type="Resource" id="Resource_ch34w"]
+script = ExtResource("3_mt2lq")
+time = 0.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": -80.7874
+}
+
+[sub_resource type="Resource" id="Resource_onpqg"]
+script = ExtResource("3_mt2lq")
+time = 5.0
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -4.25197,
+"power": 20.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_1fgih"]
+script = ExtResource("3_mt2lq")
+time = 5.4
+properties = {
+"angle": 5.0,
+"color": Color(1, 1, 1, 1),
+"pan": -1.41732,
+"power": 0.0,
+"tilt": 80.7874
+}
+
+[sub_resource type="Resource" id="Resource_b3878"]
+script = ExtResource("4_nh35a")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_ch34w"),
+"5.00": SubResource("Resource_onpqg"),
+"5.40": SubResource("Resource_1fgih")
 }
 
 [sub_resource type="Resource" id="Resource_x3dax"]
@@ -390,256 +642,220 @@ parts = {
 "5.40": SubResource("Resource_2pcwq")
 }
 
-[sub_resource type="Resource" id="Resource_mvr63"]
-script = ExtResource("3_mt2lq")
-time = 5.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -4.25197,
-"power": 20.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_6rrtb"]
-script = ExtResource("3_mt2lq")
-time = 5.4
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_pnnwb"]
-script = ExtResource("3_mt2lq")
-time = 0.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": -80.7874
-}
-
-[sub_resource type="Resource" id="Resource_vgk8l"]
+[sub_resource type="Resource" id="Resource_crjy6"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 625
 parts = {
 "0.00": SubResource("Resource_pnnwb"),
 "5.00": SubResource("Resource_mvr63"),
 "5.40": SubResource("Resource_6rrtb")
 }
 
-[sub_resource type="Resource" id="Resource_knqsc"]
-script = ExtResource("3_mt2lq")
-time = 5.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -4.25197,
-"power": 20.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_oycug"]
-script = ExtResource("3_mt2lq")
-time = 5.4
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_oo55n"]
-script = ExtResource("3_mt2lq")
-time = 0.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": -80.7874
-}
-
-[sub_resource type="Resource" id="Resource_n0b52"]
+[sub_resource type="Resource" id="Resource_uwtdp"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 626
 parts = {
-"0.00": SubResource("Resource_oo55n"),
-"5.00": SubResource("Resource_knqsc"),
-"5.40": SubResource("Resource_oycug")
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
 }
 
-[sub_resource type="Resource" id="Resource_qn4fw"]
-script = ExtResource("3_mt2lq")
-time = 5.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -4.25197,
-"power": 20.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_h32ee"]
-script = ExtResource("3_mt2lq")
-time = 5.4
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_ufcmq"]
-script = ExtResource("3_mt2lq")
-time = 0.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": -80.7874
-}
-
-[sub_resource type="Resource" id="Resource_cw2y4"]
+[sub_resource type="Resource" id="Resource_3w7su"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 627
 parts = {
-"0.00": SubResource("Resource_ufcmq"),
-"5.00": SubResource("Resource_qn4fw"),
-"5.40": SubResource("Resource_h32ee")
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
 }
 
-[sub_resource type="Resource" id="Resource_p3fx6"]
-script = ExtResource("3_mt2lq")
-time = 5.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -4.25197,
-"power": 20.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_d750f"]
-script = ExtResource("3_mt2lq")
-time = 5.4
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_ovyk3"]
-script = ExtResource("3_mt2lq")
-time = 0.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": -80.7874
-}
-
-[sub_resource type="Resource" id="Resource_2e7pp"]
+[sub_resource type="Resource" id="Resource_l5hx8"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 628
 parts = {
-"0.00": SubResource("Resource_ovyk3"),
-"5.00": SubResource("Resource_p3fx6"),
-"5.40": SubResource("Resource_d750f")
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
 }
 
-[sub_resource type="Resource" id="Resource_y55vx"]
-script = ExtResource("3_mt2lq")
-time = 5.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -4.25197,
-"power": 20.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_fyhre"]
-script = ExtResource("3_mt2lq")
-time = 5.4
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_kcwma"]
-script = ExtResource("3_mt2lq")
-time = 0.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": -80.7874
-}
-
-[sub_resource type="Resource" id="Resource_fb002"]
+[sub_resource type="Resource" id="Resource_4t8u4"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 629
 parts = {
-"0.00": SubResource("Resource_kcwma"),
-"5.00": SubResource("Resource_y55vx"),
-"5.40": SubResource("Resource_fyhre")
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
 }
 
-[sub_resource type="Resource" id="Resource_onpqg"]
-script = ExtResource("3_mt2lq")
-time = 5.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -4.25197,
-"power": 20.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_1fgih"]
-script = ExtResource("3_mt2lq")
-time = 5.4
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": 80.7874
-}
-
-[sub_resource type="Resource" id="Resource_ch34w"]
-script = ExtResource("3_mt2lq")
-time = 0.0
-properties = {
-"angle": 5.0,
-"color": Color(1, 1, 1, 1),
-"pan": -1.41732,
-"power": 0.0,
-"tilt": -80.7874
-}
-
-[sub_resource type="Resource" id="Resource_b3878"]
+[sub_resource type="Resource" id="Resource_6xw2o"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 630
 parts = {
-"0.00": SubResource("Resource_ch34w"),
-"5.00": SubResource("Resource_onpqg"),
-"5.40": SubResource("Resource_1fgih")
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_m7fur"]
+script = ExtResource("4_nh35a")
+light_index = 631
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_ydqcl"]
+script = ExtResource("4_nh35a")
+light_index = 632
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_t1hcn"]
+script = ExtResource("4_nh35a")
+light_index = 633
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_ywtt3"]
+script = ExtResource("4_nh35a")
+light_index = 634
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_rnmau"]
+script = ExtResource("4_nh35a")
+light_index = 635
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_402t5"]
+script = ExtResource("4_nh35a")
+light_index = 636
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_3qffj"]
+script = ExtResource("4_nh35a")
+light_index = 725
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_c52mt"]
+script = ExtResource("4_nh35a")
+light_index = 726
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_lagrw"]
+script = ExtResource("4_nh35a")
+light_index = 727
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_a72km"]
+script = ExtResource("4_nh35a")
+light_index = 728
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_gk8wo"]
+script = ExtResource("4_nh35a")
+light_index = 729
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_kxkn8"]
+script = ExtResource("4_nh35a")
+light_index = 730
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_sx8j0"]
+script = ExtResource("4_nh35a")
+light_index = 731
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_3qlba"]
+script = ExtResource("4_nh35a")
+light_index = 732
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_pheny"]
+script = ExtResource("4_nh35a")
+light_index = 733
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_7hxti"]
+script = ExtResource("4_nh35a")
+light_index = 734
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_47ns4"]
+script = ExtResource("4_nh35a")
+light_index = 736
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
+}
+
+[sub_resource type="Resource" id="Resource_5glqr"]
+script = ExtResource("4_nh35a")
+light_index = 735
+parts = {
+"0.00": SubResource("Resource_pnnwb"),
+"5.00": SubResource("Resource_mvr63"),
+"5.40": SubResource("Resource_6rrtb")
 }
 
 [sub_resource type="Resource" id="Resource_3w4f1"]
@@ -663,7 +879,31 @@ timelines = {
 533: SubResource("Resource_b316l"),
 534: SubResource("Resource_s8b5l"),
 535: SubResource("Resource_sq54l"),
-536: SubResource("Resource_w5l67")
+536: SubResource("Resource_w5l67"),
+625: SubResource("Resource_crjy6"),
+626: SubResource("Resource_uwtdp"),
+627: SubResource("Resource_3w7su"),
+628: SubResource("Resource_l5hx8"),
+629: SubResource("Resource_4t8u4"),
+630: SubResource("Resource_6xw2o"),
+631: SubResource("Resource_m7fur"),
+632: SubResource("Resource_ydqcl"),
+633: SubResource("Resource_t1hcn"),
+634: SubResource("Resource_ywtt3"),
+635: SubResource("Resource_rnmau"),
+636: SubResource("Resource_402t5"),
+725: SubResource("Resource_3qffj"),
+726: SubResource("Resource_c52mt"),
+727: SubResource("Resource_lagrw"),
+728: SubResource("Resource_a72km"),
+729: SubResource("Resource_gk8wo"),
+730: SubResource("Resource_kxkn8"),
+731: SubResource("Resource_sx8j0"),
+732: SubResource("Resource_3qlba"),
+733: SubResource("Resource_pheny"),
+734: SubResource("Resource_7hxti"),
+735: SubResource("Resource_5glqr"),
+736: SubResource("Resource_47ns4")
 }
 
 [sub_resource type="Resource" id="Resource_1vepj"]
@@ -939,274 +1179,274 @@ lights_param = {
 "tilt": 0.0
 },
 500: {
-"length": 1.0
+"length": 5.5
 },
 501: {
-"length": 1.0
+"length": 5.5
 },
 502: {
-"length": 1.0
+"length": 4.5
 },
 503: {
-"length": 1.0
+"length": 4.5
 },
 504: {
-"length": 1.0
+"length": 5.5
 },
 505: {
-"length": 1.0
+"length": 5.5
 },
 525: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 526: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 527: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 528: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 529: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 530: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 531: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.0,
 "power": 0.0,
-"tilt": -80.0
+"tilt": 80.7874
 },
 532: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -4.25197,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 533: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 534: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 535: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": 1.41732,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 536: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
 "power": 0.0,
-"tilt": -80.7874
+"tilt": 80.7874
 },
 625: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 626: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 627: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 628: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 629: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 630: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 631: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 632: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 633: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 634: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 635: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 636: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 725: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 726: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 727: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 728: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 729: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 730: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 731: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 732: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 733: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 734: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 735: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 736: {
-"angle": 20.0,
+"angle": 5.0,
 "color": Color(1, 1, 1, 1),
-"pan": 0.0,
+"pan": -1.41732,
 "power": 0.0,
-"tilt": 0.0
+"tilt": 80.7874
 },
 1000: {
 "angle": 20.0,
