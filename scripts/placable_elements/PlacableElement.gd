@@ -28,7 +28,7 @@ func _ready():
 	
 	MidiInput.lights[index] = self
 	
-func _process(delta):
+func _process(_delta):
 	if selected:
 		ImGui.Begin("Selected Element")
 		ImGui.Text("Name: " + p_name + " " + str(index))
@@ -37,7 +37,7 @@ func _process(delta):
 			prop.imgui_func.call(self[prop.property])
 			
 		if ImGui.Button("Copy"):
-			var str = JSON.stringify({
+			var string_to_save = JSON.stringify({
 				app = "LightShow.PlacableElement.Properties",
 				name = p_name,
 				props = editable_properties.map(func (prop): 
@@ -56,12 +56,12 @@ func _process(delta):
 					})
 			})
 			
-			DisplayServer.clipboard_set(str)
+			DisplayServer.clipboard_set(string_to_save)
 		ImGui.SameLine()
 		
 		if ImGui.Button("Past"):
-			var str = DisplayServer.clipboard_get()
-			var obj = JSON.parse_string(str)
+			var string_to_parse = DisplayServer.clipboard_get()
+			var obj = JSON.parse_string(string_to_parse)
 			
 			print(obj)
 			
@@ -89,10 +89,10 @@ func check_parent(node):
 	if parent != null:
 		check_parent(parent)
 
-func add_editable_property(property: String, name: String = property, imgui_func = null):
-	editable_properties.push_back(EditableProperty.new(property, name, imgui_func))
+func add_editable_property(property: String, in_name: String = property, imgui_func = null):
+	editable_properties.push_back(EditableProperty.new(property, in_name, imgui_func))
 	
-func handle_midi(event: InputEventMIDI):
+func handle_midi(_event: InputEventMIDI):
 	pass
 	
 func select():

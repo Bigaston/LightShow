@@ -23,7 +23,7 @@ func _ready():
 	var ui = preload("res://objects/ui.tscn").instantiate()
 	add_child(ui)
 
-func _process(delta):
+func _process(_delta):
 	#ImGui.ShowDemoWindow()
 	ImGui.Begin("Lights & More")
 	
@@ -275,7 +275,6 @@ func setup_timeline():
 	for key in current_timelines.timelines.keys():
 		var timeline = current_timelines.timelines[key] as Timeline
 		var light = lights[key]
-		var prev_time = 0
 		var tween_time = 0.2
 		
 		if light is Rope:
