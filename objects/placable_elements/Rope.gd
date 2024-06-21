@@ -29,7 +29,7 @@ func _ready():
 	
 	add_editable_property("length", "Length", func(value):
 		var array = [value]
-		if ImGui.InputFloat("Light Angle", array):
+		if ImGui.InputFloat("Length", array):
 			if array[0] > 0:
 				length = array[0]
 	)

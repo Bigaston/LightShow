@@ -20,4 +20,5 @@ func _unhandled_input(event):
 			var collider = result.collider
 			
 			if collider is PlacableElement && collider.selectable:
+				if MidiInput.selected_light != null: MidiInput.selected_light.unselect()
 				collider.select()
