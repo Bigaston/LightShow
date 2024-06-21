@@ -36,6 +36,46 @@ func _process(delta):
 		for prop in editable_properties:
 			prop.imgui_func.call(self[prop.property])
 			
+		if ImGui.Button("Copy"):
+			var str = JSON.stringify({
+				app = "LightShow.PlacableElement.Properties",
+				name = p_name,
+				props = editable_properties.map(func (prop): 
+					var val
+					
+					match typeof(self[prop.property]):
+						TYPE_COLOR:
+							val = self[prop.property].to_html()
+						_:
+							val = self[prop.property]
+					
+					return {
+						name = prop.property,
+						type = typeof(self[prop.property]),
+						value = val
+					})
+			})
+			
+			DisplayServer.clipboard_set(str)
+		ImGui.SameLine()
+		
+		if ImGui.Button("Past"):
+			var str = DisplayServer.clipboard_get()
+			var obj = JSON.parse_string(str)
+			
+			print(obj)
+			
+			if obj.app == null || obj.app != "LightShow.PlacableElement.Properties":
+				printerr("Bad Copy Paste!")
+			else:
+				for prop in obj.props:
+					if prop.name in self:
+						match prop.type:
+							TYPE_COLOR:
+								self[prop.name] = Color.html(prop.value)
+							_:
+								self[prop.name] = prop.value
+			
 		ImGui.End()
 
 func check_parent(node):
