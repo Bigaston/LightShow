@@ -33,9 +33,8 @@ func _process(delta):
 		ImGui.Begin("Selected Element")
 		ImGui.Text("Name: " + p_name + " " + str(index))
 		
-		if ImGui.CollapsingHeader("Properties"):
-			for prop in editable_properties:
-				prop.imgui_func.call(self[prop.property])
+		for prop in editable_properties:
+			prop.imgui_func.call(self[prop.property])
 			
 		ImGui.End()
 
@@ -59,7 +58,6 @@ func handle_midi(event: InputEventMIDI):
 func select():
 	selected = true
 	MidiInput.selected_light = self
-	MidiInput.update_part_display()
 	
 func unselect():
 	selected = false

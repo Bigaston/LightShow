@@ -188,50 +188,13 @@ func handle_midi(event: InputEventMIDI):
 			
 		# Timeline Register
 		if event.controller_number == 60 && event.controller_value == 0:
-			if !current_timelines.timelines.has(select_id):
-				current_timelines.timelines[select_id] = Timeline.new()
+			register_timeline_part(select_id, ctime())
 				
-			var timeline = current_timelines.timelines[select_id] as Timeline
-			
-			if !timeline.parts.has(ctime()):
-				timeline.parts[ctime()] = TimelinePart.new()
-				
-			var part = timeline.parts[ctime()] as TimelinePart
-			part.time = ctime()
-			part.properties = {}
-			
-			for prop in selected_light.editable_properties:
-				part.properties[prop.property] = selected_light[prop.property]
-				
-			update_part_display()
-		
 		if event.controller_number == 42 && event.controller_value == 0:
-			if !current_timelines.timelines.has(select_id):
-				return
-				
-			var timeline = current_timelines.timelines[select_id] as Timeline
-			
-			if !timeline.parts.has(ctime()):
-				return
-				
-			timeline.parts.erase(ctime())
-			update_part_display()
+			erease_timeline_at_pos(select_id, ctime())
 			
 		if event.controller_number == 45 && event.controller_value == 0:
-			if !current_timelines.timelines.has(select_id):
-				return
-				
-			var timeline = current_timelines.timelines[select_id] as Timeline
-			
-			if !timeline.parts.has(ctime()):
-				return
-				
-			var part = timeline.parts[ctime()] as TimelinePart			
-				
-			for prop in part.properties.keys():
-				selected_light[prop] = part.properties[prop]
-				
-			update_part_display()
+			goto_timeline_part(select_id, ctime())
 		
 		# Timeline prev
 		if event.controller_number == 61 && event.controller_value == 0:
@@ -239,14 +202,10 @@ func handle_midi(event: InputEventMIDI):
 			
 			if current_time < 0:
 				current_time = 0
-				
-			$UI/CurrentTime.text = "%.02f" % current_time
 			
 		# Timeline next
 		if event.controller_number == 62 && event.controller_value == 0:
 			current_time += timeline_step
-				
-			$UI/CurrentTime.text = "%.02f" % current_time
 			
 		selected_light.handle_midi(event)
 		
@@ -300,30 +259,12 @@ func load_data():
 
 func get_saved_light(p_lights, index: int):
 	return get_node(p_lights[index])
-
-func update_part_display():
-	if current_timelines.timelines.has(select_id):
-		var string = ""
-		
-		var timeline = current_timelines.timelines[select_id] as Timeline
-		var ordered_keys = timeline.parts.keys()
-		ordered_keys.sort_custom(func(a, b): return float(a) < float(b))
-		
-		for k in ordered_keys:
-			string += k + ","
-			
-		$UI/Parts.text = string
-	
-	else:
-		pass
-		$UI/Parts.text = "No parts..."
 		
 func update_current_timeline(index):
 	if index < 0 or index >= timelines.containers.size():
 		return
 		
 	current_timelines = timelines.containers[index]
-	$UI/CurrentTimeline.text = current_timelines.name
 	
 	current_timeline_index = index
 
@@ -387,6 +328,47 @@ func launch_timeline():
 			prev_time = part.time
 	
 		tween.play()
+		
+func erease_timeline_at_pos(id: int, time: String):
+	if !current_timelines.timelines.has(id):
+		return
+				
+	var timeline = current_timelines.timelines[id] as Timeline
+			
+	if !timeline.parts.has(time):
+		return
+		
+	timeline.parts.erase(time)
+
+func register_timeline_part(id: int, time: String):
+	if !current_timelines.timelines.has(id):
+		current_timelines.timelines[id] = Timeline.new()
+		
+	var timeline = current_timelines.timelines[id] as Timeline
+	
+	if !timeline.parts.has(time):
+		timeline.parts[time] = TimelinePart.new()
+		
+	var part = timeline.parts[time] as TimelinePart
+	part.time = time
+	part.properties = {}
+	
+	for prop in lights[id].editable_properties:
+		part.properties[prop.property] = lights[id][prop.property]
+
+func goto_timeline_part(id: int, time: String):
+	if !current_timelines.timelines.has(id):
+		return
+		
+	var timeline = current_timelines.timelines[id] as Timeline
+	
+	if !timeline.parts.has(time):
+		return
+		
+	var part = timeline.parts[time] as TimelinePart
+		
+	for prop in part.properties.keys():
+		lights[id][prop] = part.properties[prop]
 
 func display_timeline_window():
 	ImGui.Begin("Timeline")
@@ -408,5 +390,27 @@ func display_timeline_window():
 		if ImGui.InputFloat("Current Time", arr):
 			if arr[0] > 0:
 				current_time = arr[0]
+				
+		if current_timelines.timelines.has(select_id):
+			var timeline = current_timelines.timelines[select_id] as Timeline
+			var ordered_keys = timeline.parts.keys()
+			ordered_keys.sort_custom(func(a, b): return float(a) < float(b))
+			
+			for k in ordered_keys:
+				if ImGui.Button(k):
+					goto_timeline_part(select_id, k)
+				ImGui.SameLine()
+			
+			ImGui.NewLine()
+		else:
+			ImGui.Text("No part...")
+		
+		if ImGui.Button("Set part"):
+			register_timeline_part(select_id, ctime())
+		
+		ImGui.SameLine()
+		
+		if ImGui.Button("Delete Part"):
+			erease_timeline_at_pos(select_id, ctime())
 		
 	ImGui.End()
