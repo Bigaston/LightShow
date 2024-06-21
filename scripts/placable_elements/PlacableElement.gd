@@ -2,6 +2,7 @@ extends RigidBody3D
 class_name PlacableElement
 
 @export var index: int = 0
+@export var selectable = false
 
 var editable_properties: Array[EditableProperty] = []
 
@@ -98,6 +99,7 @@ func handle_midi(_event: InputEventMIDI):
 func select():
 	selected = true
 	MidiInput.selected_light = self
+	MidiInput.select_id = index
 	
 func unselect():
 	selected = false

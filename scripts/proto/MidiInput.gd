@@ -388,7 +388,17 @@ func display_timeline_window():
 		if ImGui.InputFloat("Current Time", arr):
 			if arr[0] > 0:
 				current_time = arr[0]
-				
+		if ImGui.Button("<<<"):
+			current_time -= timeline_step
+			
+			if current_time < 0:
+				current_time = 0
+		
+		ImGui.SameLine()
+		
+		if ImGui.Button(">>>"):
+			current_time += timeline_step
+		
 		if current_timelines.timelines.has(select_id):
 			var timeline = current_timelines.timelines[select_id] as Timeline
 			var ordered_keys = timeline.parts.keys()

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://vjuhcvhfb1e5"]
+
+[sub_resource type="GDScript" id="GDScript_hd1uy"]
+script/source = "extends Area3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yuitf"]
+
+[node name="Selectable" type="Area3D"]
+collision_mask = 0
+script = SubResource("GDScript_hd1uy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_yuitf")

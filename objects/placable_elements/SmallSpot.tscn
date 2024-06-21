@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1r8hshfkxopp"]
+[gd_scene load_steps=4 format=3 uid="uid://d1r8hshfkxopp"]
 
 [ext_resource type="Script" path="res://objects/placable_elements/SmallSpot.gd" id="1_tbhcq"]
 [ext_resource type="PackedScene" uid="uid://2bogselkuax3" path="res://resources/meshs/SmallSpot.glb" id="2_j0iq2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lvlbq"]
+radius = 0.177165
 
 [node name="SmallSpot" type="RigidBody3D"]
 sleeping = true
 can_sleep = false
 freeze = true
 script = ExtResource("1_tbhcq")
+selectable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140571, 0)
+shape = SubResource("SphereShape3D_lvlbq")
 
 [node name="blockbench_export" parent="." instance=ExtResource("2_j0iq2")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
