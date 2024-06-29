@@ -1,0 +1,907 @@
+[gd_resource type="Resource" script_class="SaveData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_vtv6d"]
+[ext_resource type="Script" path="res://scripts/custom_resources/TimelineManager.gd" id="2_32pk2"]
+
+[sub_resource type="Resource" id="Resource_tbs6v"]
+script = ExtResource("2_32pk2")
+containers = Array[Resource("res://scripts/custom_resources/TimelineContainer.gd")]([])
+
+[resource]
+script = ExtResource("1_vtv6d")
+lights = {
+0: NodePath("../Node3D/Scene/Lights/1stCircle/Lights/SmallSpot"),
+1: NodePath("../Node3D/Scene/Lights/1stCircle/Lights/SmallSpot2"),
+2: NodePath("../Node3D/Scene/Lights/1stCircle/Lights/SmallSpot3"),
+3: NodePath("../Node3D/Scene/Lights/1stCircle/Lights/SmallSpot4"),
+4: NodePath("../Node3D/Scene/Lights/1stCircle/Lights/SmallSpot5"),
+5: NodePath("../Node3D/Scene/Lights/1stCircle/Lights/SmallSpot6"),
+6: NodePath("../Node3D/Scene/Lights/1stCircle/Lights/SmallSpot7"),
+7: NodePath("../Node3D/Scene/Lights/1stCircle/Lights/SmallSpot8"),
+50: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot"),
+51: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot2"),
+52: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot4"),
+53: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot5"),
+54: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot6"),
+55: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot7"),
+56: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot8"),
+57: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot9"),
+58: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot10"),
+59: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot11"),
+60: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot12"),
+61: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot13"),
+62: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot14"),
+63: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot15"),
+64: NodePath("../Node3D/Scene/Lights/2ndCircle/Lights/SmallSpot16"),
+100: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot"),
+101: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot2"),
+102: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot3"),
+103: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot4"),
+104: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot5"),
+105: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot6"),
+106: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot7"),
+107: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot8"),
+108: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot9"),
+109: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot10"),
+110: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot11"),
+111: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot12"),
+112: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot13"),
+113: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot14"),
+114: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot15"),
+115: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot16"),
+116: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot17"),
+117: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot18"),
+118: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot19"),
+119: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot20"),
+120: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot21"),
+121: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot22"),
+122: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot23"),
+123: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot24"),
+124: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot25"),
+125: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot26"),
+126: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot27"),
+127: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot28"),
+128: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot29"),
+129: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot30"),
+130: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot31"),
+131: NodePath("../Node3D/Scene/Lights/3rdCircle/Lights/SmallSpot32"),
+150: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot"),
+151: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot2"),
+152: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot3"),
+153: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot4"),
+154: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot5"),
+155: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot6"),
+156: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot7"),
+157: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot8"),
+158: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot9"),
+159: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot10"),
+160: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot11"),
+161: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot12"),
+162: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot13"),
+163: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot14"),
+164: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot15"),
+165: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot16"),
+166: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot17"),
+167: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot18"),
+168: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot19"),
+169: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot20"),
+170: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot21"),
+171: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot22"),
+172: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot23"),
+173: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot24"),
+174: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot25"),
+175: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot26"),
+176: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot27"),
+177: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot28"),
+178: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot29"),
+179: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot30"),
+180: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot31"),
+181: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot32"),
+182: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot33"),
+183: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot34"),
+184: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot35"),
+185: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot36"),
+186: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot37"),
+187: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot38"),
+188: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot39"),
+189: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot40"),
+190: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot41"),
+191: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot42"),
+192: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot43"),
+193: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot44"),
+194: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot45"),
+195: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot46"),
+196: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot47"),
+197: NodePath("../Node3D/Scene/Lights/4thCircle/Lights/SmallSpot48"),
+500: NodePath("../Node3D/Scene/Ropes/Rope"),
+501: NodePath("../Node3D/Scene/Ropes/Rope2"),
+502: NodePath("../Node3D/Scene/Ropes/Rope3"),
+503: NodePath("../Node3D/Scene/Ropes/Rope4"),
+504: NodePath("../Node3D/Scene/Ropes/Rope5"),
+505: NodePath("../Node3D/Scene/Ropes/Rope6"),
+506: NodePath("../Node3D/Scene/Ropes/Rope7"),
+507: NodePath("../Node3D/Scene/Ropes/Rope8"),
+508: NodePath("../Node3D/Scene/Ropes/Rope9"),
+509: NodePath("../Node3D/Scene/Ropes/Rope10"),
+510: NodePath("../Node3D/Scene/Ropes/Rope11"),
+511: NodePath("../Node3D/Scene/Ropes/Rope12"),
+512: NodePath("../Node3D/Scene/Ropes/Rope13"),
+513: NodePath("../Node3D/Scene/Ropes/Rope14"),
+514: NodePath("../Node3D/Scene/Ropes/Rope15"),
+515: NodePath("../Node3D/Scene/Ropes/Rope16")
+}
+lights_param = {
+0: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"tilt": 0.0
+},
+1: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"tilt": 0.0
+},
+2: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+3: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+4: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+5: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+6: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+7: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+50: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+51: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+52: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+53: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+54: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+55: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+56: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"tilt": 0.0
+},
+57: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"tilt": 0.0
+},
+58: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"tilt": 0.0
+},
+59: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+60: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+61: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+62: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+63: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+64: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+100: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+101: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+102: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+103: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+104: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+105: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+106: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+107: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+108: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+109: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+110: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+111: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+112: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+113: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+114: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+115: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+116: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+117: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"tilt": 0.0
+},
+118: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 0.0,
+"tilt": 0.0
+},
+119: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+120: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+121: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+122: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+123: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+124: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+125: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+126: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+127: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+128: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+129: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+130: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+131: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+150: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+151: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+152: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+153: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+154: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+155: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+156: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+157: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+158: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+159: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+160: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+161: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+162: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+163: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+164: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+165: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+166: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+167: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+168: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+169: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+170: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+171: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+172: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+173: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+174: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+175: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+176: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+177: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+178: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+179: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+180: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+181: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+182: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+183: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+184: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+185: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+186: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+187: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+188: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+189: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+190: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+191: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+192: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+193: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+194: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+195: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+196: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+197: {
+"angle": 20.0,
+"color": Color(1, 1, 1, 1),
+"pan": 0.0,
+"power": 10.0,
+"tilt": 0.0
+},
+500: {
+"length": 2.0
+},
+501: {
+"length": 2.0
+},
+502: {
+"length": 2.0
+},
+503: {
+"length": 2.0
+},
+504: {
+"length": 2.0
+},
+505: {
+"length": 2.0
+},
+506: {
+"length": 2.0
+},
+507: {
+"length": 2.0
+},
+508: {
+"length": 2.0
+},
+509: {
+"length": 2.0
+},
+510: {
+"length": 2.0
+},
+511: {
+"length": 2.0
+},
+512: {
+"length": 2.0
+},
+513: {
+"length": 2.0
+},
+514: {
+"length": 2.0
+},
+515: {
+"length": 2.0
+}
+}
+lights_group = Array[Array]([[], [], [], [], [], [], []])
+timeline_manager = SubResource("Resource_tbs6v")
+fog_power = 0.0
+dir_light_power = 0.0

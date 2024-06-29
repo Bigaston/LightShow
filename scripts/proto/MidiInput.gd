@@ -8,7 +8,7 @@ extends Node3D
 var selected_light: PlacableElement
 var select_id = null
 
-const save_path = "res://configs/light_config3.tres"
+const save_path = "res://configs/light_config4.tres"
 
 var timelines: TimelineManager = TimelineManager.new()
 var current_timelines: TimelineContainer = TimelineContainer.new()
