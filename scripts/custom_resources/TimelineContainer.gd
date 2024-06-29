@@ -149,6 +149,12 @@ func pause():
 func stop():
 	tween.kill()
 	
+func is_playing() -> bool:
+	if tween == null:
+		return false
+		
+	return tween.is_running()
+	
 func save_part(light_index: int, time: String):
 	if !timelines.has(light_index):
 		timelines[light_index] = Timeline.new()

@@ -290,6 +290,23 @@ func display_timeline_window():
 			
 		if ImGui.Button("Stop"):
 			current_timelines.stop()
+		
+		if ImGui.CollapsingHeader("Timelines Runner"):
+			for timeline in timelines.containers:
+				ImGui.Text(timeline.name)
+				ImGui.SameLine()
+				
+				if timeline.is_playing():
+					if ImGui.Button("Stop##" + timeline.name):
+						timeline.stop()
+				else:
+					if ImGui.Button("Play##" + timeline.name):
+						timeline.play()
+					
+					ImGui.SameLine()
+					
+					if ImGui.Button("Setup##" + timeline.name):
+						timeline.setup()
 	else:
 		var arr = [current_time]
 		if ImGui.InputFloat("Current Time", arr):
