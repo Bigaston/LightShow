@@ -311,9 +311,9 @@ func display_timeline_window():
 					if ImGui.Button("Setup##" + timeline.name):
 						timeline.setup()
 	else:
-		#var timeline_name = [current_timelines.name]
-		#if ImGui.InputText("Timeline Name", timeline_name, 64):
-			#current_timelines.name = timeline_name[0]
+		var timeline_name = [current_timelines.name]
+		if ImGui.InputText("Timeline Name", timeline_name, 64):
+			current_timelines.name = timeline_name[0]
 		
 		var arr = [current_time]
 		if ImGui.InputFloat("Current Time", arr):
