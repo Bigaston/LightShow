@@ -313,6 +313,7 @@ func display_timeline_window():
 			
 			for k in ordered_keys:
 				if ImGui.Button(k):
+					current_time = float(k)
 					current_timelines.goto_part(select_id, k)
 				ImGui.SameLine()
 			

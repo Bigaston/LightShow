@@ -12,6 +12,7 @@ var selected = false
 class EditableProperty:
 	var name: String
 	var property: String
+	var should_timeline: bool = true
 	var imgui_func: Callable
 	
 	func _init(p_property: String, p_name: String = property, p_imgui_func = null):
@@ -35,6 +36,13 @@ func _process(_delta):
 		ImGui.Text("Name: " + p_name + " " + str(index))
 		
 		for prop in editable_properties:
+			var should_timeline = [prop.should_timeline]
+			
+			if ImGui.Checkbox("##" + prop.name, should_timeline):
+				prop.should_timeline = should_timeline[0]
+				
+			ImGui.SameLine()
+			
 			prop.imgui_func.call(self[prop.property])
 			
 		if ImGui.Button("Copy"):
