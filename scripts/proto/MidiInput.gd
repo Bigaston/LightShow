@@ -366,6 +366,7 @@ func display_timeline_window():
 			var new_timeline = copied_timeline.duplicate(true)
 			
 			new_timeline.light_index = select_id
+			new_timeline.await_duration = current_timelines.timelines[select_id].await_duration
 			current_timelines.timelines[select_id] = new_timeline
 		
 		var current_loop_mode = [current_timelines.loop_mode]

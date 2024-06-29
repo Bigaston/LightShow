@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=76 format=3]
+[gd_resource type="Resource" script_class="SaveData" load_steps=69 format=3]
 
 [ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_vtv6d"]
 [ext_resource type="Script" path="res://scripts/custom_resources/TimelineManager.gd" id="2_32pk2"]
@@ -447,186 +447,104 @@ loop_mode = 3
 script = ExtResource("3_q55cj")
 time = 0.0
 properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"power": 0.0
 }
 
 [sub_resource type="Resource" id="Resource_83d1k"]
 script = ExtResource("3_q55cj")
 time = 0.2
 properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 20.0,
-"tilt": 0.0
+"power": 20.0
 }
 
 [sub_resource type="Resource" id="Resource_25yv6"]
 script = ExtResource("3_q55cj")
 time = 0.4
 properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"power": 0.0
 }
 
-[sub_resource type="Resource" id="Resource_vt4ry"]
+[sub_resource type="Resource" id="Resource_htfwv"]
 script = ExtResource("3_q55cj")
-time = 1.4
+time = 1.6
 properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"power": 0.0
 }
 
-[sub_resource type="Resource" id="Resource_5jaaj"]
+[sub_resource type="Resource" id="Resource_ra4gd"]
 script = ExtResource("4_n0g12")
 light_index = 1
 parts = {
 "0.00": SubResource("Resource_s0gbq"),
 "0.20": SubResource("Resource_83d1k"),
 "0.40": SubResource("Resource_25yv6"),
-"1.40": SubResource("Resource_vt4ry")
+"1.60": SubResource("Resource_htfwv")
 }
 await_duration = 0.2
 
-[sub_resource type="Resource" id="Resource_gi0w4"]
-script = ExtResource("3_q55cj")
-time = 1.4
-properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
-}
-
-[sub_resource type="Resource" id="Resource_pyq6p"]
+[sub_resource type="Resource" id="Resource_dcgsd"]
 script = ExtResource("4_n0g12")
 light_index = 2
 parts = {
 "0.00": SubResource("Resource_s0gbq"),
 "0.20": SubResource("Resource_83d1k"),
 "0.40": SubResource("Resource_25yv6"),
-"1.40": SubResource("Resource_gi0w4")
+"1.60": SubResource("Resource_htfwv")
 }
 await_duration = 0.4
 
-[sub_resource type="Resource" id="Resource_m7bdb"]
-script = ExtResource("3_q55cj")
-time = 1.4
-properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
-}
-
-[sub_resource type="Resource" id="Resource_omqtc"]
+[sub_resource type="Resource" id="Resource_al44e"]
 script = ExtResource("4_n0g12")
 light_index = 3
 parts = {
 "0.00": SubResource("Resource_s0gbq"),
 "0.20": SubResource("Resource_83d1k"),
 "0.40": SubResource("Resource_25yv6"),
-"1.40": SubResource("Resource_m7bdb")
+"1.60": SubResource("Resource_htfwv")
 }
 await_duration = 0.6
 
-[sub_resource type="Resource" id="Resource_6wwyx"]
-script = ExtResource("3_q55cj")
-time = 1.4
-properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
-}
-
-[sub_resource type="Resource" id="Resource_kq0fe"]
+[sub_resource type="Resource" id="Resource_kqw48"]
 script = ExtResource("4_n0g12")
 light_index = 4
 parts = {
 "0.00": SubResource("Resource_s0gbq"),
 "0.20": SubResource("Resource_83d1k"),
 "0.40": SubResource("Resource_25yv6"),
-"1.40": SubResource("Resource_6wwyx")
+"1.60": SubResource("Resource_htfwv")
 }
 await_duration = 0.8
 
-[sub_resource type="Resource" id="Resource_7bumr"]
-script = ExtResource("3_q55cj")
-time = 1.4
-properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
-}
-
-[sub_resource type="Resource" id="Resource_kbh8s"]
+[sub_resource type="Resource" id="Resource_obkxe"]
 script = ExtResource("4_n0g12")
 light_index = 5
 parts = {
 "0.00": SubResource("Resource_s0gbq"),
 "0.20": SubResource("Resource_83d1k"),
 "0.40": SubResource("Resource_25yv6"),
-"1.40": SubResource("Resource_7bumr")
+"1.60": SubResource("Resource_htfwv")
 }
 await_duration = 1.0
 
-[sub_resource type="Resource" id="Resource_6a3lx"]
-script = ExtResource("3_q55cj")
-time = 1.4
-properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
-}
-
-[sub_resource type="Resource" id="Resource_sfnkq"]
+[sub_resource type="Resource" id="Resource_ex544"]
 script = ExtResource("4_n0g12")
 light_index = 6
 parts = {
 "0.00": SubResource("Resource_s0gbq"),
 "0.20": SubResource("Resource_83d1k"),
 "0.40": SubResource("Resource_25yv6"),
-"1.40": SubResource("Resource_6a3lx")
+"1.60": SubResource("Resource_htfwv")
 }
 await_duration = 1.2
 
-[sub_resource type="Resource" id="Resource_y4ueh"]
-script = ExtResource("3_q55cj")
-time = 1.4
-properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
-}
-
-[sub_resource type="Resource" id="Resource_s0vjv"]
+[sub_resource type="Resource" id="Resource_jyt5t"]
 script = ExtResource("4_n0g12")
 light_index = 7
 parts = {
 "0.00": SubResource("Resource_s0gbq"),
 "0.20": SubResource("Resource_83d1k"),
 "0.40": SubResource("Resource_25yv6"),
-"1.40": SubResource("Resource_y4ueh")
+"1.60": SubResource("Resource_htfwv")
 }
 await_duration = 1.4
 
@@ -642,17 +560,6 @@ light_index = 51
 parts = {}
 await_duration = 1.8
 
-[sub_resource type="Resource" id="Resource_375oe"]
-script = ExtResource("3_q55cj")
-time = 1.4
-properties = {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
-}
-
 [sub_resource type="Resource" id="Resource_ekpgm"]
 script = ExtResource("4_n0g12")
 light_index = 0
@@ -660,7 +567,7 @@ parts = {
 "0.00": SubResource("Resource_s0gbq"),
 "0.20": SubResource("Resource_83d1k"),
 "0.40": SubResource("Resource_25yv6"),
-"1.40": SubResource("Resource_375oe")
+"1.60": SubResource("Resource_htfwv")
 }
 await_duration = 0.0
 
@@ -669,13 +576,13 @@ script = ExtResource("2_fxaid")
 name = "Light: Rotate 1st"
 timelines = {
 0: SubResource("Resource_ekpgm"),
-1: SubResource("Resource_5jaaj"),
-2: SubResource("Resource_pyq6p"),
-3: SubResource("Resource_omqtc"),
-4: SubResource("Resource_kq0fe"),
-5: SubResource("Resource_kbh8s"),
-6: SubResource("Resource_sfnkq"),
-7: SubResource("Resource_s0vjv"),
+1: SubResource("Resource_ra4gd"),
+2: SubResource("Resource_dcgsd"),
+3: SubResource("Resource_al44e"),
+4: SubResource("Resource_kqw48"),
+5: SubResource("Resource_obkxe"),
+6: SubResource("Resource_ex544"),
+7: SubResource("Resource_jyt5t"),
 50: SubResource("Resource_bwn7x"),
 51: SubResource("Resource_jj6e0")
 }
