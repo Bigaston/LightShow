@@ -1,8 +1,16 @@
 extends Resource
 class_name TimelineContainer
 
+static var LoopMode = {
+	NoLoop = "NoLoop", 
+	Loop = "Loop", 
+	LoopWithSetup = "LoopWithSetup", 
+	PingPong = "PingPong"
+}
+
 @export var name: String
 @export var timelines: Dictionary = {}
+@export var loop_mode: String = LoopMode.NoLoop
 
 var tween: Tween
 
