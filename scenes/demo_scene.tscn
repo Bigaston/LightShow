@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3dpcakbcy2ps"]
+
+[ext_resource type="Script" path="res://scripts/proto/SelectManager.gd" id="1_brcxs"]
+[ext_resource type="PackedScene" uid="uid://c77cqyhql034w" path="res://objects/cameras/FlyingCamera.tscn" id="2_qunas"]
+[ext_resource type="PackedScene" uid="uid://bykyupejixulv" path="res://objects/ground.tscn" id="3_yejtp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kxehk"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_oporb"]
+sky_material = SubResource("ProceduralSkyMaterial_kxehk")
+
+[sub_resource type="Environment" id="Environment_pv774"]
+background_mode = 2
+background_energy_multiplier = 0.2
+sky = SubResource("Sky_oporb")
+tonemap_mode = 2
+glow_enabled = true
+fog_density = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2
+volumetric_fog_length = 20.0
+volumetric_fog_detail_spread = 1.0
+volumetric_fog_sky_affect = 0.5
+volumetric_fog_temporal_reprojection_enabled = false
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4ecd"]
+size = Vector3(1000, 1, 1000)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SelectManager" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+script = ExtResource("1_brcxs")
+camera = NodePath("../FlyingCamera")
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-0.610283, 0.634723, -0.474005, 0, 0.598353, 0.801233, 0.792183, 0.488979, -0.365165, -6, 7, -8)
+light_energy = 0.1
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
+environment = SubResource("Environment_pv774")
+
+[node name="FlyingCamera" parent="." instance=ExtResource("2_qunas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.84505, 1.1696, 7.04852)
+current = true
+
+[node name="Ground" parent="." instance=ExtResource("3_yejtp")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Ground"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_x4ecd")
+
+[node name="Scene" type="Node3D" parent="."]
