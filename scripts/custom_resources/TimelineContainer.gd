@@ -12,7 +12,7 @@ enum LoopMode {
 @export var timelines: Dictionary = {}
 @export var loop_mode: LoopMode = LoopMode.NoLoop
 
-var tween: Tween
+var tweens: Dictionary = {}
 
 func setup():
 	for key in timelines.keys():
@@ -44,9 +44,6 @@ func setup():
 			tween.play()
 
 func play():
-	tween = MidiInput.get_tree().create_tween()
-	tween.set_trans(Tween.TRANS_CUBIC)
-	
 	# time -> timelines[]
 	var parts_time: Dictionary = {}
 	
@@ -54,9 +51,14 @@ func play():
 	for key in timelines.keys():
 		var timeline = timelines[key] as Timeline
 		
+		var tween = MidiInput.get_tree().create_tween()
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.pause()
+		tweens[key] = tween
+		
 		for time in timeline.get_parts_time():
 			if parts_time.has(time):
-				parts_time[time].push_back(timeline)				
+				parts_time[time].push_back(timeline)
 			else:
 				parts_time[time] = [timeline]
 	
@@ -65,37 +67,45 @@ func play():
 	part_keys.sort_custom(func(a, b): return float(a) < float(b))
 	
 	# Pour chaque instant
-	var prev_time = 0	
+	var dict_prev_time = {}
+	for dict in timelines.values():
+		dict_prev_time[dict] = 0
 	
 	for keyframe in part_keys:
-		var first = true
-		
 		var timelines_to_adress = parts_time[keyframe]
 		
 		# Toutes les timelines où il y a besoin d'ajouter un truc
 		for timeline in timelines_to_adress:
+			var first = true
+			
 			var light = MidiInput.lights[timeline.light_index]
 			var part = timeline.parts[keyframe]
+			var tween = tweens[timeline.light_index]
 			
 			for prop in part.properties.keys():
 				if first:
 					first = false
-					tween.tween_property(light, prop, part.properties[prop], part.time - prev_time)
+					tween.tween_property(light, prop, part.properties[prop], part.time - dict_prev_time[timeline])
 				else:
-					tween.parallel().tween_property(light, prop, part.properties[prop], part.time - prev_time)
-
-		prev_time = float(keyframe)
+					tween.parallel().tween_property(light, prop, part.properties[prop], part.time - dict_prev_time[timeline])
+			
+			dict_prev_time[timeline] = float(keyframe)
+			
+	for timeline in timelines.values():
+		if !timeline.parts.has(part_keys[part_keys.size() - 1]):
+			tweens[timeline.light_index].tween_interval(float(part_keys[part_keys.size() - 1]) - dict_prev_time[timeline])
 	
 	match loop_mode:
 		LoopMode.NoLoop:
 			pass
 		LoopMode.Loop:
-			tween.set_loops()
+			for key in timelines.keys():
+				tweens[key].set_loops()
 		LoopMode.LoopWithSetup:
-			tween.set_loops()
+			for key in timelines.keys():
+				tweens[key].set_loops()
 			
 			if parts_time.has("0.00"):
-				var first = true
 				var has_rope = timelines.keys().map(func(key):
 					return MidiInput.lights[key]).bsearch_custom("", func(l, _type): 
 						return l is Rope)
@@ -103,57 +113,75 @@ func play():
 				var interval_time = 2 if has_rope else 0.2
 				
 				for timeline in parts_time["0.00"]:
+					var first = true
+					
 					var light = MidiInput.lights[timeline.light_index]
 					var part = timeline.parts["0.00"]
 					
 					for prop in part.properties.keys():
 						if first:
 							first = false
-							tween.tween_property(light, prop, part.properties[prop], interval_time)
+							tweens[timeline.light_index].tween_property(light, prop, part.properties[prop], interval_time)
 						else:
-							tween.parallel().tween_property(light, prop, part.properties[prop], interval_time)
+							tweens[timeline.light_index].parallel().tween_property(light, prop, part.properties[prop], interval_time)
 		LoopMode.PingPong:
-			tween.set_loops()
+			for key in timelines.keys():
+				tweens[key].set_loops()
 			
 			part_keys = parts_time.keys()
 			part_keys.sort_custom(func(a, b): return float(a) > float(b))
 			
 			# Pour chaque instant
-			prev_time = float(part_keys[0])
+			dict_prev_time = {}
+			for dict in timelines.values():
+				dict_prev_time[dict] = float(part_keys[0])
 			
 			for keyframe in part_keys:
-				var first = true
-				
 				var timelines_to_adress = parts_time[keyframe]
 				
 				# Toutes les timelines où il y a besoin d'ajouter un truc
 				for timeline in timelines_to_adress:
+					var first = true
+					
 					var light = MidiInput.lights[timeline.light_index]
 					var part = timeline.parts[keyframe]
 					
 					for prop in part.properties.keys():
 						if first:
 							first = false
-							tween.tween_property(light, prop, part.properties[prop], prev_time - part.time)
+							tweens[timeline.light_index].tween_property(light, prop, part.properties[prop], dict_prev_time[timeline] - part.time)
 						else:
-							tween.parallel().tween_property(light, prop, part.properties[prop], prev_time - part.time)
+							tweens[timeline.light_index].parallel().tween_property(light, prop, part.properties[prop], dict_prev_time[timeline] - part.time)
 
-				prev_time = float(keyframe)
+					dict_prev_time[timeline] = float(keyframe)
+					
+			for timeline in timelines.values():
+				if !timeline.parts.has(part_keys[0]):
+					tweens[timeline.light_index].tween_interval(dict_prev_time[timeline] - float(part_keys[0]))
 	
-	tween.play()
+	for key in timelines.keys():
+		if timelines[key].await_duration != 0:
+			var intermedial_tween = MidiInput.get_tree().create_tween()
+			intermedial_tween.tween_interval(timelines[key].await_duration)
+			intermedial_tween.tween_callback(tweens[key].play)
+			
+			intermedial_tween.play()
+		else:
+			tweens[key].play()
 
 func pause():
 	#tween.pause()
 	pass
 	
 func stop():
-	tween.kill()
+	for key in timelines.keys():
+		tweens[key].kill()
 	
 func is_playing() -> bool:
-	if tween == null:
+	if tweens.size() == 0:
 		return false
 		
-	return tween.is_running()
+	return tweens[timelines.keys()[0]].is_running()
 	
 func save_part(light_index: int, time: String):
 	if !timelines.has(light_index):

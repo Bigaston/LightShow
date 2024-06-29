@@ -1,11 +1,451 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="SaveData" load_steps=54 format=3]
 
 [ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_vtv6d"]
 [ext_resource type="Script" path="res://scripts/custom_resources/TimelineManager.gd" id="2_32pk2"]
+[ext_resource type="Script" path="res://scripts/custom_resources/TimelineContainer.gd" id="2_fxaid"]
+[ext_resource type="Script" path="res://scripts/custom_resources/TimelinePart.gd" id="3_q55cj"]
+[ext_resource type="Script" path="res://scripts/custom_resources/Timeline.gd" id="4_n0g12"]
+
+[sub_resource type="Resource" id="Resource_fa2gj"]
+script = ExtResource("3_q55cj")
+time = 0.0
+properties = {
+"length": 0.8
+}
+
+[sub_resource type="Resource" id="Resource_hr0d3"]
+script = ExtResource("3_q55cj")
+time = 20.0
+properties = {
+"length": 6.0
+}
+
+[sub_resource type="Resource" id="Resource_oxl0m"]
+script = ExtResource("4_n0g12")
+light_index = 500
+parts = {
+"0.00": SubResource("Resource_fa2gj"),
+"20.00": SubResource("Resource_hr0d3")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_b6h37"]
+script = ExtResource("4_n0g12")
+light_index = 501
+parts = {
+"0.00": SubResource("Resource_fa2gj"),
+"20.00": SubResource("Resource_hr0d3")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_5w0l2"]
+script = ExtResource("4_n0g12")
+light_index = 502
+parts = {
+"0.00": SubResource("Resource_fa2gj"),
+"20.00": SubResource("Resource_hr0d3")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_jj4pt"]
+script = ExtResource("4_n0g12")
+light_index = 503
+parts = {
+"0.00": SubResource("Resource_fa2gj"),
+"20.00": SubResource("Resource_hr0d3")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_cmd1r"]
+script = ExtResource("3_q55cj")
+time = 0.0
+properties = {
+"length": 0.8
+}
+
+[sub_resource type="Resource" id="Resource_7o3rb"]
+script = ExtResource("3_q55cj")
+time = 23.0
+properties = {
+"length": 5.5
+}
+
+[sub_resource type="Resource" id="Resource_efh3t"]
+script = ExtResource("3_q55cj")
+time = 3.0
+properties = {
+"length": 0.8
+}
+
+[sub_resource type="Resource" id="Resource_1134r"]
+script = ExtResource("4_n0g12")
+light_index = 504
+parts = {
+"0.00": SubResource("Resource_cmd1r"),
+"23.00": SubResource("Resource_7o3rb"),
+"3.00": SubResource("Resource_efh3t")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_8uqko"]
+script = ExtResource("4_n0g12")
+light_index = 505
+parts = {
+"0.00": SubResource("Resource_cmd1r"),
+"23.00": SubResource("Resource_7o3rb"),
+"3.00": SubResource("Resource_efh3t")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_qxghu"]
+script = ExtResource("4_n0g12")
+light_index = 506
+parts = {
+"0.00": SubResource("Resource_cmd1r"),
+"23.00": SubResource("Resource_7o3rb"),
+"3.00": SubResource("Resource_efh3t")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_dn21q"]
+script = ExtResource("4_n0g12")
+light_index = 507
+parts = {
+"0.00": SubResource("Resource_cmd1r"),
+"23.00": SubResource("Resource_7o3rb"),
+"3.00": SubResource("Resource_efh3t")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_32pd6"]
+script = ExtResource("3_q55cj")
+time = 0.0
+properties = {
+"length": 0.8
+}
+
+[sub_resource type="Resource" id="Resource_f8g6s"]
+script = ExtResource("3_q55cj")
+time = 26.0
+properties = {
+"length": 5.0
+}
+
+[sub_resource type="Resource" id="Resource_y7b4y"]
+script = ExtResource("3_q55cj")
+time = 6.0
+properties = {
+"length": 0.8
+}
+
+[sub_resource type="Resource" id="Resource_e4b5v"]
+script = ExtResource("4_n0g12")
+light_index = 508
+parts = {
+"0.00": SubResource("Resource_32pd6"),
+"26.00": SubResource("Resource_f8g6s"),
+"6.00": SubResource("Resource_y7b4y")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_i7i2l"]
+script = ExtResource("4_n0g12")
+light_index = 509
+parts = {
+"0.00": SubResource("Resource_32pd6"),
+"26.00": SubResource("Resource_f8g6s"),
+"6.00": SubResource("Resource_y7b4y")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_bt0h5"]
+script = ExtResource("4_n0g12")
+light_index = 510
+parts = {
+"0.00": SubResource("Resource_32pd6"),
+"26.00": SubResource("Resource_f8g6s"),
+"6.00": SubResource("Resource_y7b4y")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_7gh6d"]
+script = ExtResource("4_n0g12")
+light_index = 511
+parts = {
+"0.00": SubResource("Resource_32pd6"),
+"26.00": SubResource("Resource_f8g6s"),
+"6.00": SubResource("Resource_y7b4y")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_5gwfg"]
+script = ExtResource("3_q55cj")
+time = 0.0
+properties = {
+"length": 0.8
+}
+
+[sub_resource type="Resource" id="Resource_5wsh6"]
+script = ExtResource("3_q55cj")
+time = 29.0
+properties = {
+"length": 4.5
+}
+
+[sub_resource type="Resource" id="Resource_m2lvi"]
+script = ExtResource("3_q55cj")
+time = 9.0
+properties = {
+"length": 0.8
+}
+
+[sub_resource type="Resource" id="Resource_x7xpc"]
+script = ExtResource("4_n0g12")
+light_index = 512
+parts = {
+"0.00": SubResource("Resource_5gwfg"),
+"29.00": SubResource("Resource_5wsh6"),
+"9.00": SubResource("Resource_m2lvi")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_gw6c7"]
+script = ExtResource("4_n0g12")
+light_index = 513
+parts = {
+"0.00": SubResource("Resource_5gwfg"),
+"29.00": SubResource("Resource_5wsh6"),
+"9.00": SubResource("Resource_m2lvi")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_q4qti"]
+script = ExtResource("4_n0g12")
+light_index = 514
+parts = {
+"0.00": SubResource("Resource_5gwfg"),
+"29.00": SubResource("Resource_5wsh6"),
+"9.00": SubResource("Resource_m2lvi")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_d3cf0"]
+script = ExtResource("4_n0g12")
+light_index = 515
+parts = {
+"0.00": SubResource("Resource_5gwfg"),
+"29.00": SubResource("Resource_5wsh6"),
+"9.00": SubResource("Resource_m2lvi")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_5gexi"]
+script = ExtResource("2_fxaid")
+name = "Rope: Chandelier"
+timelines = {
+500: SubResource("Resource_oxl0m"),
+501: SubResource("Resource_b6h37"),
+502: SubResource("Resource_5w0l2"),
+503: SubResource("Resource_jj4pt"),
+504: SubResource("Resource_1134r"),
+505: SubResource("Resource_8uqko"),
+506: SubResource("Resource_qxghu"),
+507: SubResource("Resource_dn21q"),
+508: SubResource("Resource_e4b5v"),
+509: SubResource("Resource_i7i2l"),
+510: SubResource("Resource_bt0h5"),
+511: SubResource("Resource_7gh6d"),
+512: SubResource("Resource_x7xpc"),
+513: SubResource("Resource_gw6c7"),
+514: SubResource("Resource_q4qti"),
+515: SubResource("Resource_d3cf0")
+}
+loop_mode = 0
+
+[sub_resource type="Resource" id="Resource_52yyi"]
+script = ExtResource("3_q55cj")
+time = 0.0
+properties = {
+"length": 4.0
+}
+
+[sub_resource type="Resource" id="Resource_hcciq"]
+script = ExtResource("3_q55cj")
+time = 10.0
+properties = {
+"length": 5.0
+}
+
+[sub_resource type="Resource" id="Resource_vrq6s"]
+script = ExtResource("4_n0g12")
+light_index = 500
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_jbfjp"]
+script = ExtResource("4_n0g12")
+light_index = 501
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_fyekf"]
+script = ExtResource("4_n0g12")
+light_index = 502
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_0ph0n"]
+script = ExtResource("4_n0g12")
+light_index = 503
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_mboq1"]
+script = ExtResource("4_n0g12")
+light_index = 504
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 3.0
+
+[sub_resource type="Resource" id="Resource_4c7l0"]
+script = ExtResource("4_n0g12")
+light_index = 505
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 3.0
+
+[sub_resource type="Resource" id="Resource_wjwl6"]
+script = ExtResource("4_n0g12")
+light_index = 506
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 3.0
+
+[sub_resource type="Resource" id="Resource_0oaxm"]
+script = ExtResource("4_n0g12")
+light_index = 507
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 3.0
+
+[sub_resource type="Resource" id="Resource_lfg2h"]
+script = ExtResource("4_n0g12")
+light_index = 508
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 6.0
+
+[sub_resource type="Resource" id="Resource_e0l57"]
+script = ExtResource("4_n0g12")
+light_index = 509
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 6.0
+
+[sub_resource type="Resource" id="Resource_vrd2w"]
+script = ExtResource("4_n0g12")
+light_index = 510
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 6.0
+
+[sub_resource type="Resource" id="Resource_ckay5"]
+script = ExtResource("4_n0g12")
+light_index = 511
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 6.0
+
+[sub_resource type="Resource" id="Resource_ak1nj"]
+script = ExtResource("4_n0g12")
+light_index = 512
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 9.0
+
+[sub_resource type="Resource" id="Resource_f1u8l"]
+script = ExtResource("4_n0g12")
+light_index = 513
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 9.0
+
+[sub_resource type="Resource" id="Resource_brvn2"]
+script = ExtResource("4_n0g12")
+light_index = 514
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 9.0
+
+[sub_resource type="Resource" id="Resource_6eogk"]
+script = ExtResource("4_n0g12")
+light_index = 515
+parts = {
+"0.00": SubResource("Resource_52yyi"),
+"10.00": SubResource("Resource_hcciq")
+}
+await_duration = 9.0
+
+[sub_resource type="Resource" id="Resource_c2xvo"]
+script = ExtResource("2_fxaid")
+name = "Rope: Up&Down"
+timelines = {
+500: SubResource("Resource_vrq6s"),
+501: SubResource("Resource_jbfjp"),
+502: SubResource("Resource_fyekf"),
+503: SubResource("Resource_0ph0n"),
+504: SubResource("Resource_mboq1"),
+505: SubResource("Resource_4c7l0"),
+506: SubResource("Resource_wjwl6"),
+507: SubResource("Resource_0oaxm"),
+508: SubResource("Resource_lfg2h"),
+509: SubResource("Resource_e0l57"),
+510: SubResource("Resource_vrd2w"),
+511: SubResource("Resource_ckay5"),
+512: SubResource("Resource_ak1nj"),
+513: SubResource("Resource_f1u8l"),
+514: SubResource("Resource_brvn2"),
+515: SubResource("Resource_6eogk")
+}
+loop_mode = 3
 
 [sub_resource type="Resource" id="Resource_tbs6v"]
 script = ExtResource("2_32pk2")
-containers = Array[Resource("res://scripts/custom_resources/TimelineContainer.gd")]([])
+containers = Array[ExtResource("2_fxaid")]([SubResource("Resource_5gexi"), SubResource("Resource_c2xvo")])
 
 [resource]
 script = ExtResource("1_vtv6d")
@@ -149,84 +589,84 @@ lights_param = {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 3: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 4: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 5: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 6: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 7: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 50: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 51: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 52: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 53: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 54: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 55: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 56: {
@@ -254,161 +694,161 @@ lights_param = {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 60: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 61: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 62: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 63: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 64: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 100: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 101: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 102: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 103: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 104: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 105: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 106: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 107: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 108: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 109: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 110: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 111: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 112: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 113: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 114: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 115: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 116: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 117: {
@@ -429,476 +869,476 @@ lights_param = {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 120: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 121: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 122: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 123: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 124: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 125: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 126: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 127: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 128: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 129: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 130: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 131: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 150: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 151: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 152: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 153: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 154: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 155: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 156: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 157: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 158: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 159: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 160: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 161: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 162: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 163: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 164: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 165: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 166: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 167: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 168: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 169: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 170: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 171: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 172: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 173: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 174: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 175: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 176: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 177: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 178: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 179: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 180: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 181: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 182: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 183: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 184: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 185: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 186: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 187: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 188: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 189: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 190: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 191: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 192: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 193: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 194: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 195: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 196: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 197: {
 "angle": 20.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
-"power": 10.0,
+"power": 0.0,
 "tilt": 0.0
 },
 500: {
-"length": 2.0
+"length": 4.0
 },
 501: {
-"length": 2.0
+"length": 4.0
 },
 502: {
-"length": 2.0
+"length": 4.0
 },
 503: {
-"length": 2.0
+"length": 4.0
 },
 504: {
-"length": 2.0
+"length": 4.0
 },
 505: {
-"length": 2.0
+"length": 4.0
 },
 506: {
-"length": 2.0
+"length": 4.0
 },
 507: {
-"length": 2.0
+"length": 4.0
 },
 508: {
-"length": 2.0
+"length": 4.0
 },
 509: {
-"length": 2.0
+"length": 4.0
 },
 510: {
-"length": 2.0
+"length": 4.0
 },
 511: {
-"length": 2.0
+"length": 4.0
 },
 512: {
-"length": 2.0
+"length": 4.0
 },
 513: {
-"length": 2.0
+"length": 4.0
 },
 514: {
-"length": 2.0
+"length": 4.0
 },
 515: {
-"length": 2.0
+"length": 4.0
 }
 }
 lights_group = Array[Array]([[], [], [], [], [], [], []])

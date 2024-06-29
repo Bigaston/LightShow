@@ -273,9 +273,12 @@ func ctime():
 func display_timeline_window():
 	ImGui.Begin("Timeline")
 	
-	var current_timeline = [current_timelines.name]
-	if ImGui.Combo("Current Timeline", current_timeline, timelines.containers.map(func(timeline): return timeline.name)):
-		current_timelines = timelines.containers[timelines.containers.bsearch_custom(current_timeline[0], func(a, b): return a == b)]
+	#var current_timeline = [timelines.containers.bsearch_custom(current_timelines, func(a, b): return a.name == b.name)]
+	#print(current_timeline, current_timelines.name)
+	#if ImGui.Combo("Current Timeline", current_timeline, timelines.containers.map(func(timeline): return timeline.name)):
+		#current_timelines = timelines.containers[current_timeline[0]]
+		
+	ImGui.Text("Current Timeline : " + current_timelines.name)
 	
 	if selected_light == null:
 		if ImGui.Button("Setup"):
@@ -308,6 +311,10 @@ func display_timeline_window():
 					if ImGui.Button("Setup##" + timeline.name):
 						timeline.setup()
 	else:
+		#var timeline_name = [current_timelines.name]
+		#if ImGui.InputText("Timeline Name", timeline_name, 64):
+			#current_timelines.name = timeline_name[0]
+		
 		var arr = [current_time]
 		if ImGui.InputFloat("Current Time", arr):
 			if arr[0] > 0:
@@ -324,6 +331,10 @@ func display_timeline_window():
 			current_time += timeline_step
 		
 		if current_timelines.timelines.has(select_id):
+			var await_duration = [current_timelines.timelines[select_id].await_duration]
+			if ImGui.InputFloat("Await Duration", await_duration):
+				current_timelines.timelines[select_id].await_duration = await_duration[0]
+			
 			var timeline = current_timelines.timelines[select_id] as Timeline
 			var ordered_keys = timeline.parts.keys()
 			ordered_keys.sort_custom(func(a, b): return float(a) < float(b))

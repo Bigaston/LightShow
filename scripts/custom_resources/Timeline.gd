@@ -3,6 +3,7 @@ class_name Timeline
 
 @export var light_index: int
 @export var parts: Dictionary
+@export var await_duration: float = 0
 
 func save_part(light_index: int, time: String):
 	if !parts.has(time):
