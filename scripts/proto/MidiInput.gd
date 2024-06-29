@@ -339,9 +339,8 @@ func display_timeline_window():
 			new_timeline.light_index = select_id
 			current_timelines.timelines[select_id] = new_timeline
 		
-		
 		var current_loop_mode = [current_timelines.loop_mode]
 		if ImGui.Combo("Loop Mode", current_loop_mode, TimelineContainer.LoopMode.keys()):
-			current_timelines =TimelineContainer.LoopMode.keys()[TimelineContainer.LoopMode.keys().bsearch_custom(current_timeline[0], func(a, b): return a == b)]
+			current_timelines.loop_mode = current_loop_mode[0]
 		
 	ImGui.End()

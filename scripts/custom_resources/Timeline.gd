@@ -29,3 +29,6 @@ func delete_part(_light_index: int, time: String):
 		return
 		
 	parts.erase(time)
+
+func get_parts_time():
+	return parts.keys()

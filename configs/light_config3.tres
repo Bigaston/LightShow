@@ -22,7 +22,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_q1bpx"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 500
 parts = {
 "0.00": SubResource("Resource_26wjt"),
 "5.00": SubResource("Resource_o8mct")
@@ -44,7 +44,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_l2shx"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 501
 parts = {
 "0.00": SubResource("Resource_tpdxx"),
 "5.00": SubResource("Resource_lme4n")
@@ -66,7 +66,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_7uty6"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 502
 parts = {
 "0.00": SubResource("Resource_7fju0"),
 "5.00": SubResource("Resource_eqt1m")
@@ -88,7 +88,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_qjlg3"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 503
 parts = {
 "0.00": SubResource("Resource_gohsu"),
 "5.00": SubResource("Resource_m4deq")
@@ -110,7 +110,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_pvx7r"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 504
 parts = {
 "0.00": SubResource("Resource_c37v4"),
 "5.00": SubResource("Resource_jir52")
@@ -132,7 +132,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_m8xik"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 505
 parts = {
 "0.00": SubResource("Resource_8fuwb"),
 "5.00": SubResource("Resource_tb7vc")
@@ -173,7 +173,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_vgk8l"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 525
 parts = {
 "0.00": SubResource("Resource_pnnwb"),
 "5.00": SubResource("Resource_mvr63"),
@@ -215,7 +215,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_n0b52"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 526
 parts = {
 "0.00": SubResource("Resource_oo55n"),
 "5.00": SubResource("Resource_knqsc"),
@@ -257,7 +257,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_cw2y4"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 527
 parts = {
 "0.00": SubResource("Resource_ufcmq"),
 "5.00": SubResource("Resource_qn4fw"),
@@ -299,7 +299,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_2e7pp"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 528
 parts = {
 "0.00": SubResource("Resource_ovyk3"),
 "5.00": SubResource("Resource_p3fx6"),
@@ -341,7 +341,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_fb002"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 529
 parts = {
 "0.00": SubResource("Resource_kcwma"),
 "5.00": SubResource("Resource_y55vx"),
@@ -383,7 +383,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_b3878"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 530
 parts = {
 "0.00": SubResource("Resource_ch34w"),
 "5.00": SubResource("Resource_onpqg"),
@@ -425,7 +425,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_qu8ol"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 531
 parts = {
 "0.00": SubResource("Resource_x3dax"),
 "5.00": SubResource("Resource_pieci"),
@@ -467,7 +467,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_p3bj1"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 532
 parts = {
 "0.00": SubResource("Resource_u0whu"),
 "5.00": SubResource("Resource_a2ms6"),
@@ -509,7 +509,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_b316l"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 533
 parts = {
 "0.00": SubResource("Resource_tr60r"),
 "5.00": SubResource("Resource_eauy5"),
@@ -551,7 +551,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_s8b5l"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 534
 parts = {
 "0.00": SubResource("Resource_ponra"),
 "5.00": SubResource("Resource_n046o"),
@@ -593,7 +593,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_sq54l"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 535
 parts = {
 "0.00": SubResource("Resource_vm8mq"),
 "5.00": SubResource("Resource_sfetg"),
@@ -635,7 +635,7 @@ properties = {
 
 [sub_resource type="Resource" id="Resource_w5l67"]
 script = ExtResource("4_nh35a")
-light_index = 0
+light_index = 536
 parts = {
 "0.00": SubResource("Resource_k018x"),
 "5.00": SubResource("Resource_hhx7k"),
@@ -840,18 +840,18 @@ parts = {
 "5.40": SubResource("Resource_6rrtb")
 }
 
-[sub_resource type="Resource" id="Resource_47ns4"]
+[sub_resource type="Resource" id="Resource_5glqr"]
 script = ExtResource("4_nh35a")
-light_index = 736
+light_index = 735
 parts = {
 "0.00": SubResource("Resource_pnnwb"),
 "5.00": SubResource("Resource_mvr63"),
 "5.40": SubResource("Resource_6rrtb")
 }
 
-[sub_resource type="Resource" id="Resource_5glqr"]
+[sub_resource type="Resource" id="Resource_47ns4"]
 script = ExtResource("4_nh35a")
-light_index = 735
+light_index = 736
 parts = {
 "0.00": SubResource("Resource_pnnwb"),
 "5.00": SubResource("Resource_mvr63"),
@@ -905,6 +905,7 @@ timelines = {
 735: SubResource("Resource_5glqr"),
 736: SubResource("Resource_47ns4")
 }
+loop_mode = 2
 
 [sub_resource type="Resource" id="Resource_1vepj"]
 script = ExtResource("3_8aqpk")
@@ -1179,274 +1180,274 @@ lights_param = {
 "tilt": 0.0
 },
 500: {
-"length": 5.5
+"length": 1.0
 },
 501: {
-"length": 5.5
+"length": 1.0
 },
 502: {
-"length": 4.5
+"length": 1.0
 },
 503: {
-"length": 4.5
+"length": 1.0
 },
 504: {
-"length": 5.5
+"length": 1.0
 },
 505: {
-"length": 5.5
+"length": 1.0
 },
 525: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 526: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 527: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 528: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 529: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 530: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 531: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.0,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.0
 },
 532: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -4.25197,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 533: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 534: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 535: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": 1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 536: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": 0.0,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 625: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 626: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 627: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 628: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 629: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 630: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 631: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 632: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 633: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 634: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 635: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 636: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 725: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 726: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 727: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 728: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 729: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 730: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 731: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 732: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 733: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 734: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 735: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 736: {
 "angle": 5.0,
 "color": Color(1, 1, 1, 1),
 "pan": -1.41732,
 "power": 0.0,
-"tilt": 80.7874
+"tilt": -80.7874
 },
 1000: {
 "angle": 20.0,
