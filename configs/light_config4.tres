@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=81 format=3]
+[gd_resource type="Resource" script_class="SaveData" load_steps=99 format=3 uid="uid://b0mwyi8vbxamb"]
 
 [ext_resource type="Script" path="res://scripts/custom_resources/SaveData.gd" id="1_vtv6d"]
 [ext_resource type="Script" path="res://scripts/custom_resources/TimelineManager.gd" id="2_32pk2"]
@@ -471,6 +471,17 @@ properties = {
 "power": 0.0
 }
 
+[sub_resource type="Resource" id="Resource_ekpgm"]
+script = ExtResource("4_n0g12")
+light_index = 0
+parts = {
+"0.00": SubResource("Resource_s0gbq"),
+"0.20": SubResource("Resource_83d1k"),
+"0.40": SubResource("Resource_25yv6"),
+"1.60": SubResource("Resource_htfwv")
+}
+await_duration = 0.0
+
 [sub_resource type="Resource" id="Resource_ra4gd"]
 script = ExtResource("4_n0g12")
 light_index = 1
@@ -559,17 +570,6 @@ script = ExtResource("4_n0g12")
 light_index = 51
 parts = {}
 await_duration = 1.8
-
-[sub_resource type="Resource" id="Resource_ekpgm"]
-script = ExtResource("4_n0g12")
-light_index = 0
-parts = {
-"0.00": SubResource("Resource_s0gbq"),
-"0.20": SubResource("Resource_83d1k"),
-"0.40": SubResource("Resource_25yv6"),
-"1.60": SubResource("Resource_htfwv")
-}
-await_duration = 0.0
 
 [sub_resource type="Resource" id="Resource_dq8mg"]
 script = ExtResource("2_fxaid")
@@ -704,9 +704,171 @@ timelines = {
 }
 loop_mode = 1
 
+[sub_resource type="Resource" id="Resource_7qs3x"]
+script = ExtResource("3_q55cj")
+time = 0.0
+properties = {
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
+}
+
+[sub_resource type="Resource" id="Resource_wxrh6"]
+script = ExtResource("4_n0g12")
+light_index = 51
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_yyju2"]
+script = ExtResource("4_n0g12")
+light_index = 52
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_kjhga"]
+script = ExtResource("4_n0g12")
+light_index = 54
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_cwbyk"]
+script = ExtResource("4_n0g12")
+light_index = 56
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_27mmv"]
+script = ExtResource("4_n0g12")
+light_index = 58
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_wg25r"]
+script = ExtResource("4_n0g12")
+light_index = 60
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_vqdio"]
+script = ExtResource("4_n0g12")
+light_index = 62
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_lrank"]
+script = ExtResource("4_n0g12")
+light_index = 64
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_6yjm3"]
+script = ExtResource("4_n0g12")
+light_index = 153
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_gqf2g"]
+script = ExtResource("4_n0g12")
+light_index = 159
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_y45sn"]
+script = ExtResource("4_n0g12")
+light_index = 165
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_smus5"]
+script = ExtResource("4_n0g12")
+light_index = 171
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_7l4g2"]
+script = ExtResource("4_n0g12")
+light_index = 177
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_pw25j"]
+script = ExtResource("4_n0g12")
+light_index = 183
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_i2v8w"]
+script = ExtResource("4_n0g12")
+light_index = 189
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_50w8n"]
+script = ExtResource("4_n0g12")
+light_index = 195
+parts = {
+"0.00": SubResource("Resource_7qs3x")
+}
+await_duration = 0.0
+
+[sub_resource type="Resource" id="Resource_deipn"]
+script = ExtResource("2_fxaid")
+name = "Light: Setup Red Ambiance"
+timelines = {
+51: SubResource("Resource_wxrh6"),
+52: SubResource("Resource_yyju2"),
+54: SubResource("Resource_kjhga"),
+56: SubResource("Resource_cwbyk"),
+58: SubResource("Resource_27mmv"),
+60: SubResource("Resource_wg25r"),
+62: SubResource("Resource_vqdio"),
+64: SubResource("Resource_lrank"),
+153: SubResource("Resource_6yjm3"),
+159: SubResource("Resource_gqf2g"),
+165: SubResource("Resource_y45sn"),
+171: SubResource("Resource_smus5"),
+177: SubResource("Resource_7l4g2"),
+183: SubResource("Resource_pw25j"),
+189: SubResource("Resource_i2v8w"),
+195: SubResource("Resource_50w8n")
+}
+loop_mode = 0
+
 [sub_resource type="Resource" id="Resource_tbs6v"]
 script = ExtResource("2_32pk2")
-containers = Array[ExtResource("2_fxaid")]([SubResource("Resource_5gexi"), SubResource("Resource_c2xvo"), SubResource("Resource_dq8mg"), SubResource("Resource_wc00h")])
+containers = Array[ExtResource("2_fxaid")]([SubResource("Resource_5gexi"), SubResource("Resource_c2xvo"), SubResource("Resource_dq8mg"), SubResource("Resource_wc00h"), SubResource("Resource_deipn")])
 
 [resource]
 script = ExtResource("1_vtv6d")
@@ -896,18 +1058,18 @@ lights_param = {
 "tilt": 0.0
 },
 51: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 52: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 53: {
 "angle": 20.0,
@@ -917,11 +1079,11 @@ lights_param = {
 "tilt": 0.0
 },
 54: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 55: {
 "angle": 20.0,
@@ -931,11 +1093,11 @@ lights_param = {
 "tilt": 0.0
 },
 56: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 57: {
 "angle": 20.0,
@@ -945,11 +1107,11 @@ lights_param = {
 "tilt": 0.0
 },
 58: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 59: {
 "angle": 20.0,
@@ -959,11 +1121,11 @@ lights_param = {
 "tilt": 0.0
 },
 60: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 61: {
 "angle": 20.0,
@@ -973,11 +1135,11 @@ lights_param = {
 "tilt": 0.0
 },
 62: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 63: {
 "angle": 20.0,
@@ -987,11 +1149,11 @@ lights_param = {
 "tilt": 0.0
 },
 64: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 100: {
 "angle": 20.0,
@@ -1239,11 +1401,11 @@ lights_param = {
 "tilt": 0.0
 },
 153: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 154: {
 "angle": 20.0,
@@ -1281,11 +1443,11 @@ lights_param = {
 "tilt": 0.0
 },
 159: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 160: {
 "angle": 20.0,
@@ -1323,11 +1485,11 @@ lights_param = {
 "tilt": 0.0
 },
 165: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 166: {
 "angle": 20.0,
@@ -1365,11 +1527,11 @@ lights_param = {
 "tilt": 0.0
 },
 171: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 172: {
 "angle": 20.0,
@@ -1407,11 +1569,11 @@ lights_param = {
 "tilt": 0.0
 },
 177: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 178: {
 "angle": 20.0,
@@ -1449,11 +1611,11 @@ lights_param = {
 "tilt": 0.0
 },
 183: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 184: {
 "angle": 20.0,
@@ -1491,11 +1653,11 @@ lights_param = {
 "tilt": 0.0
 },
 189: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 190: {
 "angle": 20.0,
@@ -1533,11 +1695,11 @@ lights_param = {
 "tilt": 0.0
 },
 195: {
-"angle": 20.0,
-"color": Color(1, 1, 1, 1),
-"pan": 0.0,
-"power": 0.0,
-"tilt": 0.0
+"angle": 40.315,
+"color": Color(1, 0, 0, 1),
+"pan": 1.41732,
+"power": 7.40157,
+"tilt": 1.41732
 },
 196: {
 "angle": 20.0,
